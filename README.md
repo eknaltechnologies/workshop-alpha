@@ -22,10 +22,11 @@ This repository helps participants:
 - Practice coding daily
 - Build consistency
 - Learn Git & GitHub collaboration
+- Understand real-world Git workflows
+- Learn Pull Requests (PR)
 - Maintain coding discipline
 - Track learning progress
 - Create a public coding portfolio
-- Improve clean coding habits
 
 ---
 
@@ -46,6 +47,34 @@ John_Doe/
 ❌ Do NOT upload files outside your folder  
 ❌ Do NOT modify other participant folders  
 ❌ Do NOT delete other participant files
+
+---
+
+## ✅ Create Your Own Branch
+
+Every participant must work on their own branch.
+
+### Branch Naming Format
+
+```bash
+your-name
+```
+
+### Example
+
+```bash
+rahul-kumar
+ananya-reddy
+john-doe
+```
+
+❌ Do NOT push directly to `main` branch
+
+All submissions must happen through:
+
+- Your own branch
+- Pull Request (PR)
+- Review & Merge process
 
 ---
 
@@ -222,6 +251,30 @@ cd python-workshop
 
 ---
 
+# 🌿 Create Your Branch
+
+## Create New Branch
+
+```bash
+git checkout -b your-name
+```
+
+### Example
+
+```bash
+git checkout -b rahul-kumar
+```
+
+---
+
+## Verify Current Branch
+
+```bash
+git branch
+```
+
+---
+
 # 📁 Create Your Personal Folder
 
 ```bash
@@ -285,11 +338,31 @@ git commit -m "Completed Day 5 assignments"
 
 ---
 
-## Push Code
+## Push To Your Branch
 
 ```bash
-git push origin main
+git push origin your-branch-name
 ```
+
+### Example
+
+```bash
+git push origin rahul-kumar
+```
+
+---
+
+# 🔄 Create Pull Request (PR)
+
+After pushing your code:
+
+1. Open GitHub repository
+2. GitHub will show:
+   > Compare & Pull Request
+3. Click it
+4. Add proper PR title
+5. Create Pull Request
+6. Wait for review & merge
 
 ---
 
@@ -297,7 +370,15 @@ git push origin main
 
 Follow these commands every day before pushing:
 
-## Pull Latest Changes
+## Switch To Your Branch
+
+```bash
+git checkout your-branch-name
+```
+
+---
+
+## Pull Latest Changes From Main
 
 ```bash
 git pull origin main
@@ -321,11 +402,17 @@ git commit -m "Day X updates"
 
 ---
 
-## Push Your Code
+## Push Your Branch
 
 ```bash
-git push origin main
+git push origin your-branch-name
 ```
+
+---
+
+## Create Pull Request
+
+Create PR on GitHub after pushing changes.
 
 ---
 
@@ -338,6 +425,7 @@ Always make sure:
 - Folder names are correct
 - No unnecessary files are uploaded
 - You pulled latest changes before pushing
+- You are working on your own branch
 
 ---
 
@@ -377,7 +465,7 @@ Small daily improvements create massive long-term results.
 
 # 👨‍💻 Organized By
 
-## Eknal Tuts
+## Eknal Workshops
 
 Learning • Building • Growing
 
