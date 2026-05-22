@@ -1,0 +1,28 @@
+subjects={"Maths","History","geography","Civics","English","Biology","Chemistry"}
+science_dept={"Biology","Chemistry"}
+arts_dept={"Music"}
+
+print("Original:",subjects)
+#1- add()
+subjects.add("Science")
+print("Added a subject:",subjects)
+#2- remove()
+subjects.remove("geography")
+print("removed the element :",subjects)
+#3- discard()
+subjects.discard("Civics")
+print("Discarded a subject:",subjects)
+#4- pop()
+subjects.pop()
+print("popped item:",subjects)
+#5 intersection()
+share_subs=subjects.intersection(science_dept)
+compare_subs=arts_dept.intersection(subjects)
+print("Have shared subjects:",share_subs)
+print("Have similar subs:",compare_subs)
+#6 union()
+all_unique=subjects.union(science_dept)
+print("all uniques subjects:",all_unique)
+#7 difference()
+compare_sub=subjects.difference(science_dept)
+print("Have similar subs:",compare_sub)
