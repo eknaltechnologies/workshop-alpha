@@ -54,12 +54,12 @@ def main_menu():
     while True:
 
         try:
-            print("\n===== MAIN MENU =====")
-            print("1. Mobile Services")
-            print("2. Internet Services")
-            print("3. TV & OTT Services")
-            print("4. Talk to Customer Support")
-            print("5. Exit")
+            print("===== MAIN MENU ====="
+            "\n 1. Mobile Services"
+           "\n 2. Internet Services"
+            "\n 3. TV & OTT Services"
+            "\n 4. Talk to Customer Support"
+            "\n 5. Exit")
 
             choice = int(input("Enter choice: "))
 
@@ -93,10 +93,10 @@ def mobile_services():
     while True:
 
         try:
-            print("\n--- MOBILE SERVICES ---")
-            print("1. Prepaid")
-            print("2. Postpaid")
-            print("3. Back")
+            print("--- MOBILE SERVICES ---"
+            "\n 1. Prepaid"
+            "\n 2. Postpaid"
+            "\n 3. Back")
 
             choice = int(input("Enter choice: "))
 
@@ -123,11 +123,11 @@ def prepaid():
     while True:
 
         try:
-            print("\n--- PREPAID ---")
-            print("1. Balance Inquiry")
-            print("2. Recharge")
-            print("3. Data Plans")
-            print("4. Back")
+            print("\n--- PREPAID ---"
+            "1. Balance Inquiry"
+            "2. Recharge"
+            "3. Data Plans"
+            "4. Back")
 
             choice = int(input("Enter choice: "))
 
@@ -157,11 +157,11 @@ def recharge_menu():
     while True:
 
         try:
-            print("\n--- RECHARGE ---")
-            print("1. Credit Card")
-            print("2. UPI")
-            print("3. Recharge History")
-            print("4. Back")
+            print("--- RECHARGE ---"
+            "\n 1. Credit Card"
+            "\n 2. UPI"
+            "\n 3. Recharge History"
+            "\n 4. Back")
 
             choice = int(input("Enter choice: "))
 
@@ -233,12 +233,12 @@ def data_plans():
     while True:
 
         try:
-            print("\n--- DATA PLANS ---")
-            print("1. 1GB/day")
-            print("2. 2GB/day")
-            print("3. Unlimited")
-            print("4. View Selected Plans")
-            print("5. Back")
+            print("--- DATA PLANS ---"
+            "\n 1. 1GB/day"
+            "\n 2. 2GB/day"
+            "\n 3. Unlimited"
+            "\n 4. View Selected Plans"
+            "\n 5. Back")
 
             choice = int(input("Enter choice: "))
 
@@ -291,11 +291,11 @@ def postpaid():
     while True:
 
         try:
-            print("\n--- POSTPAID ---")
-            print("1. Current Bill")
-            print("2. Bill Payment")
-            print("3. Plan Upgrade")
-            print("4. Back")
+            print("\n--- POSTPAID ---"
+            "\n 1. Current Bill"
+            "\n 2. Bill Payment"
+            "\n 3. Plan Upgrade"
+            "\n 4. Back")
 
             choice = int(input("Enter choice: "))
 
@@ -324,11 +324,11 @@ def bill_payment():
     while True:
 
         try:
-            print("\n--- BILL PAYMENT ---")
-            print("1. NetBanking")
-            print("2. Wallet")
-            print("3. View Payment History")
-            print("4. Back")
+            print("--- BILL PAYMENT ---"
+            "\n 1. NetBanking"
+            "\n 2. Wallet"
+            "\n 3. View Payment History"
+            "\n 4. Back")
 
             choice = int(input("Enter choice: "))
 
@@ -386,11 +386,11 @@ def plan_upgrade():
     while True:
 
         try:
-            print("\n--- PLAN UPGRADE ---")
-            print("1. Silver → Gold")
-            print("2. Gold → Platinum")
-            print("3. View Upgrade History")
-            print("4. Back")
+            print("\n--- PLAN UPGRADE ---"
+            "\n 1. Silver → Gold"
+            "\n 2. Gold → Platinum"
+            "\n 3. View Upgrade History"
+            "\n 4. Back")
 
             choice = int(input("Enter choice: "))
 
@@ -448,10 +448,10 @@ def internet_services():
     while True:
 
         try:
-            print("\n--- INTERNET SERVICES ---")
-            print("1. Broadband")
-            print("2. Fiber")
-            print("3. Back")
+            print("\n--- INTERNET SERVICES ---"
+            "\n 1. Broadband"
+            "\n 2. Fiber"
+           "\n 3. Back")
 
             choice = int(input("Enter choice: "))
 
@@ -482,12 +482,12 @@ def tv_ott_services():
     while True:
 
         try:
-            print("\n--- TV & OTT SERVICES ---")
-            print("1. Channel Packs")
-            print("2. Recharge Plans")
-            print("3. Complaint")
-            print("4. View Complaints")
-            print("5. Back")
+            print("\n--- TV & OTT SERVICES ---"
+            "\n1. Channel Packs"
+            "\n 2. Recharge Plans"
+            "\n 3. Complaint"
+            "\n 4. View Complaints"
+            "\n 5. Back")
 
             choice = int(input("Enter choice: "))
 
