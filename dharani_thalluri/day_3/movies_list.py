@@ -11,17 +11,16 @@ except FileNotFoundError:
 
 while True:
 
-    print("\n===== Movie List System =====")
-
-    print("1. Add Movie")
-    print("2. View Movies")
-    print("3. Update Movie")
-    print("4. Delete Movie")
-    print("5. Search Movie")
-    print("6. Highest Rated Movie")
-    print("7. Genre Wise Movies")
-    print("8. Total Movies")
-    print("9. Exit")
+    print("===== Movie List System ====="
+    "\n 1. Add Movie"
+    "\n 2. View Movies"
+    "\n 3. Update Movie"
+    "\n 4. Delete Movie"
+    "\n 5. Search Movie"
+    "\n 6. Highest Rated Movie"
+    "\n 7. Genre Wise Movies"
+    "\n 8. Total Movies"
+    "\n 9. Exit")
 
     user_choice = int(input("Enter your choice (1-9): "))
 
