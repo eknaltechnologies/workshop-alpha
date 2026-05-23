@@ -64,12 +64,10 @@ while True:
         song_name=input('Enter song name to search: ').lower()
 
         found=False
-
         for song,details in music_list.items():
             if song_name in song.lower():
                 print(f"{song}-> Singer: {details['singer']} | Album:{details['album']}")
                 found=True
-        
         if not found:
             print("No Songs found......")
     
