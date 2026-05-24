@@ -1,5 +1,5 @@
 def main_menu():
-
+    
     print("\n--- MAIN MENU ---")
     print("1. Mobile Services")
     print("2. Internet services")
@@ -92,9 +92,7 @@ def Postpaid_menu():
     else:
         print("Invalid Choice")
         Postpaid_menu()
-
-#======================Internet services======================================
-
+# ====================Internet services=========================================
 def internet_services():
 
     print("\n--- INTERNET SERVICES ---")
@@ -127,7 +125,6 @@ def internet_services():
     else:
         print("Invalid Choice")
         internet_services()
-        
 #=======================Tv_and_ott_offers():========================================
 
 def Tv_and_ott_offers():
@@ -176,6 +173,7 @@ def Tv_and_ott_offers():
     else:
         print("\n  Invalid Choice!")
         Tv_and_ott_offers()
+
 def channel_pack():
 
   print("\n---Channel pack---")
