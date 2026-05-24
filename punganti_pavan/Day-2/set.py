@@ -1,7 +1,7 @@
-#set in crud operations
+# set in crud operations
 # set is only represents is unique values and un order list
 
-#  create in set 
+#  create in set
 
 students = {"pavan", "rahul", "sneha", "kiran"}
 print(students)
@@ -14,6 +14,6 @@ print(len(students))
 students.update(["meena", "arjun", "divya"])
 print(students)
 
-#delete in set 
+# delete in set
 students.clear()
 print(students)

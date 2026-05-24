@@ -1,41 +1,40 @@
-#tuple operations
-numbers = (12,24,36,48,60)
+# tuple operations
+numbers = (12, 24, 36, 48, 60)
 a = ((1, 2), (3, 4))
-#index
+# index
 print(numbers[0])
-#length
+# length
 print(len(numbers))
-#nested tuples
+# nested tuples
 print(a[1][0])
-#count
+# count
 print(numbers.count(24))
-#slicing
+# slicing
 print(numbers[1:4])
-#concatenation
-b = numbers + (72,84)
+# concatenation
+b = numbers + (72, 84)
 print(b)
-#membership
+# membership
 print(48 in numbers)
-#maximum value
+# maximum value
 print(max(numbers))
-#minimum value
+# minimum value
 print(min(numbers))
-#sum
+# sum
 print(sum(numbers))
-#sorted
+# sorted
 print(sorted(numbers))
-#tuple conversion
+# tuple conversion
 d = list(numbers)
 print(d)
-#list to tuple
+# list to tuple
 e = tuple(d)
 print(e)
-#iterate tuple
+# iterate tuple
 for i in numbers:
     print(i)
-#Item Exists
+# Item Exists
 if 36 in numbers:
     print("number exists")
 else:
     print("number not exists")
-    
