@@ -1,7 +1,4 @@
-import sys
-
 print("=====================================\nWelcome to the VBC IVR System\n=====================================")
-
 
 def main_menu():
     print("------ MAIN MENU ------")
