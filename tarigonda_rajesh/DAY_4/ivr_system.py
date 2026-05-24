@@ -8,14 +8,16 @@ user = {
     'tv_status': 'Active'
 }
 
+def invalid_choice():
+    print("Choose correct option...")
+
+def invalid_service():
+    print("Choose correct service...")
+
 # Main Menu
 def main_menu():
     while True:
-        print("\n1. Mobile Services" \
-        "\n2. Internet Services" \
-        "\n3. TV & OTT Services" \
-        "\n4. Talk to Customer Support" \
-        "\n5. Exit")
+        print("1. Mobile Services\n2. Internet Services\n3. TV & OTT Services\n4. Talk to Customer Support\n5. Exit")
 
         user_choice = int(input("Choose a service(1-5): "))
         if user_choice == 1:
@@ -30,14 +32,12 @@ def main_menu():
             print("Thank You")
             break
         else:
-            print("Choose correct service")
+            invalid_service()
 
 # Mobile Services
 def mobile_services():
     while True:
-        print("\n1. Prepaid" \
-        "\n2. Postpaid" \
-        "\n3. Back")
+        print("1. Prepaid\n2. Postpaid\n3. Back")
 
         mobile_ser = int(input("Choose mobile service(1-3): "))
         if mobile_ser == 1:
@@ -47,16 +47,12 @@ def mobile_services():
         elif mobile_ser == 3:
             break
         else:
-            print("Choose correct service")
+            invalid_service()
 
 # Prepaid
 def prepaid_services():
     while True:
-        print("\n1. Balance Inquiry" \
-        "\n2. Recharge" \
-        "\n3. Recharge History" \
-        "\n4. Data Plans" \
-        "\n5. Back")
+        print("1. Balance Inquiry\n2. Recharge\n3. Recharge History\n4. Data Plans\n5. Back")
 
         prepaid_ser = int(input("Choose prepaid service(1-5): "))
         if prepaid_ser == 1:
@@ -70,14 +66,13 @@ def prepaid_services():
         elif prepaid_ser == 5:
             break
         else:
-            print("Choose correct service")
+            invalid_service()
 
 # Recharge
 def recharge_menu():
     while True:
-        print("\n1. Using Credit Card" \
-        "\n2. Using UPI" \
-        "\n3. Back")
+        print("1. Using Credit Card\n2. Using UPI\n3. Back")
+
         recharge_ser = int(input("Choose recharge option(1-3): "))
 
         if recharge_ser == 1:
@@ -99,7 +94,7 @@ def recharge_menu():
         elif recharge_ser == 3:
             break
         else:
-            print("Choose correct option")
+            invalid_choice()
 
 # Recharge History
 def recharge_history():
@@ -113,10 +108,7 @@ def recharge_history():
 # Data Plans
 def data_plans():
     while True:
-        print("\n1. 1GB/day" \
-        "\n2. 2GB/day" \
-        "\n3. Unlimited" \
-        "\n4. Back")
+        print("1. 1GB/day\n2. 2GB/day\n3. Unlimited\n4. Back")
 
         plan = int(input("Choose data plan(1-4): "))
         if plan == 1:
@@ -133,10 +125,7 @@ def data_plans():
 # Postpaid
 def postpaid_services():
     while True:
-        print("\n1. Current Bill" \
-        "\n2. Bill Payment" \
-        "\n3. Plan Upgrade" \
-        "\n4. Back")
+        print("1. Current Bill\n2. Bill Payment\n3. Plan Upgrade\n4. Back")
 
         postpaid_ser = int(input("Choose postpaid service(1-4): "))
         if postpaid_ser == 1:
@@ -148,15 +137,12 @@ def postpaid_services():
         elif postpaid_ser == 4:
             break
         else:
-            print("Choose correct option")
+            invalid_choice()
 
 # Bill Payment
 def bill_payment():
     while True:
-        print("\n1. Pay via NetBanking" \
-        "\n2. Pay via Wallet" \
-        "\n3. Back")
-
+        print("1. Pay via NetBanking\n2. Pay via Wallet\n3. Back")
         payment = int(input("Choose payment method(1-3): "))
         if payment == 1:
             user['current_bill'] = 0
@@ -167,14 +153,12 @@ def bill_payment():
         elif payment == 3:
             break
         else:
-            print("Choose correct option")
+            invalid_choice()
 
 # Plan Upgrade
 def plan_upgrade():
     while True:
-        print("\n1. Silver to Gold" \
-        "\n2. Gold to Platinum" \
-        "\n3. Back")
+        print("1. Silver to Gold\n2. Gold to Platinum\n3. Back")
 
         upgrade = int(input("Choose upgrade option(1-3): "))
         if upgrade == 1:
@@ -184,15 +168,12 @@ def plan_upgrade():
         elif upgrade == 3:
             break
         else:
-            print("Choose correct option")
+            invalid_choice()
 
 # Internet Services
 def internet_services():
     while True:
-        print("\n1. Broadband" \
-        "\n2. Fiber" \
-        "\n3. Back")
-
+        print("1. Broadband\n2. Fiber\n3. Back")
         internet_serv = int(input("Choose internet service(1-3): "))
         if internet_serv == 1:
             broadband_services()
@@ -201,16 +182,12 @@ def internet_services():
         elif internet_serv == 3:
             break
         else:
-            print("Choose correct service")
+            invalid_service()
 
 # Broadband
 def broadband_services():
     while True:
-        print("\n1. Usage Details" \
-        "\n2. Renew Plan" \
-        "\n3. Change Router" \
-        "\n4. Back")
-
+        print("1. Usage Details\n2. Renew Plan\n3. Change Router\n4. Back")
         broadband_ser = int(input("Choose broadband service(1-4): "))
         if broadband_ser == 1:
             print(f"Broadband Usage : {user['broadband_usage']} GB")
@@ -221,15 +198,11 @@ def broadband_services():
         elif broadband_ser == 4:
             break
         else:
-            print("Choose correct service")
-
+            invalid_service()
 # Renew Plan
 def renew_plan():
     while True:
-        print("\n1. Monthly Plan" \
-        "\n2. Quarterly Plan" \
-        "\n3. Yearly Plan" \
-        "\n4. Back")
+        print("1. Monthly Plan\n2. Quarterly Plan\n3. Yearly Plan\n4. Back")
 
         renew = int(input("Choose renew option(1-4): "))
         if renew == 1:
@@ -244,15 +217,12 @@ def renew_plan():
         elif renew == 4:
             break
         else:
-            print("Choose correct option")
+            invalid_choice()
 
 # Change Router
 def change_router():
     while True:
-        print("\n1. Request Technician Visit" \
-        "\n2. Self Installation Guide" \
-        "\n3. Back")
-
+        print("1. Request Technician Visit\n2. Self Installation Guide\n3. Back")
         router = int(input("Choose option(1-3): "))
         if router == 1:
             print("Technician Visit Requested")
@@ -261,14 +231,12 @@ def change_router():
         elif router == 3:
             break
         else:
-            print("Choose correct option")
+            invalid_choice()
 
 # Fiber
 def fiber_services():
     while True:
-        print("\n1. New Connection" \
-        "\n2. Status Check" \
-        "\n3. Back")
+        print("1. New Connection\n2. Status Check\n3. Back")
 
         fiber_ser = int(input("Choose fiber service(1-3): "))
         if fiber_ser == 1:
@@ -278,14 +246,12 @@ def fiber_services():
         elif fiber_ser == 3:
             break
         else:
-            print("Choose correct option")
+            invalid_choice()
 
 # New Connection
 def new_connection():
     while True:
-        print("\n1. Residential" \
-        "\n2. Business" \
-        "\n3. Back")
+        print("1. Residential\n2. Business\n3. Back")
         connection = int(input("Choose connection type(1-3): "))
 
         if connection == 1:
@@ -297,15 +263,12 @@ def new_connection():
         elif connection == 3:
             break
         else:
-            print("Choose correct option")
+            invalid_choice()
 
 # TV & OTT Services
 def tv_ott_services():
     while True:
-        print("\n1. Channel Pack" \
-        "\n2. Recharge" \
-        "\n3. Complaint" \
-        "\n4. Back")
+        print("1. Channel Pack\n2. Recharge\n3. Complaint\n4. Back")
 
         tv_serv = int(input("Choose TV service(1-4): "))
         if tv_serv == 1:
@@ -317,16 +280,12 @@ def tv_ott_services():
         elif tv_serv == 4:
             break
         else:
-            print("Choose correct service")
+            invalid_service()
 
 # Channel Pack
 def channel_pack():
     while True:
-        print("\n1. Sports Pack" \
-        "\n2. Movies Pack" \
-        "\n3. All-in-One Pack" \
-        "\n4. Back")
-
+        print("1. Sports Pack\n2. Movies Pack\n3. All-in-One Pack\n4. Back")
         pack = int(input("Choose pack(1-4): "))
         if pack == 1:
             print("Sports Pack Activated")
@@ -342,10 +301,7 @@ def channel_pack():
 # TV Recharge
 def tv_recharge():
     while True:
-        print("\n1. 1 Month" \
-        "\n2. 6 Months" \
-        "\n3. 12 Months" \
-        "\n4. Back")
+        print("1. 1 Month \n2. 6 Months 3. 12 Months3\n4. Back")
 
         recharge = int(input("Choose recharge option(1-4): "))
         if recharge == 1:
@@ -357,14 +313,12 @@ def tv_recharge():
         elif recharge == 4:
             break
         else:
-            print("Choose correct option")
+            invalid_choice()
 
 # Complaint
 def complaint_services():
     while True:
-        print("\n1. No Signal" \
-        "\n2. Overcharged" \
-        "\n3. Back")
+        print("1. No Signal\n2. Overcharged\n3. Back")
 
         complaint = int(input("Choose complaint option(1-3): "))
         if complaint == 1:
@@ -374,5 +328,5 @@ def complaint_services():
         elif complaint == 3:
             break
         else:
-            print("Choose correct option")
+            invalid_choice()
 main_menu()
