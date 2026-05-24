@@ -1,29 +1,37 @@
 import json
 
+IVR_FILE = "ivr_data.json"
+
+DEFAULT_DATA = {
+    "recharges": [],
+    "data_plans": [],
+    "bill_payments": [],
+    "plan_upgrades": [],
+    "complaints": []
+}
+
 try:
-    with open("ivr_data.json", "r") as f:
+    with open(IVR_FILE, "r") as f:
         ivr_data = json.load(f)
 
 except FileNotFoundError:
-    ivr_data = {
-        "recharges": [],
-        "data_plans": [],
-        "bill_payments": [],
-        "plan_upgrades": [],
-        "complaints": []
-    }
+    ivr_data = DEFAULT_DATA.copy()
+
+except json.JSONDecodeError:
+    print("Invalid JSON file. Creating new data...")
+    ivr_data = DEFAULT_DATA.copy()
 
 
 # SAVE DATA
 
 def save_data():
-    with open("ivr_data.json", "w") as f:
+    with open(IVR_FILE, "w") as f:
         json.dump(ivr_data, f, indent=4)
 
 
 # SUCCESS MENU 
 
-def success_menu():
+def success_menu():          
 
     while True:
 
@@ -124,10 +132,10 @@ def prepaid():
 
         try:
             print("\n--- PREPAID ---"
-            "1. Balance Inquiry"
-            "2. Recharge"
-            "3. Data Plans"
-            "4. Back")
+            "\n 1. Balance Inquiry"
+            "\n 2. Recharge"
+            "\n 3. Data Plans"
+            "\n 4. Back")
 
             choice = int(input("Enter choice: "))
 
@@ -451,7 +459,7 @@ def internet_services():
             print("\n--- INTERNET SERVICES ---"
             "\n 1. Broadband"
             "\n 2. Fiber"
-           "\n 3. Back")
+            "\n 3. Back")
 
             choice = int(input("Enter choice: "))
 
