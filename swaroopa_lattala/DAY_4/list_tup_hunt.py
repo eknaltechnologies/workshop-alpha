@@ -1,8 +1,8 @@
-treasure_bag=[]
+treasure_bag = []
 print("======================\nTreasure Hunt challenge\n=====================")
-#Build Treasure Bag
+# Build Treasure Bag
 print("--- Task 1: Building the Treasure Bag ---")
-treasure_bag=[]
+treasure_bag = []
 treasure_bag.append("gold coin")
 treasure_bag.append("silver coin")
 treasure_bag.append("ruby")
@@ -10,19 +10,19 @@ treasure_bag.append("pearl")
 print(f"Treasure Bag:{treasure_bag}\n")
 
 print("--- Task 2: Adding Rare Treasures ---")
-rare_treasures=("diamond","magic ring")
+rare_treasures = ("diamond", "magic ring")
 treasure_bag.extend(rare_treasures)
 print(f"Bag with rare treasures: {treasure_bag}\n")
 print("--- Task 3: Island Swaps ---")
 treasure_bag.remove("silver coin")
-#replace-swap
-ruby_index=treasure_bag.index("ruby")
-treasure_bag[ruby_index]="emerald"
+# replace-swap
+ruby_index = treasure_bag.index("ruby")
+treasure_bag[ruby_index] = "emerald"
 print(f"Bag after swaps: {treasure_bag}\n")
 
 print("--- Task 4: Sorting & Counting ---")
-print("Bag has:",treasure_bag)
-gold_count=treasure_bag.count("gold coin")
+print("Bag has:", treasure_bag)
+gold_count = treasure_bag.count("gold coin")
 print(f"Number of gold coins:{gold_count}")
 # Sort alphabetically
 treasure_bag.sort()
@@ -31,7 +31,7 @@ print(f"Alphabetically sorted bag: {treasure_bag}")
 treasure_bag.reverse()
 print(f"Reversed bag: {treasure_bag}\n")
 
-#Searching the Bag
+# Searching the Bag
 print("--- Task 5: Searching the Bag ---")
 # Check if "magic ring" exists
 if "magic ring" in treasure_bag:
@@ -71,4 +71,3 @@ print(f"Your starting bag: {current_bag}")
 new_treasure = input("Enter a treasure to ADD to your bag: ")
 current_bag.append(new_treasure)
 print(f"Bag after adding: {current_bag}\n")
-

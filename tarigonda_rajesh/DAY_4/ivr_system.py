@@ -1,18 +1,21 @@
 user = {
-    'balance': 800,
-    'recharge_history': [],
-    'current_bill': 1200,
-    'broadband_usage': 45,
-    'broadband_plan': 'Monthly',
-    'fiber_connection': False,
-    'tv_status': 'Active'
+    "balance": 800,
+    "recharge_history": [],
+    "current_bill": 1200,
+    "broadband_usage": 45,
+    "broadband_plan": "Monthly",
+    "fiber_connection": False,
+    "tv_status": "Active",
 }
+
 
 def invalid_choice():
     print("Choose correct option...")
 
+
 def invalid_service():
     print("Choose correct service...")
+
 
 # Main Menu
 def main_menu():
@@ -34,6 +37,7 @@ def main_menu():
         else:
             invalid_service()
 
+
 # Mobile Services
 def mobile_services():
     while True:
@@ -48,6 +52,7 @@ def mobile_services():
             break
         else:
             invalid_service()
+
 
 # Prepaid
 def prepaid_services():
@@ -68,6 +73,7 @@ def prepaid_services():
         else:
             invalid_service()
 
+
 # Recharge
 def recharge_menu():
     while True:
@@ -77,33 +83,31 @@ def recharge_menu():
 
         if recharge_ser == 1:
             amount = int(input("Enter recharge amount: "))
-            if user['balance'] >= amount:
-                user['balance'] -= amount
-                user['recharge_history'].append(
-                    f"Recharge of {amount} done using Credit Card"
-                )
+            if user["balance"] >= amount:
+                user["balance"] -= amount
+                user["recharge_history"].append(f"Recharge of {amount} done using Credit Card")
                 print("Recharge Successful")
             else:
                 print("Insufficient Balance")
         elif recharge_ser == 2:
             amount = int(input("Enter recharge amount: "))
-            user['recharge_history'].append(
-                f"Recharge of {amount} done using UPI"
-            )
+            user["recharge_history"].append(f"Recharge of {amount} done using UPI")
             print("Recharge Successful")
         elif recharge_ser == 3:
             break
         else:
             invalid_choice()
 
+
 # Recharge History
 def recharge_history():
     print("\nRecharge History")
-    if len(user['recharge_history']) == 0:
+    if len(user["recharge_history"]) == 0:
         print("No Recharge History Found")
     else:
-        for history in user['recharge_history']:
+        for history in user["recharge_history"]:
             print(history)
+
 
 # Data Plans
 def data_plans():
@@ -122,6 +126,7 @@ def data_plans():
         else:
             print("Choose correct plan")
 
+
 # Postpaid
 def postpaid_services():
     while True:
@@ -139,21 +144,23 @@ def postpaid_services():
         else:
             invalid_choice()
 
+
 # Bill Payment
 def bill_payment():
     while True:
         print("1. Pay via NetBanking\n2. Pay via Wallet\n3. Back")
         payment = int(input("Choose payment method(1-3): "))
         if payment == 1:
-            user['current_bill'] = 0
+            user["current_bill"] = 0
             print("Bill Paid Successfully using NetBanking")
         elif payment == 2:
-            user['current_bill'] = 0
+            user["current_bill"] = 0
             print("Bill Paid Successfully using Wallet")
         elif payment == 3:
             break
         else:
             invalid_choice()
+
 
 # Plan Upgrade
 def plan_upgrade():
@@ -170,6 +177,7 @@ def plan_upgrade():
         else:
             invalid_choice()
 
+
 # Internet Services
 def internet_services():
     while True:
@@ -183,6 +191,7 @@ def internet_services():
             break
         else:
             invalid_service()
+
 
 # Broadband
 def broadband_services():
@@ -199,6 +208,8 @@ def broadband_services():
             break
         else:
             invalid_service()
+
+
 # Renew Plan
 def renew_plan():
     while True:
@@ -206,18 +217,19 @@ def renew_plan():
 
         renew = int(input("Choose renew option(1-4): "))
         if renew == 1:
-            user['broadband_plan'] = "Monthly"
+            user["broadband_plan"] = "Monthly"
             print("Monthly Plan Activated")
         elif renew == 2:
-            user['broadband_plan'] = "Quarterly"
+            user["broadband_plan"] = "Quarterly"
             print("Quarterly Plan Activated")
         elif renew == 3:
-            user['broadband_plan'] = "Yearly"
+            user["broadband_plan"] = "Yearly"
             print("Yearly Plan Activated")
         elif renew == 4:
             break
         else:
             invalid_choice()
+
 
 # Change Router
 def change_router():
@@ -232,6 +244,7 @@ def change_router():
             break
         else:
             invalid_choice()
+
 
 # Fiber
 def fiber_services():
@@ -248,6 +261,7 @@ def fiber_services():
         else:
             invalid_choice()
 
+
 # New Connection
 def new_connection():
     while True:
@@ -255,15 +269,16 @@ def new_connection():
         connection = int(input("Choose connection type(1-3): "))
 
         if connection == 1:
-            user['fiber_connection'] = True
+            user["fiber_connection"] = True
             print("Residential Connection Requested")
         elif connection == 2:
-            user['fiber_connection'] = True
+            user["fiber_connection"] = True
             print("Business Connection Requested")
         elif connection == 3:
             break
         else:
             invalid_choice()
+
 
 # TV & OTT Services
 def tv_ott_services():
@@ -282,6 +297,7 @@ def tv_ott_services():
         else:
             invalid_service()
 
+
 # Channel Pack
 def channel_pack():
     while True:
@@ -297,6 +313,7 @@ def channel_pack():
             break
         else:
             print("Choose correct pack")
+
 
 # TV Recharge
 def tv_recharge():
@@ -315,6 +332,7 @@ def tv_recharge():
         else:
             invalid_choice()
 
+
 # Complaint
 def complaint_services():
     while True:
@@ -329,4 +347,6 @@ def complaint_services():
             break
         else:
             invalid_choice()
+
+
 main_menu()

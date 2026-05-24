@@ -1,4 +1,3 @@
-
 # Setting up a nested dictionary for the kingdom
 kingdom = {
     "king": "Arthur",
@@ -8,16 +7,12 @@ kingdom = {
     "villages": {
         "v1": {"population": 120, "crops": ["wheat", "barley"]},
         "v2": {"population": 80, "crops": ["rice"]},
-        "v3": {"population": 200, "crops": ["wheat", "corn"]}
-    }
+        "v3": {"population": 200, "crops": ["wheat", "corn"]},
+    },
 }
 
 # Setting up  flat dictionary for the army combat strength numbers
-army_stats = {
-    "knight": 50,
-    "archer": 30,
-    "dragon": 300
-}
+army_stats = {"knight": 50, "archer": 30, "dragon": 300}
 
 #  villages -> v1 -> crops, and append sugarcane to the list
 kingdom["villages"]["v1"]["crops"].append("sugarcane")
@@ -33,7 +28,7 @@ print("\n--- Village Reports ---")
 # check "villages" section to pull out information for sentences
 for village_id, village_info in kingdom["villages"].items():
     people = village_info["population"]
-    crops = ", ".join(village_info["crops"]) # Cleans list brackets up with commas
+    crops = ", ".join(village_info["crops"])  # Cleans list brackets up with commas
     print(f"Village {village_id} has {people} people and grows {crops}")
 
 # Find the unit with the highest value in army_stats (key looks at numbers, not names)
@@ -83,10 +78,7 @@ crops_input = input(f"Enter crops for :{new_village_id} ")
 new_crops_list = [crop.strip() for crop in crops_input.split(",")]
 
 # Put the whole package into a brand new village drawer inside kingdom
-kingdom["villages"][new_village_id] = {
-    "population": new_pop,
-    "crops": new_crops_list
-}
+kingdom["villages"][new_village_id] = {"population": new_pop, "crops": new_crops_list}
 print("Updated Kingdom Villages:", kingdom["villages"])
 print("-" * 40)
 
