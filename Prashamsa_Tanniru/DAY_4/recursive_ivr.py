@@ -21,9 +21,7 @@ def save_data():
 
 def main_menu():
     while True:
-        print(
-            "\nMain Menu:\n1. Mobile Services\n2. Internet Services\n3. TV & OTT Services\n4. Talk to Customer Care\n5. Exit"
-        )
+        print("\nMain Menu:\n1. Mobile Services\n2. Internet Services\n3. TV & OTT Services\n4. Talk to Customer Care\n5. Exit")
         choice = int(input("Choice: ").strip())
 
         if choice == "1":
@@ -88,9 +86,7 @@ def prepaid_services():
 
 def prepaid_recharge():
     while True:
-        print(
-            "\nRecharge:\n1. Credit Card\n2. UPI\n3. Recharge History\n4. Back for Prepaid Menu\n5. Back for Main Menu"
-        )
+        print("\nRecharge:\n1. Credit Card\n2. UPI\n3. Recharge History\n4. Back for Prepaid Menu\n5. Back for Main Menu")
         choice = input("Choice: ").strip()
 
         if choice in ["1", "2"]:
@@ -124,9 +120,7 @@ def prepaid_recharge():
 
 def prepaid_data_plans():
     while True:
-        print(
-            "\nData Plans:\n1. 1.1GB/day\n2. 2GB/day\n3. Unlimited\n4. View Selected Plans\n5. Back for Prepaid Menu\n6. Back for Main Menu"
-        )
+        print("\nData Plans:\n1. 1.1GB/day\n2. 2GB/day\n3. Unlimited\n4. View Selected Plans\n5. Back for Prepaid Menu\n6. Back for Main Menu")
         choice = input("Choice: ").strip()
 
         if choice in ["1", "2", "3"]:
@@ -172,9 +166,7 @@ def postpaid_services():
 
 def postpaid_bill_payment():
     while True:
-        print(
-            "\nBill Payment:\n1. NetBanking\n2. Wallet\n3. View Payment History\n4. Back for Postpaid Menu\n5. Back for Main Menu"
-        )
+        print("\nBill Payment:\n1. NetBanking\n2. Wallet\n3. View Payment History\n4. Back for Postpaid Menu\n5. Back for Main Menu")
         choice = input("Choice: ").strip()
 
         if choice in ["1", "2"]:
@@ -199,9 +191,7 @@ def postpaid_bill_payment():
 
 def postpaid_plan_upgrade():
     while True:
-        print(
-            "\nPlan Upgrade:\n1. Silver to Gold\n2. Gold to Platinum\n3. View Upgrade History\n4. Back for Postpaid Menu\n5. Back for Main Menu"
-        )
+        print("\nPlan Upgrade:\n1. Silver to Gold\n2. Gold to Platinum\n3. View Upgrade History\n4. Back for Postpaid Menu\n5. Back for Main Menu")
         choice = input("Choice: ").strip()
 
         if choice == "1":

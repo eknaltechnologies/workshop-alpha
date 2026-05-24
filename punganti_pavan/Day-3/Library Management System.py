@@ -7,15 +7,7 @@ except FileNotFoundError:
     library = {"books": {}, "members": {}, "issued_books": {}}
 
 print("Welcome to the Library Management System")
-print(
-    "1. Add book"
-    "\n2. View library"
-    "\n3. Update book"
-    "\n4. Delete book"
-    "\n5. Issue book"
-    "\n6. View issued books"
-    "\n7. Exit"
-)
+print("1. Add book" "\n2. View library" "\n3. Update book" "\n4. Delete book" "\n5. Issue book" "\n6. View issued books" "\n7. Exit")
 
 user_choice = int(input("Please select an option (1-7): "))
 
