@@ -1,13 +1,21 @@
 try:
 
-    # Treasure Bag Creation
+    # -------- CONSTANTS --------
+
+    SILVER_COIN = "silver coin"
+    GOLD_COIN = "gold coin"
+    MAGIC_RING = "magic ring"
+    RUBY = "ruby"
+    EMERALD = "emerald"
+
+    # -------- TREASURE BAG CREATION --------
 
     treasure_bag = []
 
     starter_treasures = [
-        "gold coin",
-        "silver coin",
-        "ruby",
+        GOLD_COIN,
+        SILVER_COIN,
+        RUBY,
         "pearl"
     ]
 
@@ -16,12 +24,11 @@ try:
     print("Initial Treasure Bag:")
     print(treasure_bag)
 
-
-    # Rare Treasures
+    # -------- RARE TREASURES --------
 
     rare_treasures = (
         "diamond",
-        "magic ring"
+        MAGIC_RING
     )
 
     treasure_bag.extend(rare_treasures)
@@ -29,62 +36,53 @@ try:
     print("\nAfter Adding Rare Treasures:")
     print(treasure_bag)
 
+    # -------- REPLACE TREASURE --------
 
-    # Replace Treasure
+    if SILVER_COIN in treasure_bag:
+        treasure_bag.remove(SILVER_COIN)
 
-    if "silver coin" in treasure_bag:
+    ruby_position = treasure_bag.index(RUBY)
 
-        treasure_bag.remove("silver coin")
-
-    ruby_position = treasure_bag.index("ruby")
-
-    treasure_bag[ruby_position] = "emerald"
+    treasure_bag[ruby_position] = EMERALD
 
     print("\nAfter Island Swaps:")
     print(treasure_bag)
 
+    # -------- COUNTING TREASURES --------
 
-    # Counting Treasures
-
-    total_gold = treasure_bag.count("gold coin")
+    total_gold = treasure_bag.count(GOLD_COIN)
 
     print(f"\nTotal Gold Coins: {total_gold}")
 
-
-    # Sorting Treasures
+    # -------- SORTING TREASURES --------
 
     treasure_bag.sort()
 
     print("\nSorted Treasure Bag:")
     print(treasure_bag)
 
-
-    # Reverse Order
+    # -------- REVERSE ORDER --------
 
     treasure_bag.reverse()
 
     print("\nReverse Order Treasure Bag:")
     print(treasure_bag)
 
+    # -------- SEARCHING TREASURE --------
 
-    # Searching Treasure
-
-    if "magic ring" in treasure_bag:
-
+    if MAGIC_RING in treasure_bag:
         print("\nMagic ring found successfully!")
 
     else:
         print("\nMagic ring not found")
 
+    # -------- EMERALD POSITION --------
 
-    # Emerald Position
-
-    emerald_position = treasure_bag.index("emerald")
+    emerald_position = treasure_bag.index(EMERALD)
 
     print(f"Emerald Position: {emerald_position}")
 
-
-    # Sharing Treasure
+    # -------- SHARING TREASURE --------
 
     middle = len(treasure_bag) // 2
 
@@ -98,8 +96,7 @@ try:
     print("\nFriend Treasure Share:")
     print(friend_treasures)
 
-
-    # Treasure Islands
+    # -------- TREASURE ISLANDS --------
 
     islands = (
         "Island_1",
@@ -111,11 +108,9 @@ try:
     print("\nSearching Islands:")
 
     for island in islands:
-
         print(f"Searching in {island}")
 
-
-    # Extra Treasure Operations
+    # -------- EXTRA TREASURE OPERATIONS --------
 
     print("\nExtra Treasure Operations")
 
@@ -130,28 +125,23 @@ try:
     print("\nUpdated Treasure Bag:")
     print(treasure_bag)
 
-
-    # Length of Treasure Bag
+    # -------- LENGTH OF TREASURE BAG --------
 
     total_items = len(treasure_bag)
 
     print(f"\nTotal Items in Treasure Bag: {total_items}")
 
-
-    # Checking Existing Treasure
+    # -------- CHECKING EXISTING TREASURE --------
 
     search_item = input("\nEnter treasure to search: ")
 
     if search_item in treasure_bag:
-
         print(f"{search_item} exists in treasure bag")
 
     else:
-
         print(f"{search_item} not found")
 
-
-    # User Adds Treasure
+    # -------- USER ADDS TREASURE --------
 
     add_item = input("\nEnter a treasure to add: ")
 
@@ -161,8 +151,7 @@ try:
 
     print(treasure_bag)
 
-
-    # User Removes Treasure
+    # -------- USER REMOVES TREASURE --------
 
     remove_item = input("\nEnter a treasure to remove: ")
 
@@ -173,23 +162,19 @@ try:
         print(f"{remove_item} removed successfully")
 
     else:
-
         print(f"{remove_item} not found")
 
-
-    # Copy Treasure Bag
+    # -------- COPY TREASURE BAG --------
 
     copied_bag = treasure_bag.copy()
 
     print("\nCopied Treasure Bag:")
     print(copied_bag)
 
-
-    # Final Treasure Bag
+    # -------- FINAL TREASURE BAG --------
 
     print("\nFinal Treasure Bag:")
     print(treasure_bag)
-
 
 except KeyboardInterrupt:
 
