@@ -1,0 +1,126 @@
+{
+    "movies": {
+        "Rajasaab": {
+            "director": "Maruthi",
+            "release_year": 2026,
+            "genre": "Horror"
+        },
+        "Lucky Baskhar": {
+            "director": "Venky Atluri",
+            "release_year": 2024,
+            "genre": "Crime, Drama, Thriller"
+        },
+        "Raakaasa": {
+            "director": "Manasa Sharma",
+            "release_year": 2026,
+            "genre": "Fantasy, Comedy, Thriller"
+        },
+        "Animal": {
+            "director": "Sandeep Reddy Vanga",
+            "release_year": 2024,
+            "genre": "Action, Romance, Thriller"
+        },
+        "Sita Ramam": {
+            "director": "Hanu Raghavapudi",
+            "release_year": 2022,
+            "genre": "Action, Romance, Thriller"
+        },
+        "Pushpa: The Rise": {
+            "director": "Sukumar",
+            "release_year": 2021,
+            "genre": "Action, Thriller"
+        },
+        "Pushpa: The Rule": {
+            "director": "Sukumar",
+            "release_year": 2023,
+            "genre": "Action, Thriller"
+        },
+        "Bheemla Nayak": {
+            "director": "Saagar K Chandra",
+            "release_year": 2022,
+            "genre": "Action, Thriller"
+        },
+        "RRR": {
+            "director": "S.S. Rajamouli",
+            "release_year": 2022,
+            "genre": "S.S. Rajamouli",
+            "rating": 6.5,
+            "year": 2025
+        },
+        "KGF Chapter 2": {
+            "director": "Prashanth Neel",
+            "release_year": 2022,
+            "genre": "Action, Thriller"
+        },
+        "KGF Chapter 3": {
+            "director": "Prashanth Neel",
+            "release_year": 2024,
+            "genre": "Action, Thriller"
+        },
+        "Vikram": {
+            "director": "Lokesh Kanagaraj",
+            "release_year": 2022,
+            "genre": "Action, Thriller"
+        },
+        "Vikram Vedha": {
+            "director": "Pushkar-Gayathri",
+            "release_year": 2017,
+            "genre": "Action, Thriller"
+        },
+        "Vikram Vedha 2": {
+            "director": "Pushkar-Gayathri",
+            "release_year": 2024,
+            "genre": "Action, Thriller"
+        },
+        "Sarkaru Vaari Paata": {
+            "director": "Parasuram",
+            "release_year": 2022,
+            "genre": "Action, Comedy"
+        },
+        "Sarkaru Vaari Paata 2": {
+            "director": "Parasuram",
+            "release_year": 2024,
+            "genre": "Action, Comedy"
+        },
+        "Bimbisara": {
+            "director": "Amarendra Kumar",
+            "release_year": 2022,
+            "genre": "Action, Fantasy"
+        },
+        "Bimbisara 2": {
+            "director": "Amarendra Kumar",
+            "release_year": 2024,
+            "genre": "Action, Fantasy"
+        },
+        "Bimbisara 3": {
+            "director": "Amarendra Kumar",
+            "release_year": 2026,
+            "genre": "Action, Fantasy"
+        },
+        "Bimbisara 4": {
+            "director": "Amarendra Kumar",
+            "release_year": 2028,
+            "genre": "Action, Fantasy"
+        },
+        "Bimbisara 5": {
+            "director": "Amarendra Kumar",
+            "release_year": 2030,
+            "genre": "Action, Fantasy"
+        },
+        "Bimbisara 6": {
+            "director": "Amarendra Kumar",
+            "release_year": 2032,
+            "genre": "Action, Fantasy"
+        },
+        "Bimbisara 7": {
+            "director": "Amarendra Kumar",
+            "release_year": 2034,
+            "genre": "Action, Fantasy"
+        },
+        "Saripodhaa Sanivaaram": {
+            "director": "Vivek Athreya",
+            "release_year": 2024,
+            "genre": "Action, Comedy"
+        }
+    }
+}
