@@ -1,5 +1,5 @@
-# tuple is immutable 
-# once data is inserted we cant change the data 
+# tuple is immutable
+# once data is inserted we cant change the data
 # # CREATE a tuple
 students = ("pavan", "rahul", "sneha")
 print("Created :", students)

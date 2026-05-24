@@ -1,10 +1,5 @@
 try:
-    kingdom = {
-        "king": "Arthur",
-        "castle": "Camelot",
-        "gold": 500,
-        "army": ["knight", "archer", "catapult"]
-    }
+    kingdom = {"king": "Arthur", "castle": "Camelot", "gold": 500, "army": ["knight", "archer", "catapult"]}
     print("Kingdom records initialized:", kingdom)
 
     # accessing values
@@ -44,38 +39,24 @@ try:
     kingdom["villages"] = {
         "v1": {"population": 120, "crops": ["wheat", "barley"]},
         "v2": {"population": 80, "crops": ["rice"]},
-        "v3": {"population": 200, "crops": ["wheat", "corn"]}
+        "v3": {"population": 200, "crops": ["wheat", "corn"]},
     }
 
     print("Villages added to the kingdom:", kingdom["villages"])
 
     kingdom["villages"]["v1"]["crops"].append("sugarcane")
 
-    print(
-        "Updated crops in village v1:",
-        kingdom["villages"]["v1"]["crops"]
-    )
+    print("Updated crops in village v1:", kingdom["villages"]["v1"]["crops"])
 
     # looping through records
     for key, value in kingdom.items():
         print(key, ":", value)
 
     for village, data in kingdom["villages"].items():
-        print(
-            "Village",
-            village,
-            "has",
-            data["population"],
-            "people and grows",
-            data["crops"]
-        )
+        print("Village", village, "has", data["population"], "people and grows", data["crops"])
 
     # army power
-    kingdom["army_stats"] = {
-        "knight": 50,
-        "archer": 30,
-        "dragon": 300
-    }
+    kingdom["army_stats"] = {"knight": 50, "archer": 30, "dragon": 300}
 
     print("Army strength details:", kingdom["army_stats"])
 
@@ -115,10 +96,7 @@ try:
     population = int(input("Enter population: "))
     crops = input("Enter crops (comma separated): ").split(",")
 
-    kingdom["villages"][village_name] = {
-        "population": population,
-        "crops": crops
-    }
+    kingdom["villages"][village_name] = {"population": population, "crops": crops}
 
     print("Updated village details:", kingdom["villages"])
 

@@ -1,7 +1,7 @@
-name='Rajes'
-age=21
-cgpa=8.6
-address='Madanapalle,AP'
+name = "Rajes"
+age = 21
+cgpa = 8.6
+address = "Madanapalle,AP"
 
 print(name)
 print(type(name))

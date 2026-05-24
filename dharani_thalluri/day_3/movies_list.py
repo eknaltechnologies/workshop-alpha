@@ -5,22 +5,22 @@ try:
     with open("movie_list.json", "r") as f:
         movie_list = json.load(f)
 except FileNotFoundError:
-    movie_list = {
-        "movies": {}
-    }
+    movie_list = {"movies": {}}
 
 while True:
 
-    print("===== Movie List System ====="
-    "\n 1. Add Movie"
-    "\n 2. View Movies"
-    "\n 3. Update Movie"
-    "\n 4. Delete Movie"
-    "\n 5. Search Movie"
-    "\n 6. Highest Rated Movie"
-    "\n 7. Genre Wise Movies"
-    "\n 8. Total Movies"
-    "\n 9. Exit")
+    print(
+        "===== Movie List System ====="
+        "\n 1. Add Movie"
+        "\n 2. View Movies"
+        "\n 3. Update Movie"
+        "\n 4. Delete Movie"
+        "\n 5. Search Movie"
+        "\n 6. Highest Rated Movie"
+        "\n 7. Genre Wise Movies"
+        "\n 8. Total Movies"
+        "\n 9. Exit"
+    )
 
     user_choice = int(input("Enter your choice (1-9): "))
 
@@ -32,11 +32,7 @@ while True:
         rating = float(input("Enter movie rating: "))
         year = int(input("Enter release year: "))
 
-        movie_list["movies"][movie_name] = {
-            "genre": genre,
-            "rating": rating,
-            "year": year
-        }
+        movie_list["movies"][movie_name] = {"genre": genre, "rating": rating, "year": year}
 
         print(f"Movie '{movie_name}' added successfully!")
 

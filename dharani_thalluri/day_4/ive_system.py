@@ -2,13 +2,7 @@ import json
 
 IVR_FILE = "ivr_data.json"
 
-DEFAULT_DATA = {
-    "recharges": [],
-    "data_plans": [],
-    "bill_payments": [],
-    "plan_upgrades": [],
-    "complaints": []
-}
+DEFAULT_DATA = {"recharges": [], "data_plans": [], "bill_payments": [], "plan_upgrades": [], "complaints": []}
 
 try:
     with open(IVR_FILE, "r") as f:
@@ -24,14 +18,16 @@ except json.JSONDecodeError:
 
 # SAVE DATA
 
+
 def save_data():
     with open(IVR_FILE, "w") as f:
         json.dump(ivr_data, f, indent=4)
 
 
-# SUCCESS MENU 
+# SUCCESS MENU
 
-def success_menu():          
+
+def success_menu():
 
     while True:
 
@@ -57,17 +53,20 @@ def success_menu():
 
 # MAIN MENU
 
+
 def main_menu():
 
     while True:
 
         try:
-            print("===== MAIN MENU ====="
-            "\n 1. Mobile Services"
-           "\n 2. Internet Services"
-            "\n 3. TV & OTT Services"
-            "\n 4. Talk to Customer Support"
-            "\n 5. Exit")
+            print(
+                "===== MAIN MENU ====="
+                "\n 1. Mobile Services"
+                "\n 2. Internet Services"
+                "\n 3. TV & OTT Services"
+                "\n 4. Talk to Customer Support"
+                "\n 5. Exit"
+            )
 
             choice = int(input("Enter choice: "))
 
@@ -94,17 +93,15 @@ def main_menu():
             print("Please enter numbers only!")
 
 
-#  MOBILE SERVICES 
+#  MOBILE SERVICES
+
 
 def mobile_services():
 
     while True:
 
         try:
-            print("--- MOBILE SERVICES ---"
-            "\n 1. Prepaid"
-            "\n 2. Postpaid"
-            "\n 3. Back")
+            print("--- MOBILE SERVICES ---" "\n 1. Prepaid" "\n 2. Postpaid" "\n 3. Back")
 
             choice = int(input("Enter choice: "))
 
@@ -124,18 +121,15 @@ def mobile_services():
             print("Enter valid number!")
 
 
-# PREPAID 
+# PREPAID
+
 
 def prepaid():
 
     while True:
 
         try:
-            print("\n--- PREPAID ---"
-            "\n 1. Balance Inquiry"
-            "\n 2. Recharge"
-            "\n 3. Data Plans"
-            "\n 4. Back")
+            print("\n--- PREPAID ---" "\n 1. Balance Inquiry" "\n 2. Recharge" "\n 3. Data Plans" "\n 4. Back")
 
             choice = int(input("Enter choice: "))
 
@@ -158,18 +152,15 @@ def prepaid():
             print("Numbers only!")
 
 
-# RECHARGE 
+# RECHARGE
+
 
 def recharge_menu():
 
     while True:
 
         try:
-            print("--- RECHARGE ---"
-            "\n 1. Credit Card"
-            "\n 2. UPI"
-            "\n 3. Recharge History"
-            "\n 4. Back")
+            print("--- RECHARGE ---" "\n 1. Credit Card" "\n 2. UPI" "\n 3. Recharge History" "\n 4. Back")
 
             choice = int(input("Enter choice: "))
 
@@ -177,10 +168,7 @@ def recharge_menu():
 
                 amount = int(input("Enter recharge amount: "))
 
-                recharge = {
-                    "method": "Credit Card",
-                    "amount": amount
-                }
+                recharge = {"method": "Credit Card", "amount": amount}
 
                 ivr_data["recharges"].append(recharge)
 
@@ -195,10 +183,7 @@ def recharge_menu():
 
                 amount = int(input("Enter recharge amount: "))
 
-                recharge = {
-                    "method": "UPI",
-                    "amount": amount
-                }
+                recharge = {"method": "UPI", "amount": amount}
 
                 ivr_data["recharges"].append(recharge)
 
@@ -236,31 +221,21 @@ def recharge_menu():
 
 # DATA PLANS
 
+
 def data_plans():
 
     while True:
 
         try:
-            print("--- DATA PLANS ---"
-            "\n 1. 1GB/day"
-            "\n 2. 2GB/day"
-            "\n 3. Unlimited"
-            "\n 4. View Selected Plans"
-            "\n 5. Back")
+            print("--- DATA PLANS ---" "\n 1. 1GB/day" "\n 2. 2GB/day" "\n 3. Unlimited" "\n 4. View Selected Plans" "\n 5. Back")
 
             choice = int(input("Enter choice: "))
 
-            plans = {
-                1: "1GB/day Plan",
-                2: "2GB/day Plan",
-                3: "Unlimited Plan"
-            }
+            plans = {1: "1GB/day Plan", 2: "2GB/day Plan", 3: "Unlimited Plan"}
 
             if choice in plans:
 
-                plan = {
-                    "plan": plans[choice]
-                }
+                plan = {"plan": plans[choice]}
 
                 ivr_data["data_plans"].append(plan)
 
@@ -292,18 +267,16 @@ def data_plans():
         except ValueError:
             print("Invalid Input")
 
+
 # POSTPAID
+
 
 def postpaid():
 
     while True:
 
         try:
-            print("\n--- POSTPAID ---"
-            "\n 1. Current Bill"
-            "\n 2. Bill Payment"
-            "\n 3. Plan Upgrade"
-            "\n 4. Back")
+            print("\n--- POSTPAID ---" "\n 1. Current Bill" "\n 2. Bill Payment" "\n 3. Plan Upgrade" "\n 4. Back")
 
             choice = int(input("Enter choice: "))
 
@@ -325,26 +298,22 @@ def postpaid():
         except ValueError:
             print("Enter number only")
 
+
 # BILL PAYMENT
+
 
 def bill_payment():
 
     while True:
 
         try:
-            print("--- BILL PAYMENT ---"
-            "\n 1. NetBanking"
-            "\n 2. Wallet"
-            "\n 3. View Payment History"
-            "\n 4. Back")
+            print("--- BILL PAYMENT ---" "\n 1. NetBanking" "\n 2. Wallet" "\n 3. View Payment History" "\n 4. Back")
 
             choice = int(input("Enter choice: "))
 
             if choice == 1:
 
-                payment = {
-                    "method": "NetBanking"
-                }
+                payment = {"method": "NetBanking"}
 
                 ivr_data["bill_payments"].append(payment)
 
@@ -357,9 +326,7 @@ def bill_payment():
 
             elif choice == 2:
 
-                payment = {
-                    "method": "Wallet"
-                }
+                payment = {"method": "Wallet"}
 
                 ivr_data["bill_payments"].append(payment)
 
@@ -387,26 +354,21 @@ def bill_payment():
             print("Invalid Input")
 
 
-# PLAN UPGRADE 
+# PLAN UPGRADE
+
 
 def plan_upgrade():
 
     while True:
 
         try:
-            print("\n--- PLAN UPGRADE ---"
-            "\n 1. Silver → Gold"
-            "\n 2. Gold → Platinum"
-            "\n 3. View Upgrade History"
-            "\n 4. Back")
+            print("\n--- PLAN UPGRADE ---" "\n 1. Silver → Gold" "\n 2. Gold → Platinum" "\n 3. View Upgrade History" "\n 4. Back")
 
             choice = int(input("Enter choice: "))
 
             if choice == 1:
 
-                upgrade = {
-                    "upgrade": "Silver to Gold"
-                }
+                upgrade = {"upgrade": "Silver to Gold"}
 
                 ivr_data["plan_upgrades"].append(upgrade)
 
@@ -419,9 +381,7 @@ def plan_upgrade():
 
             elif choice == 2:
 
-                upgrade = {
-                    "upgrade": "Gold to Platinum"
-                }
+                upgrade = {"upgrade": "Gold to Platinum"}
 
                 ivr_data["plan_upgrades"].append(upgrade)
 
@@ -451,15 +411,13 @@ def plan_upgrade():
 
 # INTERNET SERVICES
 
+
 def internet_services():
 
     while True:
 
         try:
-            print("\n--- INTERNET SERVICES ---"
-            "\n 1. Broadband"
-            "\n 2. Fiber"
-            "\n 3. Back")
+            print("\n--- INTERNET SERVICES ---" "\n 1. Broadband" "\n 2. Fiber" "\n 3. Back")
 
             choice = int(input("Enter choice: "))
 
@@ -483,19 +441,15 @@ def internet_services():
             print("Numbers only")
 
 
-# TV & OTT SERVICES 
+# TV & OTT SERVICES
+
 
 def tv_ott_services():
 
     while True:
 
         try:
-            print("\n--- TV & OTT SERVICES ---"
-            "\n1. Channel Packs"
-            "\n 2. Recharge Plans"
-            "\n 3. Complaint"
-            "\n 4. View Complaints"
-            "\n 5. Back")
+            print("\n--- TV & OTT SERVICES ---" "\n1. Channel Packs" "\n 2. Recharge Plans" "\n 3. Complaint" "\n 4. View Complaints" "\n 5. Back")
 
             choice = int(input("Enter choice: "))
 
@@ -515,9 +469,7 @@ def tv_ott_services():
 
                 issue = input("Enter complaint: ")
 
-                complaint = {
-                    "issue": issue
-                }
+                complaint = {"issue": issue}
                 ivr_data["complaints"].append(complaint)
 
                 save_data()
@@ -541,5 +493,6 @@ def tv_ott_services():
 
         except ValueError:
             print("Invalid Input")
+
 
 main_menu()
