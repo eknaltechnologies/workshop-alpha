@@ -3,7 +3,7 @@ try:
         "king": "Arthur",
         "castle": "Camelot",
         "gold": 500,
-        "army": ["knight", "archer", "catapult"]
+        "army": ["knight", "archer", "catapult"],
     }
     print(kingdom)
 
@@ -39,7 +39,7 @@ try:
     kingdom["villages"] = {
         "v1": {"population": 120, "crops": ["wheat", "barley"]},
         "v2": {"population": 80, "crops": ["rice"]},
-        "v3": {"population": 200, "crops": ["wheat", "corn"]}
+        "v3": {"population": 200, "crops": ["wheat", "corn"]},
     }
     print("Villages in kingdom:", kingdom["villages"])
     kingdom["villages"]["v1"]["crops"].append("sugarcane")
@@ -49,14 +49,17 @@ try:
     for key, value in kingdom.items():
         print(key, ":", value)
     for village, data in kingdom["villages"].items():
-        print("Village name", village, "has", data["population"], "people and grows", data["crops"])
+        print(
+            "Village name",
+            village,
+            "has",
+            data["population"],
+            "people and grows",
+            data["crops"],
+        )
 
     # army power
-    kingdom["army_stats"] = {
-        "knight": 50,
-        "archer": 30,
-        "dragon": 300
-    }
+    kingdom["army_stats"] = {"knight": 50, "archer": 30, "dragon": 300}
     print("Army stats in kingdom:", kingdom["army_stats"])
     kingdom["army_stats"]["archer"] += 10
     high_strength = max(kingdom["army_stats"].values())
@@ -94,6 +97,3 @@ try:
 
 except KeyboardInterrupt:
     print("Program interrupted.")
-
-
-

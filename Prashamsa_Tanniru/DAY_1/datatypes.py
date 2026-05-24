@@ -1,8 +1,8 @@
-a="eknal"
-b=25
-c=55.5
-d=True
-e=None
+a = "eknal"
+b = 25
+c = 55.5
+d = True
+e = None
 print(type(a))
 print(type(b))
 print(type(c))
