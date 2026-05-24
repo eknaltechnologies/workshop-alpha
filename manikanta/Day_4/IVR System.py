@@ -94,7 +94,7 @@ def Postpaid_menu():
         Postpaid_menu()
 
 #======================Internet services======================================
-1
+
 def internet_services():
 
     print("\n--- INTERNET SERVICES ---")
@@ -127,6 +127,7 @@ def internet_services():
     else:
         print("Invalid Choice")
         internet_services()
+        
 #=======================Tv_and_ott_offers():========================================
 
 def Tv_and_ott_offers():
