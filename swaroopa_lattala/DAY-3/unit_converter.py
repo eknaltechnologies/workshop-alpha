@@ -6,7 +6,8 @@ try:
 except FileNotFoundError:
     converter = {'history': {}}
 
-print("\n===== UNIT CONVERTER =====\n1.KM -> M  2.M -> KM  3.G -> KG  4.KG -> G  5.IN -> CM  6.CM -> IN  7.C -> F  8. View History  9.delete history  10.exit")
+print("\n===== UNIT CONVERTER =====\n1.KM -> M  2.M -> KM  3.G -> KG  4.KG -> G  5.IN -> CM \n" \
+"  6.CM -> IN  7.C -> F  8. View History  9.delete history  10.exit")
 
 user_choice = int(input("\nSelect a number (1-10): "))
 
