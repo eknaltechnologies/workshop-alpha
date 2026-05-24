@@ -1,7 +1,7 @@
 """
-variable is container used to data store 
+variable is container used to data store
 we  assign values using the "=" operator
-concatination 
+concatination
 """
 
 name = "pavan"

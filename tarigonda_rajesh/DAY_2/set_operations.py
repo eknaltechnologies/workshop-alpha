@@ -1,4 +1,15 @@
-color_set = {"blue", "green", "pink", "yellow", "red", "purple", "pink", "blue", "orange", "yellow"}
+color_set = {
+    "blue",
+    "green",
+    "pink",
+    "yellow",
+    "red",
+    "purple",
+    "pink",
+    "blue",
+    "orange",
+    "yellow",
+}
 
 
 print(color_set)

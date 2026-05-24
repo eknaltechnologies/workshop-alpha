@@ -1,4 +1,12 @@
-subjects = {"Maths", "History", "geography", "Civics", "English", "Biology", "Chemistry"}
+subjects = {
+    "Maths",
+    "History",
+    "geography",
+    "Civics",
+    "English",
+    "Biology",
+    "Chemistry",
+}
 science_dept = {"Biology", "Chemistry"}
 arts_dept = {"Music"}
 
