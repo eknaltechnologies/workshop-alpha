@@ -2,6 +2,7 @@ from flask import Flask, request
 
 app = Flask(__name__)
 
+
 # Home Page
 @app.route("/")
 def home():
@@ -40,11 +41,9 @@ def home():
     """
 
 
-
 @app.route("/music/<music_name>")
 def music(music_name):
     return f"<h1>🎶 Music Name: {music_name}</h1>"
-
 
 
 @app.route("/singer/<music_name>/<singer_name>")
@@ -52,11 +51,9 @@ def singer(music_name, singer_name):
     return f"<h2>{music_name} is sung by {singer_name}</h2>"
 
 
-
 @app.route("/likes/<music_name>/<int:likes>")
 def likes(music_name, likes):
     return f"<h2>{music_name} has {likes} likes 👍</h2>"
-
 
 
 @app.route("/genre/<music_name>/<genre>")
@@ -64,11 +61,9 @@ def genre(music_name, genre):
     return f"<h2>{music_name} belongs to {genre} genre 🎸</h2>"
 
 
-
 @app.route("/duration/<music_name>/<int:minutes>")
 def duration(music_name, minutes):
     return f"<h2>{music_name} duration is {minutes} minutes ⏱️</h2>"
-
 
 
 @app.route("/album/<music_name>/<album_name>")
@@ -76,11 +71,9 @@ def album(music_name, album_name):
     return f"<h2>{music_name} is from {album_name} album 💿</h2>"
 
 
-
 @app.route("/language/<music_name>/<language>")
 def language(music_name, language):
     return f"<h2>{music_name} is available in {language} language 🌍</h2>"
-
 
 
 @app.route("/rating/<music_name>/<float:rating>")
@@ -88,11 +81,9 @@ def rating(music_name, rating):
     return f"<h2>{music_name} rating is {rating} ⭐</h2>"
 
 
-
 @app.route("/release/<music_name>/<int:year>")
 def release(music_name, year):
     return f"<h2>{music_name} was released in {year} 📅</h2>"
-
 
 
 @app.route("/submit", methods=["POST"])
