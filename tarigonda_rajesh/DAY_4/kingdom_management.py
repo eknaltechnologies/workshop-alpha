@@ -67,12 +67,10 @@ kingdom["army"].remove("archer")
 kingdom["army_stats"]["dragon"] -= 50
 kingdom["alliance"] = "Northen Empire"
 
-print(
-    f"Gold: {kingdom['gold']}\
+print(f"Gold: {kingdom['gold']}\
       \nPopulation of v1:{kingdom['villages']['v1']['population']}\
       \nDragon Health: {kingdom['army_stats']['dragon']}\
-      \nAllience: {kingdom['alliance']}"
-)
+      \nAllience: {kingdom['alliance']}")
 
 # 10 Inteactive
 new_solder = input("Enter the new Soldiers: ")
