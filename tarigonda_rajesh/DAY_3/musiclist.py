@@ -11,19 +11,16 @@ while True:
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
     user_choice = int(input("Please select an option (1-6): "))
 
-    #Add a Song
+    # Add a Song
     if user_choice == 1:
         song_name = input("Enter the song name: ")
         singer_name = input("Enter the singer name: ")
         album_name = input("Enter the album name: ")
 
-        music_list[song_name] = {
-            "singer": singer_name,
-            "album": album_name
-        }
+        music_list[song_name] = {"singer": singer_name, "album": album_name}
         print(f"Song '{song_name}' added successfully.")
 
-    #View all songs
+    # View all songs
     elif user_choice == 2:
         if not music_list:
             print("No songs available.")
@@ -32,7 +29,7 @@ while True:
             for song, details in music_list.items():
                 print(f"{song}-> Singer : {details['singer']} | Album : {details['album']}")
 
-    #Update a Song
+    # Update a Song
     elif user_choice == 3:
         song_name = input("Enter the song name to update: ")
 
@@ -40,16 +37,13 @@ while True:
             new_singer = input("Enter new singer name: ")
             new_album = input("Enter new album name: ")
 
-            music_list[song_name] = {
-                "singer": new_singer,
-                "album": new_album
-            }
+            music_list[song_name] = {"singer": new_singer, "album": new_album}
 
             print(f"Song '{song_name}' updated successfully.")
         else:
             print("Song not found.")
 
-    #Delete a Song
+    # Delete a Song
     elif user_choice == 4:
         song_name = input("Enter the song name to delete: ")
 
@@ -59,24 +53,23 @@ while True:
         else:
             print("Song not found.")
 
-    #Search for a Song 
-    elif user_choice==5:
-        song_name=input('Enter song name to search: ').lower()
+    # Search for a Song
+    elif user_choice == 5:
+        song_name = input("Enter song name to search: ").lower()
 
-        found=False
-        for song,details in music_list.items():
+        found = False
+        for song, details in music_list.items():
             if song_name in song.lower():
                 print(f"{song}-> Singer: {details['singer']} | Album:{details['album']}")
-                found=True
+                found = True
         if not found:
             print("No Songs found......")
-    
-    #Exit 
-    elif user_choice ==6:
+
+    # Exit
+    elif user_choice == 6:
         print("Exiting Music List...")
         break
     else:
-        print('Invalid choice.')
+        print("Invalid choice.")
 
-    
     json.dump(music_list, open("music_list.json", "w"), indent=4)
