@@ -12,12 +12,7 @@ try:
 
     treasure_bag = []
 
-    starter_treasures = [
-        GOLD_COIN,
-        SILVER_COIN,
-        RUBY,
-        "pearl"
-    ]
+    starter_treasures = [GOLD_COIN, SILVER_COIN, RUBY, "pearl"]
 
     treasure_bag.extend(starter_treasures)
 
@@ -26,10 +21,7 @@ try:
 
     # -------- RARE TREASURES --------
 
-    rare_treasures = (
-        "diamond",
-        MAGIC_RING
-    )
+    rare_treasures = ("diamond", MAGIC_RING)
 
     treasure_bag.extend(rare_treasures)
 
@@ -98,12 +90,7 @@ try:
 
     # -------- TREASURE ISLANDS --------
 
-    islands = (
-        "Island_1",
-        "Island_2",
-        "Island_3",
-        "Island_4"
-    )
+    islands = ("Island_1", "Island_2", "Island_3", "Island_4")
 
     print("\nSearching Islands:")
 
