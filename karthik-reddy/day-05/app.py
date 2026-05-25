@@ -25,7 +25,7 @@ def home():
 
     <hr>
 
-    <h2>Add Music Details</h2>
+    <h2>Add Music Details....</h2>
 
     <form action="/submit" method="POST">
 
