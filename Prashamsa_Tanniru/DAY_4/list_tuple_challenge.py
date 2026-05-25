@@ -55,4 +55,3 @@ try:
 
 except KeyboardInterrupt:
     print("\nGame interrupted by user.")
-
