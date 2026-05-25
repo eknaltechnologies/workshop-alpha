@@ -1,8 +1,9 @@
 from flask import Flask
 
-app=Flask(__name__)
+app = Flask(__name__)
 
-@app.route('/')
+
+@app.route("/")
 def home():
     return """
     <h1>Hello, Welcome to My Portfolio</h1>
@@ -10,7 +11,8 @@ def home():
     <p>A Final year student.</p>
     """
 
-@app.route('/about')
+
+@app.route("/about")
 def about():
     return """
     <h3>My name is Rajesh.I am a final year student.</h3>
@@ -34,7 +36,8 @@ def skills():
     </ul>
     """
 
-@app.route('/projects')
+
+@app.route("/projects")
 def projects():
     return """
     <h1>Projects</h1>
@@ -45,6 +48,8 @@ def projects():
         <li>Recommendation System</li>
     </ul>
     """
+
+
 @app.route("/contact")
 def contact():
     return """
@@ -55,5 +60,5 @@ def contact():
     """
 
 
-if __name__=="__main__":
+if __name__ == "__main__":
     app.run(debug=True)
