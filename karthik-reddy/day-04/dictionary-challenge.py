@@ -1,14 +1,8 @@
 try:
 
-    kingdom = {
-        "king": "Arthur",
-        "castle": "Camelot",
-        "gold": 500,
-        "army": ["knight", "archer", "catapult"]
-    }
+    kingdom = {"king": "Arthur", "castle": "Camelot", "gold": 500, "army": ["knight", "archer", "catapult"]}
 
     print(kingdom)
-
 
     # accessing values
 
@@ -34,7 +28,6 @@ try:
 
     print("Dragon Added:", kingdom["dragon"])
 
-
     print("---------- deleting values ------------")
 
     kingdom["army"].remove("catapult")
@@ -47,7 +40,6 @@ try:
 
     print("Updated Kingdom:", kingdom)
 
-
     print("---------- searching values ------------")
 
     print("Does gold exist?", "gold" in kingdom)
@@ -58,25 +50,12 @@ try:
 
     print("Items:", kingdom.items())
 
-
     print("---------- nested dictionary ------------")
 
     kingdom["villages"] = {
-
-        "v1": {
-            "population": 120,
-            "crops": ["wheat", "barley"]
-        },
-
-        "v2": {
-            "population": 80,
-            "crops": ["rice"]
-        },
-
-        "v3": {
-            "population": 200,
-            "crops": ["wheat", "corn"]
-        }
+        "v1": {"population": 120, "crops": ["wheat", "barley"]},
+        "v2": {"population": 80, "crops": ["rice"]},
+        "v3": {"population": 200, "crops": ["wheat", "corn"]},
     }
 
     print("Villages:", kingdom["villages"])
@@ -85,9 +64,7 @@ try:
 
     kingdom["villages"]["v3"]["population"] += 50
 
-    print("Updated v1 crops:",
-          kingdom["villages"]["v1"]["crops"])
-
+    print("Updated v1 crops:", kingdom["villages"]["v1"]["crops"])
 
     print("---------- looping record ------------")
 
@@ -95,39 +72,25 @@ try:
 
         print(key, ":", value)
 
-
     for village, info in kingdom["villages"].items():
 
-        print("Village", village,
-              "has", info["population"],
-              "people and grows",
-              info["crops"])
-
+        print("Village", village, "has", info["population"], "people and grows", info["crops"])
 
     print("---------- army stats -----------")
 
-    kingdom["army_stats"] = {
+    kingdom["army_stats"] = {"knight": 50, "archer": 30, "dragon": 300}
 
-        "knight": 50,
-        "archer": 30,
-        "dragon": 300
-    }
-
-    print("Army Stats:",
-          kingdom["army_stats"])
+    print("Army Stats:", kingdom["army_stats"])
 
     kingdom["army_stats"]["archer"] += 10
 
-    strongest = max(kingdom["army_stats"],
-                    key=kingdom["army_stats"].get)
+    strongest = max(kingdom["army_stats"], key=kingdom["army_stats"].get)
 
     print("Strongest Unit:", strongest)
 
     del kingdom["army_stats"]["knight"]
 
-    print("Updated Army Stats:",
-          kingdom["army_stats"])
-
+    print("Updated Army Stats:", kingdom["army_stats"])
 
     print("---------- kingdom events ------------")
 
@@ -145,7 +108,6 @@ try:
 
     print("Updated Kingdom:", kingdom)
 
-
     print("---------- adding soliders ------------")
 
     soldier = input("Enter new soldier: ")
@@ -154,9 +116,7 @@ try:
 
     kingdom["army_stats"][soldier] = strength
 
-    print("Updated Army Stats:",
-          kingdom["army_stats"])
-
+    print("Updated Army Stats:", kingdom["army_stats"])
 
     print("---------- adding villages ------------")
 
@@ -166,15 +126,9 @@ try:
 
     crops = input("Enter crop name: ").split(",")
 
-    kingdom["villages"][village] = {
+    kingdom["villages"][village] = {"population": population, "crops": crops}
 
-        "population": population,
-        "crops": crops
-    }
-
-    print("Updated Villages:",
-          kingdom["villages"])
-
+    print("Updated Villages:", kingdom["villages"])
 
     print("---------- removing villages ------------")
 
@@ -188,7 +142,6 @@ try:
 
     else:
         print("Village not found")
-
 
     print("Final Kingdom:", kingdom)
 

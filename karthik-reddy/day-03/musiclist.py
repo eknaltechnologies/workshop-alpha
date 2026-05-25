@@ -10,11 +10,7 @@ except FileNotFoundError:
 
 print("Welcome to the Music List!")
 
-print("1. Add Song"
-      "\n2. View Songs"
-      "\n3. Update Song"
-      "\n4. Delete Song"
-      "\n5. Exit")
+print("1. Add Song" "\n2. View Songs" "\n3. Update Song" "\n4. Delete Song" "\n5. Exit")
 
 try:
     user_choice = int(input("Please select an option (1-5): "))
@@ -24,10 +20,7 @@ try:
         singer_name = input("Enter the singer name: ")
         album_name = input("Enter the album name: ")
 
-        music_list[song_name] = {
-            "singer": singer_name,
-            "album": album_name
-        }
+        music_list[song_name] = {"singer": singer_name, "album": album_name}
 
         print(f"Song '{song_name}' added successfully.")
 
@@ -46,10 +39,7 @@ try:
             new_singer = input("Enter new singer name: ")
             new_album = input("Enter new album name: ")
 
-            music_list[song_name] = {
-                "singer": new_singer,
-                "album": new_album
-            }
+            music_list[song_name] = {"singer": new_singer, "album": new_album}
 
             print(f"Song '{song_name}' updated successfully.")
         else:
