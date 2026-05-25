@@ -178,4 +178,4 @@ try:
 
 except KeyboardInterrupt:
 
-    print("\nProgram stopped by user")
+    print("\nProgram stop by user")
