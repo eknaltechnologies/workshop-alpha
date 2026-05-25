@@ -1,0 +1,16 @@
+student_name ="lokesh"
+roll_no = 404
+year = 4
+cgpa = 8.5
+
+print(student_name)
+print(type(student_name))
+
+print(roll_no)
+print(type(roll_no))
+
+print(year)
+print(type(year))
+
+print(cgpa)
+print(type(cgpa))
