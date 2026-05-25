@@ -1,5 +1,3 @@
-import sys
-
 print("=====================================\nWelcome to the VBC IVR System\n=====================================")
 
 
@@ -229,8 +227,7 @@ def renew_plan_menu():
 # submenu Change router
 def change_router():
     print("\n--- CHANGE ROUTER ---")
-    print(
-        "1. Request Technician Visit \n2. Self Installation Guide \n3. Back for Broadband Menu \n4. Back for Main Menu ")
+    print("1. Request Technician Visit \n2. Self Installation Guide \n3. Back for Broadband Menu \n4. Back for Main Menu ")
     choice = input("\nPlease select an option (1-4): ")
 
     if choice == "1":
