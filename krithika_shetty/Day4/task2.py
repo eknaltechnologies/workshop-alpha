@@ -41,11 +41,7 @@ def sorting_and_counting(treasure_bag):
 def search_bag(treasure_bag):
     print("\nSearching the Bag")
 
-    print(
-        "Magic Ring Found!"
-        if "magic ring" in treasure_bag
-        else "Magic Ring Not Found!"
-    )
+    print("Magic Ring Found!" if "magic ring" in treasure_bag else "Magic Ring Not Found!")
 
     if "emerald" in treasure_bag:
         print("Emerald Position:", treasure_bag.index("emerald"))
