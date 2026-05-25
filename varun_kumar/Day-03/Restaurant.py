@@ -1,14 +1,15 @@
 import json
-
-# Load data from json file
 try:
     with open("restaurant.json", "r") as f:
         menu = json.load(f)
 
-except:
+except FileNotFoundError:
+    print("File not found, creating new menu...")
     menu = {}
 
+
 while True:
+
     print("\n---- RESTAURANT MENU ----")
     print("1. Add Item")
     print("2. View Menu")
@@ -16,6 +17,7 @@ while True:
     print("4. Delete Item")
     print("5. Order Food")
     print("6. Exit")
+
     choice = int(input("Enter choice: "))
 
     # Add Item
@@ -114,6 +116,6 @@ while True:
     else:
         print("Invalid Choice")
 
-    # Save data
+    # Save Data
     with open("restaurant.json", "w") as f:
         json.dump(menu, f, indent=4)
