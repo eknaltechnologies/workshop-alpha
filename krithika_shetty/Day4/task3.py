@@ -1,3 +1,12 @@
+def show_section(title):
+    print(f"\n===== {title} =====")
+
+
+def show_data(title, data):
+    print(f"\n{title}:")
+    print(data)
+
+
 def create_kingdom():
     kingdom = {
         "king": "Arthur",
@@ -6,21 +15,26 @@ def create_kingdom():
         "army": ["knight", "archer", "catapult"]
     }
 
-    print("\n===== KINGDOM RECORDS =====")
+    show_section("KINGDOM RECORDS")
     print(kingdom)
-
     return kingdom
 
 
 def access_information(kingdom):
-    print("\n===== ACCESSING INFORMATION =====")
-    print("King:", kingdom["king"])
-    print("Army:", kingdom["army"])
-    print("Queen:", kingdom.get("queen"))
+    show_section("ACCESSING INFORMATION")
+
+    details = {
+        "King": kingdom["king"],
+        "Army": kingdom["army"],
+        "Queen": kingdom.get("queen")
+    }
+
+    for key, value in details.items():
+        print(f"{key}: {value}")
 
 
 def update_records(kingdom):
-    print("\n===== UPDATING RECORDS =====")
+    show_section("UPDATING RECORDS")
 
     kingdom["gold"] += 250
     kingdom["queen"] = "Guinevere"
@@ -31,40 +45,38 @@ def update_records(kingdom):
 
 
 def delete_information(kingdom):
-    print("\n===== DELETING INFORMATION =====")
+    show_section("DELETING INFORMATION")
 
-    if "catapult" in kingdom["army"]:
-        kingdom["army"].remove("catapult")
+    kingdom["army"] = [
+        soldier for soldier in kingdom["army"]
+        if soldier != "catapult"
+    ]
 
-    if "queen" in kingdom:
-        del kingdom["queen"]
+    kingdom.pop("queen", None)
 
-    removed_gold = kingdom.pop("gold")
+    removed_gold = kingdom.pop("gold", 0)
+
     print("Gold Taken:", removed_gold)
-
     print(kingdom)
 
 
 def search_kingdom(kingdom):
-    print("\n===== SEARCHING KINGDOM =====")
+    show_section("SEARCHING KINGDOM")
 
     print("Does gold exist?", "gold" in kingdom)
 
-    print("\nKeys:")
-    for key in kingdom.keys():
-        print(key)
-
-    print("\nValues:")
-    for value in kingdom.values():
-        print(value)
-
-    print("\nItems:")
-    for item in kingdom.items():
-        print(item)
+    for title, data in {
+        "Keys": kingdom.keys(),
+        "Values": kingdom.values(),
+        "Items": kingdom.items()
+    }.items():
+        print(f"\n{title}:")
+        for item in data:
+            print(item)
 
 
 def manage_villages(kingdom):
-    print("\n===== VILLAGES =====")
+    show_section("VILLAGES")
 
     kingdom["villages"] = {
         "v1": {
@@ -81,36 +93,35 @@ def manage_villages(kingdom):
         }
     }
 
-    print("Population of v2:",
-          kingdom["villages"]["v2"]["population"])
+    print(
+        "Population of v2:",
+        kingdom["villages"]["v2"]["population"]
+    )
 
     kingdom["villages"]["v1"]["crops"].append("sugarcane")
-
     kingdom["villages"]["v3"]["population"] += 50
 
-    print("\nUpdated Villages:")
-    print(kingdom["villages"])
+    show_data("Updated Villages", kingdom["villages"])
 
 
 def loop_records(kingdom):
-    print("\n===== LOOPING THROUGH KINGDOM =====")
+    show_section("LOOPING THROUGH KINGDOM")
 
     for key, value in kingdom.items():
         print(f"{key} : {value}")
 
-    print("\n===== VILLAGE REPORT =====")
+    show_section("VILLAGE REPORT")
 
     for village, details in kingdom["villages"].items():
-        population = details["population"]
-        crops = ", ".join(details["crops"])
-
         print(
-            f"Village {village} has {population} people and grows {crops}"
+            f"Village {village} has "
+            f"{details['population']} people and grows "
+            f"{', '.join(details['crops'])}"
         )
 
 
 def army_power():
-    print("\n===== ARMY POWER =====")
+    show_section("ARMY POWER")
 
     army_stats = {
         "knight": 50,
@@ -124,16 +135,15 @@ def army_power():
 
     print("Strongest Unit:", strongest)
 
-    del army_stats["knight"]
+    army_stats.pop("knight")
 
-    print("Updated Army Stats:")
-    print(army_stats)
+    show_data("Updated Army Stats", army_stats)
 
     return army_stats
 
 
 def kingdom_events(kingdom, army_stats):
-    print("\n===== KINGDOM EVENTS =====")
+    show_section("KINGDOM EVENTS")
 
     kingdom["gold"] = kingdom.get("gold", 0) + 200
 
@@ -147,26 +157,23 @@ def kingdom_events(kingdom, army_stats):
 
     kingdom["alliance"] = "Northern Empire"
 
-    print("\nKingdom After Events:")
-    print(kingdom)
-
-    print("\nArmy Stats After Events:")
-    print(army_stats)
+    show_data("Kingdom After Events", kingdom)
+    show_data("Army Stats After Events", army_stats)
 
 
 def final_challenge(kingdom, army_stats):
-    print("\n===== FINAL INTERACTIVE CHALLENGE =====")
+    show_section("FINAL INTERACTIVE CHALLENGE")
 
     soldier = input("Enter new soldier name: ")
     strength = int(input("Enter soldier strength: "))
 
     army_stats[soldier] = strength
 
-    print("\nArmy Stats Updated:")
-    print(army_stats)
+    show_data("Army Stats Updated", army_stats)
 
     village_name = input("\nEnter new village name: ")
     population = int(input("Enter population: "))
+
     crops = input(
         "Enter crops separated by commas: "
     ).split(",")
@@ -176,8 +183,10 @@ def final_challenge(kingdom, army_stats):
         "crops": [crop.strip() for crop in crops]
     }
 
-    print("\nVillages After Addition:")
-    print(kingdom["villages"])
+    show_data(
+        "Villages After Addition",
+        kingdom["villages"]
+    )
 
     remove_village = input(
         "\nEnter village name to remove: "
@@ -189,29 +198,22 @@ def final_challenge(kingdom, army_stats):
     else:
         print("Village not found.")
 
-    print("\nUpdated Kingdom:")
-    print(kingdom)
+    show_data("Updated Kingdom", kingdom)
 
 
 def main():
     kingdom = create_kingdom()
 
     access_information(kingdom)
-
     update_records(kingdom)
-
     delete_information(kingdom)
-
     search_kingdom(kingdom)
-
     manage_villages(kingdom)
-
     loop_records(kingdom)
 
     army_stats = army_power()
 
     kingdom_events(kingdom, army_stats)
-
     final_challenge(kingdom, army_stats)
 
 
