@@ -57,7 +57,8 @@ def movie_franchise(movie_name, franchise):
 @app.route('/', methods=["GET", "POST"])
 def home():
     if request.method == "POST":
-        return '<h1> Welcome to the Movie List App! Explore various movies and their details 🎬 </h1>'
+        return '<h1> Welcome to the Movie List App! '
+        'Explore various movies and their details 🎬 </h1>'
     else:
          return '<h1> Thank you for visiting! </h1>' 
 @app.route('/add_movie', methods=["GET", "POST"])
