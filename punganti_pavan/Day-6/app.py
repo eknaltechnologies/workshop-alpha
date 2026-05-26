@@ -3,8 +3,12 @@ from flask import Flask, jsonify, request
 app = Flask(__name__)
 
 market = {
-    1: {"product": "atta 5kg", "person": "Pavan"},
-    2: {"product": "suga 5kg", "person": "manikanta"}
+    1: {"product": "atta 5kg", 
+        "person": "Pavan"
+    },
+    2: {"product": "suga 5kg", 
+        "person": "manikanta"
+    },
 }
 
 # ====================CREATE ==================
