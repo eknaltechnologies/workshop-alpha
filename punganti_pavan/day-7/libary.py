@@ -24,19 +24,18 @@ def home():
 # ================= ADD BOOK =================
 @app.route("/add", methods=["POST"])
 def add_book():
+  book_name = request.form["book_name"]
+  author = request.form["author"]
+  price = request.form["price"]
 
-    book_name = request.form["book_name"]
-    author = request.form["author"]
-    price = request.form["price"]
-
-    library["books"][book_name] = {
+  library["books"][book_name] = {
         "author": author,
         "price": price
     }
 
-    save_data()
+  save_data()
 
-    return redirect("/")
+  return redirect("/")
 
 # ================= Update BOOK =================
 @app.route("/update", methods=["POST"])
