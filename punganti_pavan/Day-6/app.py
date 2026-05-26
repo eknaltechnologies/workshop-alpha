@@ -3,29 +3,25 @@ from flask import Flask, jsonify, request
 app = Flask(__name__)
 
 market = {
-    1: {"product": "atta 5kg", 
-        "person": "Pavan"
-    },
-    2: {"product": "suga 5kg", 
-        "person": "manikanta"
-    },
+    1: {"product": "atta 5kg", "person": "Pavan"},
+    2: {"product": "suga 5kg", "person": "manikanta"},
 }
+
 
 # ====================CREATE ==================
 @app.route("/market", methods=["POST"])
 def add_product():
     data = request.json
     new_id = max(market.keys()) + 1 if market else 1
-    market[new_id] = {
-        "product": data["product"],
-        "person": data["person2"]
-    }
+    market[new_id] = {"product": data["product"], "person": data["person2"]}
     return jsonify({"message": "product added", "id": new_id})
 
-#======================= READ ALL ============================
+
+# ======================= READ ALL ============================
 @app.route("/market", methods=["GET"])
 def get_products():
     return jsonify(market)
+
 
 # =======================READ ONE =========================
 @app.route("/market/<int:id>", methods=["GET"])
@@ -35,6 +31,7 @@ def get_product_by_id(id):
         return jsonify(product)
     return jsonify({"error": "product not found"}), 404
 
+
 # ================ UPDATE ==================================
 @app.route("/market/<int:id>", methods=["PUT"])
 def update_product(id):
@@ -43,6 +40,7 @@ def update_product(id):
         market[id].update(data)
         return jsonify({"message": "product updated"})
     return jsonify({"error": "product not found"}), 404
+
 
 # ================ DELETE ================================
 @app.route("/market/<int:id>", methods=["DELETE"])
