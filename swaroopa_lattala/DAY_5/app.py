@@ -2,7 +2,8 @@ from flask import Flask
 
 app = Flask(__name__)
 
-@app.route('/')
+
+@app.route("/")
 def home():
     # The main page showing the wish list items
     return """
@@ -27,7 +28,8 @@ def home():
     </p>
     """
 
-@app.route('/about')
+
+@app.route("/about")
 def about():
     # A simple second page that links back to the home page
     return """
@@ -37,8 +39,6 @@ def about():
     <a href="/">← Go Back to Wish List</a>
     """
 
+
 if __name__ == "__main__":
-    app.run(debug=True,port=5000)
-
-
-
+    app.run(debug=True, port=5000)
