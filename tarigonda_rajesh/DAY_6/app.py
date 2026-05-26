@@ -1,5 +1,6 @@
 import json
-from flask import Flask, render_template, request, redirect
+
+from flask import Flask, redirect, render_template, request
 
 app = Flask(__name__)
 
@@ -135,7 +136,11 @@ def update_song(song_name):
 
             return redirect("/songs")
 
-        return render_template("update_song.html", song_name=song_name, details=music_list[song_name])
+        return render_template(
+            "update_song.html",
+            song_name=song_name,
+            details=music_list[song_name],
+        )
 
     return "Song Not Found"
 
