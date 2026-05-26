@@ -2,8 +2,6 @@ from flask import Flask, render_template, request, redirect, url_for
 import json
 
 app = Flask(__name__)
-
-
 def load_data():
     try:
         with open("unit_converter.json", "r") as f:
