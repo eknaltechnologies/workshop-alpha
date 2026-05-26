@@ -22,14 +22,12 @@ def save_json():
 
 
 @app.route("/")
-
 def home():
 
     return render_template("home.html")
 
 
 @app.route("/recommend", methods=["POST"])
-
 def recommend():
 
     selected_mood = request.form.get("mood")
@@ -42,29 +40,18 @@ def recommend():
 
             result.append(movie)
 
-    return render_template(
-        "result.html",
-        movies=result,
-        mood=selected_mood
-    )
+    return render_template("result.html", movies=result, mood=selected_mood)
 
 
 @app.route("/add-movie", methods=["POST"])
-
 def add_movie():
 
     new_movie = {
-
         "name": request.form.get("name"),
-
         "genre": request.form.get("genre"),
-
         "mood": request.form.get("mood"),
-
         "emoji": request.form.get("emoji"),
-
-        "poster": request.form.get("poster")
-
+        "poster": request.form.get("poster"),
     }
 
     movie_data["movies"].append(new_movie)
