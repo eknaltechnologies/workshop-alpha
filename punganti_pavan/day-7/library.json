@@ -1,0 +1,12 @@
+{
+    "books": {
+        "richdad poor dad": {
+            "author": "dr.robert kim",
+            "price": "8.00"
+        },
+        "5am club": {
+            "author": "dr.robert",
+            "price": "50.00"
+        }
+    }
+}
