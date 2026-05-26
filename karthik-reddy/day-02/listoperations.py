@@ -12,7 +12,7 @@ fruits.insert(1, "pineapple")
 print("insert():", fruits)
 
 fruits.remove("banana")
-print("remove():", fruits)  
+print("remove():", fruits)
 
 fruits.pop()
 print("pop():", fruits)

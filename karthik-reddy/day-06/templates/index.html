@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Music Recommendation</title>
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins',sans-serif;
+        }
+
+        body{
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            overflow:hidden;
+            position:relative;
+            background:black;
+        }
+
+        /* Animated Background */
+
+        body::before{
+            content:"";
+            position:absolute;
+            width:700px;
+            height:700px;
+            background:linear-gradient(#ff00cc,#3333ff);
+            border-radius:50%;
+            top:-200px;
+            left:-150px;
+            filter:blur(120px);
+            animation:move1 8s infinite alternate;
+        }
+
+        body::after{
+            content:"";
+            position:absolute;
+            width:600px;
+            height:600px;
+            background:linear-gradient(#00ffcc,#ff6600);
+            border-radius:50%;
+            bottom:-200px;
+            right:-150px;
+            filter:blur(120px);
+            animation:move2 8s infinite alternate;
+        }
+
+        @keyframes move1{
+            100%{
+                transform:translate(100px,80px);
+            }
+        }
+
+        @keyframes move2{
+            100%{
+                transform:translate(-100px,-80px);
+            }
+        }
+
+        .container{
+            position:relative;
+            z-index:10;
+            width:100%;
+            max-width:600px;
+            padding:40px;
+            border-radius:30px;
+            background:rgba(255,255,255,0.08);
+            border:1px solid rgba(255,255,255,0.15);
+            backdrop-filter:blur(18px);
+            box-shadow:0 10px 40px rgba(0,0,0,0.5);
+        }
+
+        .logo{
+            text-align:center;
+            font-size:75px;
+            margin-bottom:10px;
+            animation:boue 2s infinite;
+        }
+
+        @keyframes bounce{
+            50%{
+                transform:translateY(-10px);
+            }
+        }
+
+        h1{
+            text-align:center;
+            color:white;
+            font-size:38px;
+            margin-bottom:30px;
+            font-weight:700;
+        }
+
+        h2{
+            color:#ffffff;
+            margin:20px 0 10px;
+            font-size:22px;
+            font-weight:500;
+        }
+
+        input,
+        select{
+            width:100%;
+            padding:15px;
+            margin-top:12px;
+            border:none;
+            outline:none;
+            border-radius:15px;
+            background:rgba(255,255,255,0.12);
+            color:white;
+            font-size:15px;
+            transition:0.3s;
+        }
+
+        input::placeholder{
+            color:#d1d5db;
+        }
+
+        input:focus,
+        select:focus{
+            background:rgba(255,255,255,0.18);
+            transform:scale(1.02);
+        }
+
+        select option{
+            color:black;
+        }
+
+        button{
+            width:100%;
+            padding:15px;
+            margin-top:20px;
+            border:none;
+            border-radius:15px;
+            background:linear-gradient(to right,#ff00cc,#3333ff);
+            color:white;
+            font-size:17px;
+            font-weight:600;
+            cursor:pointer;
+            transition:0.4s;
+        }
+
+        button:hover{
+            transform:translateY(-4px) scale(1.02);
+            box-shadow:0 10px 25px rgba(255,0,204,0.5);
+        }
+
+        hr{
+            margin:35px 0;
+            border:none;
+            height:1px;
+            background:rgba(255,255,255,0.15);
+        }
+
+        .footer-text{
+            text-align:center;
+            color:#cbd5e1;
+            margin-top:20px;
+            font-size:14px;
+        }
+
+        @media(max-width:650px){
+
+            .container{
+                margin:20px;
+                padding:30px 25px;
+            }
+
+            h1{
+                font-size:30px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="logo">🎶</div>
+
+    <h1>Music Recommendation</h1>
+
+    <form action="/recommend" method="POST">
+
+        <h2>Select Your Mood</h2>
+
+        <select name="mood">
+
+            <option>Happy 😊</option>
+            <option>Sad 😔</option>
+            <option>Relaxed 😌</option>
+            <option>Energetic ⚡</option>
+            <option>Romantic ❤️</option>
+
+        </select>
+
+        <button type="submit">
+            Get Recommendation
+        </button>
+
+    </form>
+
+    <hr>
+
+    <form action="/add-music" method="POST">
+
+        <h2>Add Your Favorite Song</h2>
+
+        <input type="text" name="name" placeholder="Song Name" required>
+
+        <input type="text" name="artist" placeholder="Artist Name" required>
+
+        <select name="mood">
+
+            <option>Happy 😊</option>
+            <option>Sad 😔</option>
+            <option>Relaxed 😌</option>
+            <option>Energetic ⚡</option>
+            <option>Romantic ❤️</option>
+
+        </select>
+
+        <input type="url" name="poster" placeholder="Poster Image URL" required>
+
+        <button type="submit">
+            Add Song
+        </button>
+
+    </form>
+
+    <div class="footer-text">
+        🎧 Feel the Music • Feel the Mood
+    </div>
+
+</div>
+
+</body>
+</html>

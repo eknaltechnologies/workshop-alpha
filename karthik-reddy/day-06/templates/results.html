@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ mood }} Songs</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial;
+        }
+
+        body{
+            background:#0f172a;
+            color:white;
+            padding:30px;
+        }
+
+        h1{
+            text-align:center;
+            margin-bottom:20px;
+        }
+
+        a{
+            color:orange;
+            text-decoration:none;
+            display:block;
+            margin-bottom:20px;
+            font-size:18px;
+        }
+
+        .card-container{
+            display:flex;
+            flex-wrap:wrap;
+            gap:20px;
+            justify-content:center;
+        }
+
+        .card{
+            width:260px;
+            background:#1e293b;
+            border-radius:15px;
+            overflow:hidden;
+            transition:0.3s;
+            box-shadow:0px 0px 10px rgba(0,0,0,0.5);
+        }
+
+        .card:hover{
+            transform:scale(1.03);
+        }
+
+        .card img{
+            width:100%;
+            height:300px;
+            object-fit:cover;
+        }
+
+        .content{
+            padding:15px;
+        }
+
+        .content h2{
+            margin-bottom:10px;
+        }
+
+        .content p{
+            margin-top:5px;
+        }
+
+        .empty{
+            text-align:center;
+            font-size:25px;
+            margin-top:50px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<h1>🎵 {{ mood }} Songs</h1>
+
+<a href="/">← Back To Home</a>
+
+<div class="card-container">
+
+    {% if songs %}
+
+        {% for song in songs %}
+
+        <div class="card">
+
+            <img src="{{ song.poster }}" alt="Song Poster">
+
+            <div class="content">
+
+                <h2>{{ song.emoji }} {{ song.name }}</h2>
+
+                <p><strong>Artist:</strong> {{ song.artist }}</p>
+
+                <p><strong>Mood:</strong> {{ song.mood }}</p>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <div class="empty">
+            No Songs Found
+        </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>
