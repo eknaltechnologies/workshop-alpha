@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversion History</title>
+    <style>
+        body { 
+            font-family: sans-serif; 
+            margin: 50px; 
+            background: #fafafa; 
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .back-btn { 
+            text-decoration: none; 
+            color: #007bff; 
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        .back-btn:hover {
+            text-decoration: underline;
+        }
+        h2 {
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+        }
+        th, td { 
+            border: 1px solid #ccc; 
+            padding: 12px 15px; 
+            text-align: left; 
+        }
+        th { 
+            background: #007bff; 
+            color: white; 
+        }
+        .del-btn {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .del-btn:hover {
+            background-color: #c82333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a class="back-btn" href="/">⬅️ Back to Converter</a>
+        <h2>🕒 Conversion History</h2>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>From (Input)</th>
+                    <th>To (Result)</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% if history %}
+                    {% for key, value in history.items() %}
+                    <tr>
+                        <td>{{ key }}</td>
+                        <td>{{ value }}</td>
+                        <td>
+                            <form action="/delete" method="POST" style="margin:0;">
+                                <input type="hidden" name="key" value="{{ key }}">
+                                <button type="submit" class="del-btn">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                {% else %}
+                    <tr>
+                        <td colspan="3" style="text-align: center; color: #888; padding: 20px;">
+                            💾 History Storage System is Active! Perform a conversion to see it here.
+                        </td>
+                    </tr>
+                {% endif %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
