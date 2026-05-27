@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Web Unit Converter</title>
+</head>
+<body>
+    <div class="container">
+        <h2>📊 Unit Converter Project</h2>
+        <form method="POST">
+            <label>Select Conversion Type:</label>
+            <select name="choice">
+                <option value="1">1. KM -> M</option>
+                <option value="2">2. M -> KM</option>
+                <option value="3">3. G -> KG</option>
+                <option value="4">4. KG -> G</option>
+                <option value="5">5. IN -> CM</option>
+                <option value="6">6. CM -> IN</option>
+                <option value="7">7. C -> F</option>
+            </select>
+            <br><br>
+            <label>Enter Numeric Value:</label>
+            <input
+                type="number"
+                step="any"
+                name="value"
+                required
+            >
+            <br><br>
+            <button type="submit">
+                Run Conversion
+            </button>
+        </form>
+        {% if result %}
+            <h3>
+                Result: {{ result }}
+            </h3>
+        {% endif %}
+        <a href="/history">
+            🕒 View Saved Conversion History
+        </a>
+    </div>
+</body>
+</html>
