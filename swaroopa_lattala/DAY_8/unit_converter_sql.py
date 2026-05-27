@@ -9,14 +9,17 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
+
 class History(db.Model):
-    id = db.Column(db.Integer,primary_key=True)
-    conversion_type = db.Column(db.String(50), nullable=False )
-    input_value = db.Column(db.String(100), nullable=False )
-    result_value = db.Column( db.String(100), nullable=False)
-    
+    id = db.Column(db.Integer, primary_key=True)
+    conversion_type = db.Column(db.String(50), nullable=False)
+    input_value = db.Column(db.String(100), nullable=False)
+    result_value = db.Column(db.String(100), nullable=False)
+
+
 def __repr__(self):
-        return f"<History {self.input_value}>"   
+    return f"<History {self.input_value}>"
+
 
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -66,29 +69,21 @@ def index():
             res = (val * 9 / 5) + 32
             key = f"{val} C"
             value = f"{res} F"
-            conversion_type = "Temperature" 
-        new_record = History(
-            conversion_type=conversion_type,
-            input_value=key,
-            result_value=value
-        )
+            conversion_type = "Temperature"
+        new_record = History(conversion_type=conversion_type, input_value=key, result_value=value)
         db.session.add(new_record)
         db.session.commit()
         result = f"{key} = {value}"
 
-    return render_template(
-        "index.html",
-        result=result
-    )
+    return render_template("index.html", result=result)
 
 
 @app.route("/history")
 def history():
     records = History.query.all()
-    return render_template(
-        "history.html",
-        history=records
-    )
+    return render_template("history.html", history=records)
+
+
 @app.route("/edit/<int:id>", methods=["GET", "POST"])
 def edit_record(id):
     record = History.query.get_or_404(id)
@@ -99,10 +94,8 @@ def edit_record(id):
         db.session.commit()
         return redirect(url_for("history"))
 
-    return render_template(
-        "edit.html",
-        record=record
-    )
+    return render_template("edit.html", record=record)
+
 
 @app.route("/delete/<int:id>", methods=["POST"])
 def delete_record(id):
@@ -110,6 +103,7 @@ def delete_record(id):
     db.session.delete(record)
     db.session.commit()
     return redirect(url_for("history"))
+
 
 if __name__ == "__main__":
     app.run(debug=True)
