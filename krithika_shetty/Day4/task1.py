@@ -133,7 +133,13 @@ def main_menu():
     while True:
         show_menu(
             "IVR MAIN MENU",
-            {"1": "Mobile Services", "2": "Internet Services", "3": "TV & OTT Services", "4": "Talk to Customer Support", "5": "Exit"},
+            {
+                "1": "Mobile Services",
+                "2": "Internet Services",
+                "3": "TV & OTT Services",
+                "4": "Talk to Customer Support",
+                "5": "Exit",
+            },
         )
 
         choice = input("Enter choice: ")
