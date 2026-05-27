@@ -41,11 +41,7 @@ def recommend_music():
 
             recommended_songs.append(song)
 
-    return render_template(
-        "results.html",
-        songs=recommended_songs,
-        mood=selected_mood
-    )
+    return render_template("results.html", songs=recommended_songs, mood=selected_mood)
 
 
 # Add Music Route
@@ -57,18 +53,15 @@ def add_music():
         "artist": request.form.get("artist"),
         "mood": request.form.get("mood"),
         "emoji": request.form.get("emoji"),
-        "poster": request.form.get("poster")
+        "poster": request.form.get("poster"),
     }
 
     music_data["songs"].append(new_song)
 
     save_json()
 
-    return render_template(
-        "results.html",
-        songs=music_data["songs"],
-        mood="All Songs"
-    )
+    return render_template("results.html", songs=music_data["songs"], mood="All Songs")
+
 
 # Show All Songs
 @app.route("/all-songs")
@@ -83,11 +76,8 @@ def all_songs():
 
         music_data = {"songs": []}
 
-    return render_template(
-        "results.html",
-        songs=music_data["songs"],
-        mood="All Songs"
-    )
+    return render_template("results.html", songs=music_data["songs"], mood="All Songs")
+
 
 if __name__ == "__main__":
     app.run(debug=True)
