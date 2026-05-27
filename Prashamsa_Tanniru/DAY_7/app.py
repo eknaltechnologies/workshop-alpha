@@ -38,7 +38,6 @@ def add_note():
             db.session.commit()
     return redirect(url_for("notes"))
 
-
 @app.route("/view_notes/<index>")
 def view_notes(index):
     notes_list = Notes.query.get(index)

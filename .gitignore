@@ -11,7 +11,8 @@ __pycache__/
 
 # Distribution / packaging
 *movies.json
-*DAY_7/migrations/
+Prashamsa_Tanniru/DAY_7/instance/
+Prashamsa_Tanniru/DAY_7/migrations/
 .Python
 build/
 develop-eggs/
