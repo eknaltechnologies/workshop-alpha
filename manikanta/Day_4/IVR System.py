@@ -156,24 +156,6 @@ def Tv_and_ott_offers():
         print("invaild choice")
         Tv_and_ott_offers()
 
-def Tv_and_ott_offers():
-
-    print("\n--- TV & OTT Services ---")
-    print("1. Channel Pack")
-    print("2. Back")
-
-    choice = input("Enter Choice: ")
-
-    if choice == "1":
-        channel_pack()        
-
-    elif choice == "2":
-        main_menu()           
-
-    else:
-        print("\n  Invalid Choice!")
-        Tv_and_ott_offers()
-
 def channel_pack():
 
   print("\n---Channel pack---")
