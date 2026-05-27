@@ -1,5 +1,5 @@
 def main_menu():
-
+    
     print("\n--- MAIN MENU ---")
     print("1. Mobile Services")
     print("2. Internet services")
