@@ -4,7 +4,7 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-# Load Music Data
+# Load Music Datass
 try:
     with open("music.json", "r") as f:
         music_data = json.load(f)
