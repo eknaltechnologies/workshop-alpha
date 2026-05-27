@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>All Songs</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            background-color: #f4f4f4;
+        }
+
+        /* Navbar */
+
+        .navbar{
+
+            height: 70px;
+
+            width: 100%;
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            z-index: 1000;
+
+            background-color: #1e1e2f;
+
+            color: white;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 0 30px;
+        }
+
+        .logo{
+
+            font-size: 28px;
+
+            font-weight: bold;
+        }
+
+        .nav-right{
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+        }
+
+        .nav-right input{
+
+            padding: 10px;
+
+            width: 260px;
+
+            border: none;
+
+            border-radius: 5px;
+        }
+
+        .add-btn{
+
+            text-decoration: none;
+
+            background-color: #ff4d6d;
+
+            color: white;
+
+            padding: 10px 15px;
+
+            border-radius: 5px;
+        }
+
+        /* Layout */
+
+        .main-layout{
+
+            display: flex;
+
+            margin-top: 70px;
+        }
+
+        /* Sidebar */
+
+        .sidebar{
+
+            width: 240px;
+
+            height: calc(100vh - 70px);
+
+            position: fixed;
+
+            top: 70px;
+
+            left: 0;
+
+            background-color: #2b2b40;
+
+            padding-top: 20px;
+
+            overflow-y: auto;
+        }
+
+        .sidebar a{
+
+            display: block;
+
+            color: white;
+
+            text-decoration: none;
+
+            padding: 16px 25px;
+
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover{
+
+            background-color: #40405c;
+        }
+
+        /* Main Content */
+
+        .main-content{
+
+            margin-left: 240px;
+
+            width: calc(100% - 240px);
+
+            padding: 30px;
+        }
+
+        /* Page Title */
+
+        .page-title{
+
+            margin-bottom: 25px;
+
+            color: #1e1e2f;
+        }
+
+        /* Songs Grid */
+
+        .songs-container{
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+            gap: 20px;
+        }
+
+        /* Song Card */
+
+        .song-card{
+
+            background-color: white;
+
+            padding: 20px;
+
+            border-radius: 10px;
+
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+
+        .song-name{
+
+            font-size: 22px;
+
+            font-weight: bold;
+
+            color: #1e1e2f;
+
+            margin-bottom: 10px;
+        }
+
+        .song-info{
+
+            color: gray;
+
+            margin-bottom: 8px;
+        }
+
+        /* Favorite */
+
+        .favorite{
+
+            font-size: 22px;
+
+            margin-top: 10px;
+
+            margin-bottom: 15px;
+        }
+
+        /* Buttons */
+
+        .actions{
+
+            display: flex;
+
+            gap: 10px;
+
+            flex-wrap: wrap;
+        }
+
+        .edit-btn{
+
+            background-color: orange;
+
+            color: white;
+
+            border: none;
+
+            padding: 10px 15px;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+        }
+
+        .delete-btn{
+
+            background-color: red;
+
+            color: white;
+
+            border: none;
+
+            padding: 10px 15px;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+        }
+
+        .favorite-btn{
+
+            background-color: #ff4d6d;
+
+            color: white;
+
+            border: none;
+
+            padding: 10px 15px;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+        }
+
+        /* Footer */
+
+        footer{
+
+            background-color: #1e1e2f;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 15px;
+
+            margin-left: 240px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <div class="navbar">
+
+        <div class="logo">
+
+            Music Vault
+
+        </div>
+
+        <div class="nav-right">
+
+            <form action="/songs" method="GET">
+
+                <input
+                    type="text"
+                    name="song"
+                    placeholder="Search Songs"
+                >
+
+            </form>
+
+            <a href="/add-song" class="add-btn">
+
+                + Add Song
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- Layout -->
+
+    <div class="main-layout">
+
+        <!-- Sidebar -->
+
+        <div class="sidebar">
+
+            <a href="/">🏠 Dashboard</a>
+
+            <a href="/songs">🎵 All Songs</a>
+
+            <a href="/favorites">❤️ Favorite Songs</a>
+
+            <a href="/genres">🎼 Genres</a>
+
+            <a href="/albums">💿 Albums</a>
+
+        </div>
+
+        <!-- Main Content -->
+
+        <div class="main-content">
+
+            <h1 class="page-title">
+
+                All Songs
+
+            </h1>
+
+            <!-- Songs -->
+
+            <div class="songs-container">
+
+                {% for song, details in music_list.items() %}
+
+                <div class="song-card">
+
+                    <div class="song-name">
+
+                        {{ song }}
+
+                    </div>
+
+                    <div class="song-info">
+
+                        Singer : {{ details.singer }}
+
+                    </div>
+
+                    <div class="song-info">
+
+                        Album : {{ details.album }}
+
+                    </div>
+
+                    <div class="song-info">
+
+                        Genre : {{ details.genre }}
+
+                    </div>
+
+                    <div class="song-info">
+
+                        Duration : {{ details.duration }}
+
+                    </div>
+
+                    <div class="favorite">
+
+                        {% if details.favorite %}
+
+                            ❤️ Favorite
+
+                        {% else %}
+
+                            🤍 Not Favorite
+
+                        {% endif %}
+
+                    </div>
+
+                    <!-- Actions -->
+
+                    <div class="actions">
+
+                        <a href="/update-song/{{ song }}">
+
+                            <button class="edit-btn">
+
+                                Edit
+
+                            </button>
+
+                        </a>
+
+                        <form
+                            action="/delete-song/{{ song }}"
+                            method="POST"
+                        >
+
+                            <button
+                                type="submit"
+                                class="delete-btn"
+                            >
+
+                                Delete
+
+                            </button>
+
+                        </form>
+
+                        <a href="/favorite-song/{{ song }}">
+
+                            <button class="favorite-btn">
+
+                                Favorite
+
+                            </button>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+
+    <footer>
+
+        © 2026 Music Vault | Built Using Flask & JSON
+
+    </footer>
+
+</body>
+
+</html>

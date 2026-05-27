@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add Song</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+
+            background-color: #f4f4f4;
+        }
+
+        /* Navbar */
+
+        .navbar{
+
+            height: 70px;
+
+            background-color: #1e1e2f;
+
+            color: white;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 0 30px;
+        }
+
+        .logo{
+
+            font-size: 28px;
+
+            font-weight: bold;
+        }
+
+        .back-btn{
+
+            text-decoration: none;
+
+            background-color: #1e88e5;
+
+            color: white;
+
+            padding: 10px 15px;
+
+            border-radius: 5px;
+        }
+
+        /* Form Container */
+
+        .form-container{
+
+            width: 400px;
+
+            margin: 50px auto;
+
+            background-color: white;
+
+            padding: 30px;
+
+            border-radius: 10px;
+
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+
+        .form-container h1{
+
+            text-align: center;
+
+            margin-bottom: 25px;
+
+            color: #1e1e2f;
+        }
+
+        /* Inputs */
+
+        input{
+
+            width: 100%;
+
+            padding: 12px;
+
+            margin-bottom: 18px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 5px;
+        }
+
+        /* Button */
+
+        button{
+
+            width: 100%;
+
+            padding: 12px;
+
+            border: none;
+
+            background-color: #ff4d6d;
+
+            color: white;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+
+            font-size: 16px;
+        }
+
+        button:hover{
+
+            background-color: #e63956;
+        }
+
+        /* Footer */
+
+        footer{
+
+            background-color: #1e1e2f;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 15px;
+
+            margin-top: 40px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <div class="navbar">
+
+        <div class="logo">
+
+            Music Vault
+
+        </div>
+
+        <a href="/songs" class="back-btn">
+
+            Back To Songs
+
+        </a>
+
+    </div>
+
+    <!-- Form -->
+
+    <div class="form-container">
+
+        <h1>Add Song</h1>
+
+        <form method="POST">
+
+            <input
+                type="text"
+                name="song_name"
+                placeholder="Song Name"
+                required
+            >
+
+            <input
+                type="text"
+                name="singer"
+                placeholder="Singer Name"
+                required
+            >
+
+            <input
+                type="text"
+                name="album"
+                placeholder="Album Name"
+                required
+            >
+
+            <input
+                type="text"
+                name="genre"
+                placeholder="Genre"
+                required
+            >
+
+            <input
+                type="text"
+                name="duration"
+                placeholder="Duration"
+                required
+            >
+
+            <button type="submit">
+
+                Add Song
+
+            </button>
+
+        </form>
+
+    </div>
+
+    <!-- Footer -->
+
+    <footer>
+
+        © 2026 Music Vault | Built Using Flask & JSON
+
+    </footer>
+
+</body>
+
+</html>
