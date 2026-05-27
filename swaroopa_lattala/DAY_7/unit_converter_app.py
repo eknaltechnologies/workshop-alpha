@@ -1,6 +1,6 @@
 import json
-from flask import Flask, render_template, request, redirect, url_for
 
+from flask import Flask, redirect, render_template, request, url_for
 
 app = Flask(__name__)
 def load_data():
@@ -13,8 +13,6 @@ def load_data():
 def save_data(data):
     with open("unit_converter.json", "w") as f:
         json.dump(data, f, indent=4)
-
-
 
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -63,6 +61,24 @@ def index():
         
     return render_template("index.html", result=result)
 
+@app.route("/edit/<key>", methods=["GET", "POST"])
+def edit_record(key):
+    converter = load_data()
+    if request.method == "POST":
+        updated_value = request.form.get("updated_value")
+
+        converter["history"][key] = updated_value
+        save_data(converter)
+
+        return redirect(url_for("history"))
+
+    current_value = converter["history"][key]
+
+    return render_template(
+        "edit.html",
+        key=key,
+        current_value=current_value,
+    )
 
 @app.route("/history")
 def history():

@@ -74,12 +74,18 @@
                     <tr>
                         <td>{{ key }}</td>
                         <td>{{ value }}</td>
-                        <td>
-                            <form action="/delete" method="POST" style="margin:0;">
-                                <input type="hidden" name="key" value="{{ key }}">
-                                <button type="submit" class="del-btn">Delete</button>
-                            </form>
-                        </td>
+                
+                           <td>
+    <a href="/edit/{{ key }}" class="edit-btn">Edit</a>
+
+    <form action="/delete" method="POST" style="display:inline;">
+        <input type="hidden" name="key" value="{{ key }}">
+        <button type="submit" class="del-btn">Delete</button>
+    </form>
+</td>
+                            </td>
+                             </form>
+                        
                     </tr>
                     {% endfor %}
                 {% else %}
