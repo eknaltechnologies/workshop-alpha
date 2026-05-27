@@ -1,5 +1,7 @@
-from flask import Flask, request, render_template
 import json
+
+from flask import Flask, request, render_template
+
 
 app = Flask(__name__)
 
