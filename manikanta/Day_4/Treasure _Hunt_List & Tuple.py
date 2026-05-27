@@ -18,6 +18,8 @@ def build_treasure_bag():
 
 
 # 2. Rare Treasures (Tuple)
+
+
 def add_rare_treasures(treasure_bag):
 
     rare_treasures = ("diamond", "magic ring")

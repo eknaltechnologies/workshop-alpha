@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Record</title>
+</head>
+<body>
+
+    <h2>Edit Conversion</h2>
+
+    <form method="POST">
+
+        <label>Input:</label>
+        <input type="text" value="{{ key }}" readonly>
+
+        <br><br>
+
+        <label>Update Result:</label>
+        <input
+            type="text"
+            name="updated_value"
+            value="{{ current_value }}"
+        >
+
+        <br><br>
+
+        <button type="submit">Update</button>
+
+    </form>
+
+</body>
+</html>
