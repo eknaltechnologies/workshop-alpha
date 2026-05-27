@@ -13,10 +13,7 @@ market = {
 def add_product():
     data = request.json
     new_id = max(market.keys()) + 1 if market else 1
-    market[new_id] = {
-        "product": data["product"],
-        "person": data["person"]
-    }
+    market[new_id] = {"product": data["product"], "person": data["person"]}
     return jsonify({"message": "product added", "id": new_id})
 
 
