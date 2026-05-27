@@ -1,5 +1,10 @@
 try:
-    kingdom = {"king": "Arthur", "castle": "Camelot", "gold": 500, "army": ["knight", "archer", "catapult"]}
+    kingdom = {
+        "king": "Arthur",
+        "castle": "Camelot",
+        "gold": 500,
+        "army": ["knight", "archer", "catapult"],
+    }
     print("Kingdom records initialized:", kingdom)
 
     # accessing values
@@ -53,7 +58,14 @@ try:
         print(key, ":", value)
 
     for village, data in kingdom["villages"].items():
-        print("Village", village, "has", data["population"], "people and grows", data["crops"])
+        print(
+            "Village",
+            village,
+            "has",
+            data["population"],
+            "people and grows",
+            data["crops"],
+        )
 
     # army power
     kingdom["army_stats"] = {"knight": 50, "archer": 30, "dragon": 300}

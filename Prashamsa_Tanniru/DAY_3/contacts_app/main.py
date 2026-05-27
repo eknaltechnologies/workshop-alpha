@@ -34,8 +34,8 @@ while True:
         for name, data in contacts.items():
             if query in name.lower() or query == data.get("phone", "").lower():
                 print(f"\nName: {name}")
-                print(f"Phone: {data.get('phone','')}")
-                print(f"Email: {data.get('email','')}")
+                print(f"Phone: {data.get('phone', '')}")
+                print(f"Email: {data.get('email', '')}")
                 found = True
         if not found:
             print("Contact not found.")

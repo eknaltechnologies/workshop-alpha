@@ -1,6 +1,7 @@
-from flask import Flask,render_template, request,url_for,redirect
-from flask_sqlalchemy import SQLAlchemy
+from flask import Flask, redirect, render_template, request, url_for
 from flask_migrate import Migrate
+from flask_sqlalchemy import SQLAlchemy
+
 app = Flask(__name__)
 
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///notes.db"
@@ -9,11 +10,11 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
+
 class Notes(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
     description = db.Column(db.Text, nullable=False)
-
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -38,11 +39,11 @@ def add_note():
             db.session.commit()
     return redirect(url_for("notes"))
 
+
 @app.route("/view_notes/<index>")
 def view_notes(index):
     notes_list = Notes.query.get(index)
     return render_template("notes.html", note=notes_list, mode="view")
-    
 
 
 @app.route("/update_note/<index>", methods=["GET", "POST"])

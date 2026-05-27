@@ -75,7 +75,13 @@ def add_note():
 def view_notes(index):
     notes_list = load_notes()
     if 0 <= int(index) < len(notes_list):
-        return render_template("notes.html", notes=notes_list, note=notes_list[int(index)], index=index, mode="view")
+        return render_template(
+            "notes.html",
+            notes=notes_list,
+            note=notes_list[int(index)],
+            index=index,
+            mode="view",
+        )
     return redirect(url_for("home"))
 
 
