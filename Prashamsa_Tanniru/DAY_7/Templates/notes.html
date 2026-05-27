@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <title>Eknal – Notes</title>   
+     <style>
+            *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+    }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .container {
+            background-color: #fff;
+            width:100%;
+            max-width:700px;
+            margin: 40px auto;  
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow:0 4px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 40px;
+        }
+        h2{
+            margin-bottom: 20px;
+        }
+        a {
+            color: #007BFF;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .button {
+          background-color:#007BFF;
+          color:white;
+          border:none;
+          padding:12px 20px;
+          border-radius:8px;
+          cursor:pointer;
+          font-size:16px;
+          margin:10px 0;
+        }
+        button:hover{
+        background-color:#0056b3;
+    }
+        section {
+            margin-top: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        input,textarea{
+        width:100%;
+        padding:12px;
+        margin-top:10px;
+        margin-bottom:15px;
+        border:1px solid #ccc;
+        border-radius:8px;
+        font-size:16px;
+    }
+    textarea{
+        min-height:120px;
+        resize:vertical;
+    }
+    .back-link{
+        display:inline-block;
+        margin-top:15px;
+        padding:12px 18px;
+        background-color:#007BFF;
+        color:white;
+        border-radius:8px;
+    }
+       .back-link:hover{
+        background-color:#0056b3;
+    }
+    @media (max-width:600px){
+
+        .container{
+            padding:20px;
+        }
+
+        h1{
+            font-size:28px;
+        }
+        .back-link{
+            width:100%;
+            text-align:center;
+        }
+    }
+    </style> 
+</head> 
+<body>
+<div class="container">
+    <h1>Eknal – Notes</h1>
+
+    {% if mode == "list" %}
+    <!-- Section: List of Notes -->
+    <section>
+        <a href="{{ url_for('add_note_form') }}" class="button">Add Note</a>
+    </section>
+    {% for note in notes %}
+    <section>
+        <a href="{{ url_for('view_notes', index=note.id) }}">{{ note.title }}</a>
+    </section>
+    {% endfor %}
+
+    {% elif mode == "view" %}
+    <!-- Section: View Note -->
+    <section>
+        <h2>{{ note.title }}</h2>
+        <form method="POST" action="{{ url_for('update_note', index=note.id) }}">
+            <input type="text" name="title" value="{{ note.title }}" required><br>
+            <textarea name="description">{{ note.description }}</textarea><br>
+            <button type="submit" class="button">Update Note</button>
+        </form>
+
+        <!-- Delete Form -->
+        <form method="POST" action="{{ url_for('delete_note', index=note.id) }}">
+            <button type="submit" class="button">Delete Note</button>
+        </form>
+
+        <a href="{{ url_for('notes') }}" class="btn">Back to Notes</a>
+    </section>
+
+    {% elif mode == "add" %}
+    <!-- Section: Add Note -->
+    <section>
+        <h2>Add a New Note</h2>
+        <form method="POST" action="{{ url_for('add_note') }}">
+            <input type="text" name="title" placeholder="Enter note title" required><br>
+            <textarea name="description" placeholder="Enter note description"></textarea><br>
+            <button type="submit" class="button">Save Note</button>
+        </form>
+        <a href="{{ url_for('notes') }}" class="back-link">Back to Notes</a>
+    </section>
+    {% endif %}
+</div>
+</body>
+</html>
