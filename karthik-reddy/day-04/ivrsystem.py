@@ -240,7 +240,14 @@ def data_plans():
 
         try:
 
-            print("\n--- DATA PLANS ---" "\n1. 1GB/day" "\n2. 2GB/day" "\n3. Unlimited" "\n4. View Selected Plans" "\n5. Back")
+            print(
+                "\n--- DATA PLANS ---"
+                "\n1. 1GB/day"
+                "\n2. 2GB/day"
+                "\n3. Unlimited"
+                "\n4. View Selected Plans"
+                "\n5. Back"
+            )
 
             choice = int(input(ENTER_CHOICE))
 
@@ -460,7 +467,14 @@ def tv_ott_services():
 
         try:
 
-            print("\n--- TV & OTT SERVICES ---" "\n1. Channel Packs" "\n2. Recharge Plans" "\n3. Complaint" "\n4. View Complaints" "\n5. Back")
+            print(
+                "\n--- TV & OTT SERVICES ---"
+                "\n1. Channel Packs"
+                "\n2. Recharge Plans"
+                "\n3. Complaint"
+                "\n4. View Complaints"
+                "\n5. Back"
+            )
 
             choice = int(input(ENTER_CHOICE))
 
