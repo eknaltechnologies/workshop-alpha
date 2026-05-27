@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Genres</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            background-color: #f4f4f4;
+        }
+
+        /* Navbar */
+
+        .navbar{
+
+            height: 70px;
+
+            background-color: #1e1e2f;
+
+            color: white;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 0 30px;
+        }
+
+        .logo{
+
+            font-size: 28px;
+
+            font-weight: bold;
+        }
+
+        .back-btn{
+
+            text-decoration: none;
+
+            background-color: #1e88e5;
+
+            color: white;
+
+            padding: 10px 15px;
+
+            border-radius: 5px;
+        }
+
+        /* Content */
+
+        .container{
+
+            padding: 30px;
+        }
+
+        .page-title{
+
+            margin-bottom: 30px;
+
+            color: #1e1e2f;
+        }
+
+        /* Genre Cards */
+
+        .genres-container{
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+            gap: 20px;
+        }
+
+        .genre-card{
+
+            background-color: white;
+
+            padding: 25px;
+
+            border-radius: 10px;
+
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+
+        .genre-title{
+
+            font-size: 24px;
+
+            margin-bottom: 15px;
+
+            color: #1e1e2f;
+        }
+
+        .song-item{
+
+            padding: 10px 0;
+
+            border-bottom: 1px solid #ddd;
+        }
+
+        .song-item:last-child{
+
+            border-bottom: none;
+        }
+
+        /* Footer */
+
+        footer{
+
+            background-color: #1e1e2f;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 15px;
+
+            margin-top: 40px;
+        }
+
+        .dashboard-btn{
+
+            text-decoration: none;
+
+            background-color: #1e88e5;
+
+            color: white;
+
+            padding: 10px 15px;
+
+            border-radius: 5px;
+
+            margin-right: 10px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <div class="navbar">
+
+    <div class="logo">
+
+        Music Vault
+
+    </div>
+
+    <div>
+
+        <a href="/" class="dashboard-btn">
+
+            Dashboard
+
+        </a>
+
+
+    </div>
+
+</div>
+
+    <!-- Main Content -->
+
+    <div class="container">
+
+        <h1 class="page-title">
+
+            Genres 🎼
+
+        </h1>
+
+        <div class="genres-container">
+
+            {% for genre, songs in genres_data.items() %}
+
+            <div class="genre-card">
+
+                <div class="genre-title">
+
+                    {{ genre }}
+
+                </div>
+
+                {% for song in songs %}
+
+                <div class="song-item">
+
+                    🎵 {{ song }}
+
+                </div>
+
+                {% endfor %}
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+
+    <footer>
+
+        © 2026 Music Vault | Built Using Flask & JSON
+
+    </footer>
+
+</body>
+
+</html>
