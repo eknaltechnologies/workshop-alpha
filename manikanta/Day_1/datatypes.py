@@ -1,8 +1,8 @@
-a="manii"
-b=78
-c=98.5
-d=True
-e=None
+a = "manii"
+b = 78
+c = 98.5
+d = True
+e = None
 print(type(a))
 print(type(b))
 print(type(c))

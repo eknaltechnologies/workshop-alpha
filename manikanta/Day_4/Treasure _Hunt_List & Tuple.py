@@ -1,5 +1,6 @@
 # Python Treasure Hunt – List & Tuple
 
+
 # 1. Build the Treasure Bag
 def build_treasure_bag():
 
@@ -15,7 +16,9 @@ def build_treasure_bag():
 
     return treasure_bag
 
+
 # 2. Rare Treasures (Tuple)
+
 
 def add_rare_treasures(treasure_bag):
 
@@ -28,7 +31,9 @@ def add_rare_treasures(treasure_bag):
 
     return treasure_bag
 
+
 # 3. Island Swaps
+
 
 def island_swaps(treasure_bag):
 

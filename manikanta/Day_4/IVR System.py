@@ -1,5 +1,5 @@
 def main_menu():
-    
+
     print("\n--- MAIN MENU ---")
     print("1. Mobile Services")
     print("2. Internet services")
@@ -14,10 +14,10 @@ def main_menu():
 
     elif choice == "3":
         Tv_and_ott_offers()
-    
+
     elif choice == "2":
         print("Thank You")
-    
+
     else:
         print("Invalid Choice")
         main_menu()
@@ -37,10 +37,10 @@ def mobile_services():
 
     elif choice == "2":
         Postpaid_menu()
-    
+
     elif choice == "3":
         main_menu()
-    
+
     else:
         print("Invalid Choice")
         mobile_services()
@@ -69,6 +69,8 @@ def prepaid_menu():
     else:
         print("Invalid Choice")
         prepaid_menu()
+
+
 def Postpaid_menu():
 
     print("\n--- Postpaid MENU ---")
@@ -92,6 +94,8 @@ def Postpaid_menu():
     else:
         print("Invalid Choice")
         Postpaid_menu()
+
+
 # ====================Internet services=========================================
 def internet_services():
 
@@ -125,15 +129,18 @@ def internet_services():
     else:
         print("Invalid Choice")
         internet_services()
-#=======================Tv_and_ott_offers():========================================
+
+
+# =======================Tv_and_ott_offers():========================================
+
 
 def Tv_and_ott_offers():
-        
+
     print("\n1.Channel_pack")
     print("2.Recharge")
     print("3.complaint")
     print("4.back")
-    
+
     choice = input("Enter Choice: ")
 
     if choice == "1":
@@ -147,40 +154,41 @@ def Tv_and_ott_offers():
     elif choice == "3":
         print("Complaint")
         Tv_and_ott_offers()
-    
+
     elif choice == "4":
         print("back")
         Tv_and_ott_offers()
-    
+
     else:
         print("invaild choice")
         Tv_and_ott_offers()
 
+
 def channel_pack():
 
-  print("\n---Channel pack---")
-  print("1. Sports pack")
-  print("2. Movies pack")
-  print("3. All-in-onepack")
-  print("4. Back for Main Menu")
+    print("\n---Channel pack---")
+    print("1. Sports pack")
+    print("2. Movies pack")
+    print("3. All-in-onepack")
+    print("4. Back for Main Menu")
 
-  choice = input("Enter Choice: ")
+    choice = input("Enter Choice: ")
 
-  if choice == "1":
+    if choice == "1":
         print("Sportspack")
-        channel_pack()  
-  elif choice == "2":
+        channel_pack()
+    elif choice == "2":
         print("Movies pack")
         channel_pack()
-    
-  elif choice=="3":
+
+    elif choice == "3":
         print("All-in-onepack")
         channel_pack()
-  elif choice == "4":
+    elif choice == "4":
         print("Back for Main Menu")
         main_menu()
-    
-  else:
+
+    else:
         print("Invalid Choice")
         channel_pack()
 

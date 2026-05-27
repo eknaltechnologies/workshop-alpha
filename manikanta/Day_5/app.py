@@ -16,6 +16,7 @@ if os.path.exists(FILE_NAME):
 else:
     library = {"books": {}}
 
+
 # ================= HOME =================
 @app.route("/")
 def home():
@@ -30,30 +31,25 @@ def add_book():
     author = request.form["author"]
     price = request.form["price"]
 
-    library["books"][book_name] = {
-        "author": author,
-        "price": price
-    }
+    library["books"][book_name] = {"author": author, "price": price}
 
     save_data()
 
     return redirect("/")
 
+
 # ================= Update BOOK =================
 @app.route("/update", methods=["POST"])
 def update_book():
-    old_name = request.form["old_book_name"]   
+    old_name = request.form["old_book_name"]
     new_name = request.form["book_name"]
     author = request.form["author"]
     price = request.form["price"]
 
     if old_name in library["books"] and old_name != new_name:
-        del library["books"][old_name]          
+        del library["books"][old_name]
 
-    library["books"][new_name] = {
-        "author": author,
-        "price": price
-    }
+    library["books"][new_name] = {"author": author, "price": price}
 
     save_data()
     return redirect("/")
