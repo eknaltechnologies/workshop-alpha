@@ -132,13 +132,7 @@ def prepaid():
 
     while True:
         try:
-            print(
-                "\n--- PREPAID ---"
-                "\n1. Balance Inquiry"
-                "\n2. Recharge"
-                "\n3. Data Plans"
-                "\n4. Back"
-            )
+            print("\n--- PREPAID ---" "\n1. Balance Inquiry" "\n2. Recharge" "\n3. Data Plans" "\n4. Back")
 
             choice = int(input(ENTER_CHOICE))
 
@@ -205,13 +199,7 @@ def recharge_menu():
 
     while True:
         try:
-            print(
-                "\n--- RECHARGE ---"
-                "\n1. Credit Card"
-                "\n2. UPI"
-                "\n3. Recharge History"
-                "\n4. Back"
-            )
+            print("\n--- RECHARGE ---" "\n1. Credit Card" "\n2. UPI" "\n3. Recharge History" "\n4. Back")
 
             choice = int(input(ENTER_CHOICE))
 
@@ -292,13 +280,7 @@ def postpaid():
 
     while True:
         try:
-            print(
-                "\n--- POSTPAID ---"
-                "\n1. Current Bill"
-                "\n2. Bill Payment"
-                "\n3. Plan Upgrade"
-                "\n4. Back"
-            )
+            print("\n--- POSTPAID ---" "\n1. Current Bill" "\n2. Bill Payment" "\n3. Plan Upgrade" "\n4. Back")
 
             choice = int(input(ENTER_CHOICE))
 
@@ -341,13 +323,7 @@ def bill_payment():
 
     while True:
         try:
-            print(
-                "\n--- BILL PAYMENT ---"
-                "\n1. NetBanking"
-                "\n2. Wallet"
-                "\n3. View Payment History"
-                "\n4. Back"
-            )
+            print("\n--- BILL PAYMENT ---" "\n1. NetBanking" "\n2. Wallet" "\n3. View Payment History" "\n4. Back")
 
             choice = int(input(ENTER_CHOICE))
 
