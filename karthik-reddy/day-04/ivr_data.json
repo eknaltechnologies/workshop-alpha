@@ -1,0 +1,24 @@
+{
+    "recharges": [
+        {
+            "method": "Credit Card",
+            "amount": 1000
+        },
+        {
+            "method": "UPI",
+            "amount": 299
+        },
+        {
+            "method": "UPI",
+            "amount": 120
+        }
+    ],
+    "data_plans": [],
+    "bill_payments": [],
+    "plan_upgrades": [],
+    "complaints": [
+        {
+            "issue": "tv was buffering"
+        }
+    ]
+}
