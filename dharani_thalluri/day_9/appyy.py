@@ -276,7 +276,13 @@ def seed_database_directly():
     ]
     try:
         for m in default_telugu_movies:
-            movie_record = Movie(name=m["name"], genre=m["genre"], mood=m["mood"], emoji=m["emoji"], poster=m["poster"])
+            movie_record = Movie(
+                name=m["name"],
+                genre=m["genre"],
+                mood=m["mood"],
+                emoji=m["emoji"],
+                poster=m["poster"],
+            )
             db.session.add(movie_record)
         db.session.commit()
         print("🎉 Database successfully seeded with movie elements!")

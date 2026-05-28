@@ -412,7 +412,7 @@ def internet_services():
 
     while True:
         try:
-            print("\n--- INTERNET SERVICES ---" "\n 1. Broadband" "\n 2. Fiber" "\n 3. Back")
+            print("\n--- INTERNET SERVICES ---\n 1. Broadband\n 2. Fiber\n 3. Back")
 
             choice = int(input("Enter choice: "))
 

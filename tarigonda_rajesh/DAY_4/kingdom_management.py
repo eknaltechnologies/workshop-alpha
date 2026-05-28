@@ -1,5 +1,10 @@
 # 1 Creating Kingdom Records
-kingdom = {"king": "Arthur", "castle": "Camelot", "gold": 500, "army": ["knight", "archer", "catapult"]}
+kingdom = {
+    "king": "Arthur",
+    "castle": "Camelot",
+    "gold": 500,
+    "army": ["knight", "archer", "catapult"],
+}
 
 print(f"King: {kingdom['king']}\nArmy: {kingdom['army']}")
 
@@ -17,7 +22,7 @@ print(f"After Update:\n{kingdom}")
 # 4 Deleting Information
 kingdom["army"].remove("catapult")
 del kingdom["queen"]
-print(f'Gold taken: {kingdom.pop("gold")}')
+print(f"Gold taken: {kingdom.pop('gold')}")
 
 # 5 Searching the Kingdom
 
