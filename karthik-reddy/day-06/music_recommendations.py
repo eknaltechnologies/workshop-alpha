@@ -36,9 +36,7 @@ def recommend_music():
     recommended_songs = []
 
     for song in music_data["songs"]:
-
         if song["mood"].lower() == selected_mood.lower():
-
             recommended_songs.append(song)
 
     return render_template("results.html", songs=recommended_songs, mood=selected_mood)
@@ -68,12 +66,10 @@ def add_music():
 def all_songs():
 
     try:
-
         with open("music.json", "r") as f:
             music_data = json.load(f)
 
     except (FileNotFoundError, json.JSONDecodeError):
-
         music_data = {"songs": []}
 
     return render_template("results.html", songs=music_data["songs"], mood="All Songs")

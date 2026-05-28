@@ -14,7 +14,6 @@ migrate = Migrate(app, db)
 
 
 class Song(db.Model):
-
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
     artist = db.Column(db.String(100), nullable=False)
@@ -55,7 +54,6 @@ def add_music():
     song_poster = request.form.get("poster")
 
     if not song_name or not artist_name or not song_mood:
-
         return "Please fill all required fields"
 
     new_song = Song(
@@ -72,7 +70,6 @@ def add_music():
 
 
 if __name__ == "__main__":
-
     with app.app_context():
         db.create_all()
     app.run(debug=True)
