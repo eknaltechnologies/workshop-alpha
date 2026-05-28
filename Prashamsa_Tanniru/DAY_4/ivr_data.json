@@ -1,0 +1,17 @@
+{
+  "balance": 45.0,
+  "recharges": [
+    {
+      "method": "UPI",
+      "amount": 45.0
+    }
+  ],
+  "data_plans": [],
+  "bill_payments": [],
+  "plan_upgrades": [],
+  "complaints": [
+    {
+      "issue": ""
+    }
+  ]
+}

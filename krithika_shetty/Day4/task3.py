@@ -12,7 +12,7 @@ def create_kingdom():
         "king": "Arthur",
         "castle": "Camelot",
         "gold": 500,
-        "army": ["knight", "archer", "catapult"]
+        "army": ["knight", "archer", "catapult"],
     }
 
     show_section("KINGDOM RECORDS")
@@ -26,7 +26,7 @@ def access_information(kingdom):
     details = {
         "King": kingdom["king"],
         "Army": kingdom["army"],
-        "Queen": kingdom.get("queen")
+        "Queen": kingdom.get("queen"),
     }
 
     for key, value in details.items():
@@ -47,10 +47,7 @@ def update_records(kingdom):
 def delete_information(kingdom):
     show_section("DELETING INFORMATION")
 
-    kingdom["army"] = [
-        soldier for soldier in kingdom["army"]
-        if soldier != "catapult"
-    ]
+    kingdom["army"] = [soldier for soldier in kingdom["army"] if soldier != "catapult"]
 
     kingdom.pop("queen", None)
 
@@ -68,7 +65,7 @@ def search_kingdom(kingdom):
     for title, data in {
         "Keys": kingdom.keys(),
         "Values": kingdom.values(),
-        "Items": kingdom.items()
+        "Items": kingdom.items(),
     }.items():
         print(f"\n{title}:")
         for item in data:
@@ -79,24 +76,12 @@ def manage_villages(kingdom):
     show_section("VILLAGES")
 
     kingdom["villages"] = {
-        "v1": {
-            "population": 120,
-            "crops": ["wheat", "barley"]
-        },
-        "v2": {
-            "population": 80,
-            "crops": ["rice"]
-        },
-        "v3": {
-            "population": 200,
-            "crops": ["wheat", "corn"]
-        }
+        "v1": {"population": 120, "crops": ["wheat", "barley"]},
+        "v2": {"population": 80, "crops": ["rice"]},
+        "v3": {"population": 200, "crops": ["wheat", "corn"]},
     }
 
-    print(
-        "Population of v2:",
-        kingdom["villages"]["v2"]["population"]
-    )
+    print("Population of v2:", kingdom["villages"]["v2"]["population"])
 
     kingdom["villages"]["v1"]["crops"].append("sugarcane")
     kingdom["villages"]["v3"]["population"] += 50
@@ -113,21 +98,13 @@ def loop_records(kingdom):
     show_section("VILLAGE REPORT")
 
     for village, details in kingdom["villages"].items():
-        print(
-            f"Village {village} has "
-            f"{details['population']} people and grows "
-            f"{', '.join(details['crops'])}"
-        )
+        print(f"Village {village} has " f"{details['population']} people and grows " f"{', '.join(details['crops'])}")
 
 
 def army_power():
     show_section("ARMY POWER")
 
-    army_stats = {
-        "knight": 50,
-        "archer": 30,
-        "dragon": 300
-    }
+    army_stats = {"knight": 50, "archer": 30, "dragon": 300}
 
     army_stats["archer"] += 10
 
@@ -174,23 +151,16 @@ def final_challenge(kingdom, army_stats):
     village_name = input("\nEnter new village name: ")
     population = int(input("Enter population: "))
 
-    crops = input(
-        "Enter crops separated by commas: "
-    ).split(",")
+    crops = input("Enter crops separated by commas: ").split(",")
 
     kingdom["villages"][village_name] = {
         "population": population,
-        "crops": [crop.strip() for crop in crops]
+        "crops": [crop.strip() for crop in crops],
     }
 
-    show_data(
-        "Villages After Addition",
-        kingdom["villages"]
-    )
+    show_data("Villages After Addition", kingdom["villages"])
 
-    remove_village = input(
-        "\nEnter village name to remove: "
-    )
+    remove_village = input("\nEnter village name to remove: ")
 
     if remove_village in kingdom["villages"]:
         del kingdom["villages"][remove_village]

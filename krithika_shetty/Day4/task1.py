@@ -11,12 +11,10 @@ def customer_support():
 
 def prepaid_menu():
     while True:
-        show_menu("Prepaid", {
-            "1": "Balance Inquiry",
-            "2": "Recharge",
-            "3": "Data Plans",
-            "4": "Back"
-        })
+        show_menu(
+            "Prepaid",
+            {"1": "Balance Inquiry", "2": "Recharge", "3": "Data Plans", "4": "Back"},
+        )
 
         choice = input("Enter choice: ")
 
@@ -34,12 +32,15 @@ def prepaid_menu():
 
 def postpaid_menu():
     while True:
-        show_menu("Postpaid", {
-            "1": "Current Bill",
-            "2": "Bill Payment",
-            "3": "Plan Upgrade",
-            "4": "Back"
-        })
+        show_menu(
+            "Postpaid",
+            {
+                "1": "Current Bill",
+                "2": "Bill Payment",
+                "3": "Plan Upgrade",
+                "4": "Back",
+            },
+        )
 
         choice = input("Enter choice: ")
 
@@ -57,11 +58,7 @@ def postpaid_menu():
 
 def mobile_services():
     while True:
-        show_menu("Mobile Services", {
-            "1": "Prepaid",
-            "2": "Postpaid",
-            "3": "Back"
-        })
+        show_menu("Mobile Services", {"1": "Prepaid", "2": "Postpaid", "3": "Back"})
 
         choice = input("Enter choice: ")
 
@@ -77,12 +74,15 @@ def mobile_services():
 
 def broadband_menu():
     while True:
-        show_menu("Broadband", {
-            "1": "Usage Details",
-            "2": "Renew Plan",
-            "3": "Change Router",
-            "4": "Back"
-        })
+        show_menu(
+            "Broadband",
+            {
+                "1": "Usage Details",
+                "2": "Renew Plan",
+                "3": "Change Router",
+                "4": "Back",
+            },
+        )
 
         choice = input("Enter choice: ")
 
@@ -100,11 +100,7 @@ def broadband_menu():
 
 def fiber_menu():
     while True:
-        show_menu("Fiber", {
-            "1": "New Connection",
-            "2": "Status Check",
-            "3": "Back"
-        })
+        show_menu("Fiber", {"1": "New Connection", "2": "Status Check", "3": "Back"})
 
         choice = input("Enter choice: ")
 
@@ -120,11 +116,7 @@ def fiber_menu():
 
 def internet_services():
     while True:
-        show_menu("Internet Services", {
-            "1": "Broadband",
-            "2": "Fiber",
-            "3": "Back"
-        })
+        show_menu("Internet Services", {"1": "Broadband", "2": "Fiber", "3": "Back"})
 
         choice = input("Enter choice: ")
 
@@ -140,12 +132,10 @@ def internet_services():
 
 def tv_ott_services():
     while True:
-        show_menu("TV & OTT Services", {
-            "1": "Channel Packs",
-            "2": "Recharge",
-            "3": "Complaint",
-            "4": "Back"
-        })
+        show_menu(
+            "TV & OTT Services",
+            {"1": "Channel Packs", "2": "Recharge", "3": "Complaint", "4": "Back"},
+        )
 
         choice = input("Enter choice: ")
 
@@ -163,13 +153,16 @@ def tv_ott_services():
 
 def main_menu():
     while True:
-        show_menu("IVR MAIN MENU", {
-            "1": "Mobile Services",
-            "2": "Internet Services",
-            "3": "TV & OTT Services",
-            "4": "Talk to Customer Support",
-            "5": "Exit"
-        })
+        show_menu(
+            "IVR MAIN MENU",
+            {
+                "1": "Mobile Services",
+                "2": "Internet Services",
+                "3": "TV & OTT Services",
+                "4": "Talk to Customer Support",
+                "5": "Exit",
+            },
+        )
 
         choice = input("Enter choice: ")
 

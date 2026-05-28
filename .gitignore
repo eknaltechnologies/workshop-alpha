@@ -1,3 +1,6 @@
+# Virtual Environment
+workshop_alpha/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
@@ -7,6 +10,10 @@ __pycache__/
 *.so
 
 # Distribution / packaging
+*movies.json
+*migartions/
+Prashamsa_Tanniru/DAY_7/instance/
+Prashamsa_Tanniru/DAY_7/migrations/
 .Python
 build/
 develop-eggs/
@@ -216,3 +223,5 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+.DS_Store
+.DS_Store
