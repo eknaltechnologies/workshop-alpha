@@ -21,7 +21,6 @@ except FileNotFoundError:
     unit_data = {"history": {}}
 
 while True:
-
     print("\n===== UNIT CONVERTER =====")
     print("1. KM -> M")
     print("2. M -> KM")

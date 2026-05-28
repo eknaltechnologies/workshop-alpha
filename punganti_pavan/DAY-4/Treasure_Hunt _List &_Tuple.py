@@ -112,7 +112,6 @@ def treasure_map():
     print("\nSearching Islands:\n")
 
     for island in islands:
-
         print(f"Searching {island} for treasures...")
 
 
@@ -137,7 +136,6 @@ def interactive_game(treasure_bag):
     remove_item = input("\nEnter Treasure To Remove: ")
 
     if remove_item in treasure_bag:
-
         treasure_bag.remove(remove_item)
 
         print("\nBag After Removing Treasure:")

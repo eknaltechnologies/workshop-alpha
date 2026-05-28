@@ -76,7 +76,7 @@ json.dump(music_list, open("music_list.json", "w"), indent=4)
 =======
 print("Welcome to the Music List!")
 
-print("1. Add Song" "\n2. View Songs" "\n3. Update Song" "\n4. Delete Song" "\n5. Exit")
+print("1. Add Song\n2. View Songs\n3. Update Song\n4. Delete Song\n5. Exit")
 
 try:
     user_choice = int(input("Please select an option (1-5): "))

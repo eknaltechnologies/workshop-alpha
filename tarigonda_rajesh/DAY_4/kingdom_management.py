@@ -51,7 +51,7 @@ kingdom["villages"] = {
     },
 }
 
-print(f"Population of V2: " f"{kingdom['villages']['v2']['population']}")
+print(f"Population of V2: {kingdom['villages']['v2']['population']}")
 
 kingdom["villages"]["v1"]["crops"].append("sugarcane")
 kingdom["villages"]["v3"]["population"] += 50
@@ -114,7 +114,7 @@ strength = int(input("Enter the strength of army: "))
 
 kingdom["army_stats"][new_soldier] = strength
 
-village = input(f"Enter the village to remove " f"{list(kingdom['villages'].keys())}: ")
+village = input(f"Enter the village to remove {list(kingdom['villages'].keys())}: ")
 
 for key, value in kingdom.items():
     print(f"{key} --> {value}")
