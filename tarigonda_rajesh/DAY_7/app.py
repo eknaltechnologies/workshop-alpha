@@ -21,6 +21,42 @@ class Convert(db.Model):
     created_at = db.Column(db.DateTime, nullable=False)
 
 
+def perform_conversion(value, conversion_type, from_unit):
+    if conversion_type == "Length":
+        if from_unit == "KM":
+            result = value * 1000
+            to_unit = "M"
+        else:
+            result = value / 1000
+            to_unit = "KM"
+
+    elif conversion_type == "Weight":
+        if from_unit == "KG":
+            result = value * 1000
+            to_unit = "G"
+        else:
+            result = value / 1000
+            to_unit = "KG"
+
+    elif conversion_type == "Height":
+        if from_unit == "IN":
+            result = value * 2.54
+            to_unit = "CM"
+        else:
+            result = value / 2.54
+            to_unit = "IN"
+
+    elif conversion_type == "Temperature":
+        if from_unit == "C":
+            result = (value * 9 / 5) + 32
+            to_unit = "F"
+        else:
+            result = (value - 32) * 5 / 9
+            to_unit = "C"
+
+    return result, to_unit
+
+
 @app.route("/", methods=["GET", "POST"])
 def index():
     result = None
@@ -31,53 +67,42 @@ def index():
         val = float(request.form.get("value"))
 
         if user_choice == 1:
-            res = val * 1000
-            input_val = f"{val} KM"
-            output_val = f"{res} M"
             conversion_type = "Length"
+            from_unit = "KM"
 
         elif user_choice == 2:
-            res = val / 1000
-            input_val = f"{val} M"
-            output_val = f"{res} KM"
             conversion_type = "Length"
+            from_unit = "M"
 
         elif user_choice == 3:
-            res = val / 1000
-            input_val = f"{val} G"
-            output_val = f"{res} KG"
             conversion_type = "Weight"
+            from_unit = "G"
 
         elif user_choice == 4:
-            res = val * 1000
-            input_val = f"{val} KG"
-            output_val = f"{res} G"
             conversion_type = "Weight"
+            from_unit = "KG"
 
         elif user_choice == 5:
-            res = val * 2.54
-            input_val = f"{val} IN"
-            output_val = f"{res} CM"
             conversion_type = "Height"
+            from_unit = "IN"
 
         elif user_choice == 6:
-            res = val / 2.54
-            input_val = f"{val} CM"
-            output_val = f"{res} IN"
             conversion_type = "Height"
+            from_unit = "CM"
 
         elif user_choice == 7:
-            res = (val * 9 / 5) + 32
-            input_val = f"{val} C"
-            output_val = f"{res} F"
             conversion_type = "Temperature"
+            from_unit = "C"
+        elif user_choice == 8:
+            conversion_type = "Temperature"
+            from_unit = "F"
 
-        data = Convert(
-            input_value=input_val, 
-            output_value=output_val, 
-            conversion_type=conversion_type, 
-            created_at=datetime.now()
-        )
+        res, to_unit = perform_conversion(val, conversion_type, from_unit)
+
+        input_val = f"{val} {from_unit}"
+        output_val = f"{res} {to_unit}"
+
+        data = Convert(input_value=input_val, output_value=output_val, conversion_type=conversion_type, created_at=datetime.now())
         db.session.add(data)
         db.session.commit()
         result = f"{input_val} = {output_val}"
@@ -90,13 +115,16 @@ def edit_record(id):
     record = Convert.query.get_or_404(id)
 
     if request.method == "POST":
-        updated_value = request.form.get("updated_value")
-        record.output_value = updated_value
+        updated_value = float(request.form.get("updated_value"))
+        from_unit = record.input_value.split()[-1]
+        res, to_unit = perform_conversion(updated_value, record.conversion_type, from_unit)
+        record.input_value = f"{updated_value} {from_unit}"
+        record.output_value = f"{res} {to_unit}"
         db.session.commit()
 
         return redirect(url_for("history"))
 
-    return render_template("edit.html", record=record), 400
+    return render_template("edit.html", record=record)
 
 
 @app.route("/history")
