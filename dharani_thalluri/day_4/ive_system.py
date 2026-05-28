@@ -131,7 +131,7 @@ def prepaid():
 
     while True:
         try:
-            print("\n--- PREPAID ---" "\n 1. Balance Inquiry" "\n 2. Recharge" "\n 3. Data Plans" "\n 4. Back")
+            print("\n--- PREPAID ---" "\n " "1. Balance Inquiry" "\n 2. Recharge" "\n 3. Data Plans" "\n 4. Back")
 
             choice = int(input("Enter choice: "))
 
@@ -222,7 +222,14 @@ def data_plans():
 
     while True:
         try:
-            print("--- DATA PLANS ---" "\n 1. 1GB/day" "\n 2. 2GB/day" "\n 3. Unlimited" "\n 4. View Selected Plans" "\n 5. Back")
+            print(
+                "--- DATA PLANS ---"
+                "\n 1. 1GB/day"
+                "\n 2. 2GB/day"
+                "\n 3. Unlimited"
+                "\n 4. View Selected Plans"
+                "\n 5. Back"
+            )
 
             choice = int(input("Enter choice: "))
 
@@ -348,7 +355,13 @@ def plan_upgrade():
 
     while True:
         try:
-            print("\n--- PLAN UPGRADE ---" "\n 1. Silver → Gold" "\n 2. Gold → Platinum" "\n 3. View Upgrade History" "\n 4. Back")
+            print(
+                "\n--- PLAN UPGRADE ---"
+                "\n 1. Silver → Gold"
+                "\n 2. Gold → Platinum"
+                "\n 3. View Upgrade History"
+                "\n 4. Back"
+            )
 
             choice = int(input("Enter choice: "))
 
@@ -399,7 +412,7 @@ def internet_services():
 
     while True:
         try:
-            print("\n--- INTERNET SERVICES ---\n 1. Broadband\n 2. Fiber\n 3. Back")
+            print("\n--- INTERNET SERVICES ---" "\n 1. Broadband" "\n 2. Fiber" "\n 3. Back")
 
             choice = int(input("Enter choice: "))
 
@@ -430,7 +443,14 @@ def tv_ott_services():
 
     while True:
         try:
-            print("\n--- TV & OTT SERVICES ---" "\n1. Channel Packs" "\n 2. Recharge Plans" "\n 3. Complaint" "\n 4. View Complaints" "\n 5. Back")
+            print(
+                "\n--- TV & OTT SERVICES ---"
+                "\n1. Channel Packs"
+                "\n 2. Recharge Plans"
+                "\n 3. Complaint"
+                "\n 4. View Complaints"
+                "\n 5. Back"
+            )
 
             choice = int(input("Enter choice: "))
 
