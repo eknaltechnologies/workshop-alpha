@@ -2,19 +2,15 @@ from flask import Flask, redirect, render_template, request
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 
-# 1. Initialization and App Configuration
 app = Flask(__name__)
 
-# Clean shortcut path configuration matching your workshop session photo exactly
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///movies.db"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
-# 2. Database and Migration Engine Binding
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
 
-# 3. Database ORM Model Definitions
 class Movie(db.Model):
     __tablename__ = "movies"
 
@@ -29,9 +25,9 @@ class Movie(db.Model):
         return f"<Movie {self.name}>"
 
 
-# 4. Pure Python Data Seeding Core Logic
 def seed_database_directly():
-    """Populates the database with default entries on first load if it is completely empty."""
+    """Populates the database with default entries
+    on first load if it is completely empty."""
     if Movie.query.count() == 0:
         default_telugu_movies = [
             {
@@ -297,7 +293,6 @@ def seed_database_directly():
             print(f"⚠️ Error occurred while seeding database: {e}")
 
 
-# 5. Routing Controllers
 @app.route("/")
 def home():
     seed_database_directly()
