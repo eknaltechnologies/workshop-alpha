@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Unit Converter</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body class="bg-light">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/frontend">Unit Converter</a>
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="/frontend">Converter</a></li>
+            <li class="nav-item"><a class="nav-link" href="/frontend/history">History</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container mt-5">
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white">
+                <h2 class="mb-0">Unit Converter</h2>
+            </div>
+            <div class="card-body">
+                <form onsubmit="convert(); return false;">
+                    <div class="mb-3">
+                        <label for="value" class="form-label">Enter Value:</label>
+                        <input type="number" id="value" class="form-control" placeholder="Enter number">
+                    </div>
+                    <div class="mb-3">
+                        <label for="conversionType" class="form-label">Conversion Type:</label>
+                        <select id="conversionType" class="form-select">
+                            <option value="km_to_m">KM → M</option>
+                            <option value="m_to_km">M → KM</option>
+                            <option value="kg_to_g">KG → G</option>
+                            <option value="g_to_kg">G → KG</option>
+                            <option value="in_to_cm">IN → CM</option>
+                            <option value="cm_to_in">CM → IN</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Convert</button>
+                </form>
+                <div id="result" class="alert alert-info mt-3" style="display:none;"></div>
+            </div>
+            <div class="card-footer text-end">
+                <a href="/frontend/history" class="btn btn-secondary">View History</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
