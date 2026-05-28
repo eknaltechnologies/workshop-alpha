@@ -73,7 +73,10 @@ def index():
             conversion_type = "Temperature"
 
         data = Convert(
-            input_value=input_val, output_value=output_val, conversion_type=conversion_type, created_at=datetime.now()
+            input_value=input_val, 
+            output_value=output_val, 
+            conversion_type=conversion_type, 
+            created_at=datetime.now()
         )
         db.session.add(data)
         db.session.commit()
