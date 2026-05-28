@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <titl>History</title>
+    <style>
+        table{
+            text-align: center;
+        }
+        td,th{
+            padding:10px 20px;
+        }
+        a{
+            text-decoration: none;
+            border:2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <a href="/" name="a1">Back</a>
+    <h2>Conversion History</h2>
+    <table border="2">
+        <thead>
+            <th>Input</th>
+            <th>Result</th>
+            <th>Conversion Type</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            {% for row in history %}
+            <tr>
+                <td>{{ row.input_value}}</td>
+                <td>{{ row.output_value}}</td>
+                <td>{{ row.conversion_type}}</td>
+                <td>
+                    <a href="{{ url_for('edit_record', id=row.id)}}">Edit</a>
+                    <br>
+                    <form action="{{ url_for('delete_record', id=row.id) }}" method="POST">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
