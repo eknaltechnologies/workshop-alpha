@@ -24,88 +24,96 @@
             display:flex;
             justify-content:center;
             align-items:center;
-            overflow:hidden;
+            overflow-y:auto;
             position:relative;
-            background:black;
+            background:#020617;
+            padding:40px 20px;
         }
 
         /* Animated Background */
 
         body::before{
             content:"";
-            position:absolute;
+            position:fixed;
             width:700px;
             height:700px;
             background:linear-gradient(#ff00cc,#3333ff);
             border-radius:50%;
-            top:-200px;
-            left:-150px;
-            filter:blur(120px);
-            animation:move1 8s infinite alternate;
+            top:-250px;
+            left:-180px;
+            filter:blur(130px);
+            animation:move1 10s infinite alternate;
+            z-index:-1;
         }
 
         body::after{
             content:"";
-            position:absolute;
+            position:fixed;
             width:600px;
             height:600px;
             background:linear-gradient(#00ffcc,#ff6600);
             border-radius:50%;
-            bottom:-200px;
-            right:-150px;
-            filter:blur(120px);
-            animation:move2 8s infinite alternate;
+            bottom:-250px;
+            right:-180px;
+            filter:blur(130px);
+            animation:move2 10s infinite alternate;
+            z-index:-1;
         }
 
         @keyframes move1{
+
             100%{
-                transform:translate(100px,80px);
+                transform:translate(120px,90px);
             }
+
         }
 
         @keyframes move2{
+
             100%{
-                transform:translate(-100px,-80px);
+                transform:translate(-120px,-90px);
             }
+
         }
 
         .container{
-            position:relative;
-            z-index:10;
             width:100%;
-            max-width:600px;
+            max-width:650px;
             padding:40px;
             border-radius:30px;
             background:rgba(255,255,255,0.08);
+            backdrop-filter:blur(20px);
             border:1px solid rgba(255,255,255,0.15);
-            backdrop-filter:blur(18px);
-            box-shadow:0 10px 40px rgba(0,0,0,0.5);
+            box-shadow:0 10px 40px rgba(0,0,0,0.6);
         }
 
         .logo{
             text-align:center;
-            font-size:75px;
+            font-size:80px;
             margin-bottom:10px;
-            animation:boue 2s infinite;
+            animation:bounce 2s infinite;
         }
 
         @keyframes bounce{
+
             50%{
                 transform:translateY(-10px);
             }
+
         }
 
         h1{
             text-align:center;
             color:white;
-            font-size:38px;
+            font-size:40px;
             margin-bottom:30px;
             font-weight:700;
         }
 
         h2{
-            color:#ffffff;
-            margin:20px 0 10px;
+            color:white;
+            margin-top:20px;
+            margin-bottom:12px;
             font-size:22px;
             font-weight:500;
         }
@@ -113,11 +121,11 @@
         input,
         select{
             width:100%;
-            padding:15px;
+            padding:16px;
             margin-top:12px;
             border:none;
             outline:none;
-            border-radius:15px;
+            border-radius:16px;
             background:rgba(255,255,255,0.12);
             color:white;
             font-size:15px;
@@ -130,7 +138,7 @@
 
         input:focus,
         select:focus{
-            background:rgba(255,255,255,0.18);
+            background:rgba(255,255,255,0.2);
             transform:scale(1.02);
         }
 
@@ -140,10 +148,10 @@
 
         button{
             width:100%;
-            padding:15px;
-            margin-top:20px;
+            padding:16px;
+            margin-top:18px;
             border:none;
-            border-radius:15px;
+            border-radius:16px;
             background:linear-gradient(to right,#ff00cc,#3333ff);
             color:white;
             font-size:17px;
@@ -153,8 +161,17 @@
         }
 
         button:hover{
-            transform:translateY(-4px) scale(1.02);
+            transform:translateY(-4px);
             box-shadow:0 10px 25px rgba(255,0,204,0.5);
+        }
+
+        .all-songs-btn{
+            display:block;
+            text-decoration:none;
+        }
+
+        .all-songs-btn button{
+            background:linear-gradient(to right,#00c6ff,#0072ff);
         }
 
         hr{
@@ -164,22 +181,21 @@
             background:rgba(255,255,255,0.15);
         }
 
-        .footer-text{
+        .footer{
             text-align:center;
+            margin-top:25px;
             color:#cbd5e1;
-            margin-top:20px;
             font-size:14px;
         }
 
-        @media(max-width:650px){
+        @media(max-width:700px){
 
             .container{
-                margin:20px;
-                padding:30px 25px;
+                padding:30px 22px;
             }
 
             h1{
-                font-size:30px;
+                font-size:32px;
             }
 
         }
@@ -192,9 +208,11 @@
 
 <div class="container">
 
-    <div class="logo">🎶</div>
+    <div class="logo">🎵</div>
 
     <h1>Music Recommendation</h1>
+
+    <!-- Recommendation Form -->
 
     <form action="/recommend" method="POST">
 
@@ -202,11 +220,11 @@
 
         <select name="mood">
 
-            <option>Happy 😊</option>
-            <option>Sad 😔</option>
-            <option>Relaxed 😌</option>
-            <option>Energetic ⚡</option>
-            <option>Romantic ❤️</option>
+            <option>Happy</option>
+            <option>Sad</option>
+            <option>Relaxed</option>
+            <option>Energetic</option>
+            <option>Romantic</option>
 
         </select>
 
@@ -216,27 +234,44 @@
 
     </form>
 
+    <!-- Show All Songs -->
+
+    <a href="/all-songs" class="all-songs-btn">
+
+        <button type="button">
+            Show All Songs
+        </button>
+
+    </a>
+
     <hr>
+
+    <!-- Add Song Form -->
 
     <form action="/add-music" method="POST">
 
         <h2>Add Your Favorite Song</h2>
 
-        <input type="text" name="name" placeholder="Song Name" required>
+        <input
+            type="text"
+            name="name"
+            placeholder="Enter Song Name"
+            required
+        >
 
-        <input type="text" name="artist" placeholder="Artist Name" required>
+        <input
+            type="text"
+            name="artist"
+            placeholder="Enter Artist Name"
+            required
+        >
 
-        <select name="mood">
-
-            <option>Happy 😊</option>
-            <option>Sad 😔</option>
-            <option>Relaxed 😌</option>
-            <option>Energetic ⚡</option>
-            <option>Romantic ❤️</option>
-
-        </select>
-
-        <input type="url" name="poster" placeholder="Poster Image URL" required>
+        <input
+            type="url"
+            name="poster"
+            placeholder="Enter Poster Image URL"
+            required
+        >
 
         <button type="submit">
             Add Song
@@ -244,8 +279,8 @@
 
     </form>
 
-    <div class="footer-text">
-        🎧 Feel the Music • Feel the Mood
+    <div class="footer">
+        🎧 Feel The Beat • Feel The Mood
     </div>
 
 </div>
