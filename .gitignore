@@ -11,6 +11,7 @@ __pycache__/
 
 # Distribution / packaging
 *movies.json
+*migartions/
 Prashamsa_Tanniru/DAY_7/instance/
 Prashamsa_Tanniru/DAY_7/migrations/
 .Python
