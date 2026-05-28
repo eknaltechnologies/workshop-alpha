@@ -1,5 +1,4 @@
 try:
-
     # -------- CONSTANTS --------
 
     SILVER_COIN = "silver coin"
@@ -143,7 +142,6 @@ try:
     remove_item = input("\nEnter a treasure to remove: ")
 
     if remove_item in treasure_bag:
-
         treasure_bag.remove(remove_item)
 
         print(f"{remove_item} removed successfully")
@@ -164,5 +162,4 @@ try:
     print(treasure_bag)
 
 except KeyboardInterrupt:
-
     print("\nProgram stop by user")

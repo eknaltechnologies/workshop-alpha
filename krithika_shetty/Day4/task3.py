@@ -8,7 +8,12 @@ def show_data(title, data):
 
 
 def create_kingdom():
-    kingdom = {"king": "Arthur", "castle": "Camelot", "gold": 500, "army": ["knight", "archer", "catapult"]}
+    kingdom = {
+        "king": "Arthur",
+        "castle": "Camelot",
+        "gold": 500,
+        "army": ["knight", "archer", "catapult"],
+    }
 
     show_section("KINGDOM RECORDS")
     print(kingdom)
@@ -18,7 +23,11 @@ def create_kingdom():
 def access_information(kingdom):
     show_section("ACCESSING INFORMATION")
 
-    details = {"King": kingdom["king"], "Army": kingdom["army"], "Queen": kingdom.get("queen")}
+    details = {
+        "King": kingdom["king"],
+        "Army": kingdom["army"],
+        "Queen": kingdom.get("queen"),
+    }
 
     for key, value in details.items():
         print(f"{key}: {value}")
@@ -53,7 +62,11 @@ def search_kingdom(kingdom):
 
     print("Does gold exist?", "gold" in kingdom)
 
-    for title, data in {"Keys": kingdom.keys(), "Values": kingdom.values(), "Items": kingdom.items()}.items():
+    for title, data in {
+        "Keys": kingdom.keys(),
+        "Values": kingdom.values(),
+        "Items": kingdom.items(),
+    }.items():
         print(f"\n{title}:")
         for item in data:
             print(item)
@@ -140,7 +153,10 @@ def final_challenge(kingdom, army_stats):
 
     crops = input("Enter crops separated by commas: ").split(",")
 
-    kingdom["villages"][village_name] = {"population": population, "crops": [crop.strip() for crop in crops]}
+    kingdom["villages"][village_name] = {
+        "population": population,
+        "crops": [crop.strip() for crop in crops],
+    }
 
     show_data("Villages After Addition", kingdom["villages"])
 

@@ -1,6 +1,10 @@
 try:
-
-    kingdom = {"king": "Arthur", "castle": "Camelot", "gold": 500, "army": ["knight", "archer", "catapult"]}
+    kingdom = {
+        "king": "Arthur",
+        "castle": "Camelot",
+        "gold": 500,
+        "army": ["knight", "archer", "catapult"],
+    }
 
     print(kingdom)
 
@@ -69,12 +73,17 @@ try:
     print("---------- looping record ------------")
 
     for key, value in kingdom.items():
-
         print(key, ":", value)
 
     for village, info in kingdom["villages"].items():
-
-        print("Village", village, "has", info["population"], "people and grows", info["crops"])
+        print(
+            "Village",
+            village,
+            "has",
+            info["population"],
+            "people and grows",
+            info["crops"],
+        )
 
     print("---------- army stats -----------")
 
@@ -99,7 +108,6 @@ try:
     kingdom["villages"]["v1"]["population"] -= 20
 
     if "archer" in kingdom["army_stats"]:
-
         del kingdom["army_stats"]["archer"]
 
     kingdom["army_stats"]["dragon"] -= 50
@@ -135,7 +143,6 @@ try:
     remove_village = input("Enter village to remove: ")
 
     if remove_village in kingdom["villages"]:
-
         del kingdom["villages"][remove_village]
 
         print(remove_village, "removed")
