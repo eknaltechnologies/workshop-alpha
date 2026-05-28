@@ -64,24 +64,32 @@
     <table>
 
         <tr>
-            <th>Book</th>
-            <th>Author</th>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Authour</th>
             <th>Price</th>
             <th>Action</th>
         </tr>
 
-        {% for name, details in books.items() %}
+        {% for book in books %}
 
         <tr>
 
-            <td>{{ name }}</td>
+            <td>{{ book.id }}</td>
 
-            <td>{{ details.author }}</td>
+            <td>{{ book.add_book }}</td>
+            
+            <td>{{ book.author }}</td>
 
-            <td>{{ details.price }}</td>
+            <td>{{ book.cost_amount }}</td>
 
             <td>
-                <a href="/delete/{{ name }}">
+                <button type="button" class="edit-btn" 
+                        onclick="openEdit('{{ book.id }}', '{{ book.add_book }}', '{{ book.author }}', '{{ book.cost_amount }}')">
+                    Edit
+                </button>
+                
+                <a href="/delete/{{ book.id }}" class="delete-btn" onclick="return confirm('Are you sure?')">
                     Delete
                 </a>
             </td>
@@ -103,10 +111,10 @@
                 
                 <input type="text" name="author" id="edit_author" placeholder="Author Name" required>
                 
-                <input type="text" name="price" id="edit_price" placeholder="Price" required>
+                <input type="number" name="price" id="edit_price" placeholder="Price" required>
 
                 <br>
-                <button type="submit">Update</button>
+                <button type="submit" style="background-color: blue;">Update</button>
                 
                 <button type="button" class="cancel-btn" onclick="closeEdit()">Cancel</button>
             </form>
