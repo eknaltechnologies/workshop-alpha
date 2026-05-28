@@ -11,7 +11,10 @@ def customer_support():
 
 def prepaid_menu():
     while True:
-        show_menu("Prepaid", {"1": "Balance Inquiry", "2": "Recharge", "3": "Data Plans", "4": "Back"})
+        show_menu(
+            "Prepaid",
+            {"1": "Balance Inquiry", "2": "Recharge", "3": "Data Plans", "4": "Back"},
+        )
 
         choice = input("Enter choice: ")
 
@@ -29,7 +32,15 @@ def prepaid_menu():
 
 def postpaid_menu():
     while True:
-        show_menu("Postpaid", {"1": "Current Bill", "2": "Bill Payment", "3": "Plan Upgrade", "4": "Back"})
+        show_menu(
+            "Postpaid",
+            {
+                "1": "Current Bill",
+                "2": "Bill Payment",
+                "3": "Plan Upgrade",
+                "4": "Back",
+            },
+        )
 
         choice = input("Enter choice: ")
 
@@ -63,7 +74,15 @@ def mobile_services():
 
 def broadband_menu():
     while True:
-        show_menu("Broadband", {"1": "Usage Details", "2": "Renew Plan", "3": "Change Router", "4": "Back"})
+        show_menu(
+            "Broadband",
+            {
+                "1": "Usage Details",
+                "2": "Renew Plan",
+                "3": "Change Router",
+                "4": "Back",
+            },
+        )
 
         choice = input("Enter choice: ")
 
@@ -113,7 +132,10 @@ def internet_services():
 
 def tv_ott_services():
     while True:
-        show_menu("TV & OTT Services", {"1": "Channel Packs", "2": "Recharge", "3": "Complaint", "4": "Back"})
+        show_menu(
+            "TV & OTT Services",
+            {"1": "Channel Packs", "2": "Recharge", "3": "Complaint", "4": "Back"},
+        )
 
         choice = input("Enter choice: ")
 

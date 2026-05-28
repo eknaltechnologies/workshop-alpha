@@ -107,12 +107,10 @@ def internet_services():
     choice = input("Enter Choice: ")
 
     if choice == "1":
-
         print("Your Internet Balance is 2.5GB")
         internet_services()
 
     elif choice == "2":
-
         amount = int(input("Enter Recharge Amount: "))
 
         if amount >= 199:

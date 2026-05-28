@@ -2,7 +2,13 @@ import json
 
 IVR_FILE = "ivr_data.json"
 
-DEFAULT_DATA = {"recharges": [], "data_plans": [], "bill_payments": [], "plan_upgrades": [], "complaints": []}
+DEFAULT_DATA = {
+    "recharges": [],
+    "data_plans": [],
+    "bill_payments": [],
+    "plan_upgrades": [],
+    "complaints": [],
+}
 
 try:
     with open(IVR_FILE, "r") as f:
@@ -30,7 +36,6 @@ def save_data():
 def success_menu():
 
     while True:
-
         print("\n1. Continue Exploring")
         print("2. Exit")
 
@@ -57,7 +62,6 @@ def success_menu():
 def main_menu():
 
     while True:
-
         try:
             print(
                 "===== MAIN MENU ====="
@@ -99,9 +103,8 @@ def main_menu():
 def mobile_services():
 
     while True:
-
         try:
-            print("--- MOBILE SERVICES ---" "\n 1. Prepaid" "\n 2. Postpaid" "\n 3. Back")
+            print("--- MOBILE SERVICES ---\n 1. Prepaid\n 2. Postpaid\n 3. Back")
 
             choice = int(input("Enter choice: "))
 
@@ -127,7 +130,6 @@ def mobile_services():
 def prepaid():
 
     while True:
-
         try:
             print("\n--- PREPAID ---" "\n 1. Balance Inquiry" "\n 2. Recharge" "\n 3. Data Plans" "\n 4. Back")
 
@@ -158,14 +160,12 @@ def prepaid():
 def recharge_menu():
 
     while True:
-
         try:
             print("--- RECHARGE ---" "\n 1. Credit Card" "\n 2. UPI" "\n 3. Recharge History" "\n 4. Back")
 
             choice = int(input("Enter choice: "))
 
             if choice == 1:
-
                 amount = int(input("Enter recharge amount: "))
 
                 recharge = {"method": "Credit Card", "amount": amount}
@@ -180,7 +180,6 @@ def recharge_menu():
                 success_menu()
 
             elif choice == 2:
-
                 amount = int(input("Enter recharge amount: "))
 
                 recharge = {"method": "UPI", "amount": amount}
@@ -195,16 +194,13 @@ def recharge_menu():
                 success_menu()
 
             elif choice == 3:
-
                 if not ivr_data["recharges"]:
                     print("No recharge history found")
 
                 else:
-
                     print("\n--- RECHARGE HISTORY ---")
 
                     for recharge in ivr_data["recharges"]:
-
                         print(f"Method : {recharge['method']}")
                         print(f"Amount : ₹{recharge['amount']}")
                         print("----------------------")
@@ -225,7 +221,6 @@ def recharge_menu():
 def data_plans():
 
     while True:
-
         try:
             print(
                 "--- DATA PLANS ---"
@@ -241,7 +236,6 @@ def data_plans():
             plans = {1: "1GB/day Plan", 2: "2GB/day Plan", 3: "Unlimited Plan"}
 
             if choice in plans:
-
                 plan = {"plan": plans[choice]}
 
                 ivr_data["data_plans"].append(plan)
@@ -254,12 +248,10 @@ def data_plans():
                 success_menu()
 
             elif choice == 4:
-
                 if not ivr_data["data_plans"]:
                     print("No plans selected")
 
                 else:
-
                     print("\n--- SELECTED PLANS ---")
 
                     for plan in ivr_data["data_plans"]:
@@ -281,7 +273,6 @@ def data_plans():
 def postpaid():
 
     while True:
-
         try:
             print("\n--- POSTPAID ---" "\n 1. Current Bill" "\n 2. Bill Payment" "\n 3. Plan Upgrade" "\n 4. Back")
 
@@ -312,14 +303,12 @@ def postpaid():
 def bill_payment():
 
     while True:
-
         try:
             print("--- BILL PAYMENT ---" "\n 1. NetBanking" "\n 2. Wallet" "\n 3. View Payment History" "\n 4. Back")
 
             choice = int(input("Enter choice: "))
 
             if choice == 1:
-
                 payment = {"method": "NetBanking"}
 
                 ivr_data["bill_payments"].append(payment)
@@ -332,7 +321,6 @@ def bill_payment():
                 success_menu()
 
             elif choice == 2:
-
                 payment = {"method": "Wallet"}
 
                 ivr_data["bill_payments"].append(payment)
@@ -345,7 +333,6 @@ def bill_payment():
                 success_menu()
 
             elif choice == 3:
-
                 print("\n--- PAYMENT HISTORY ---")
 
                 for payment in ivr_data["bill_payments"]:
@@ -367,7 +354,6 @@ def bill_payment():
 def plan_upgrade():
 
     while True:
-
         try:
             print(
                 "\n--- PLAN UPGRADE ---"
@@ -380,7 +366,6 @@ def plan_upgrade():
             choice = int(input("Enter choice: "))
 
             if choice == 1:
-
                 upgrade = {"upgrade": "Silver to Gold"}
 
                 ivr_data["plan_upgrades"].append(upgrade)
@@ -393,7 +378,6 @@ def plan_upgrade():
                 success_menu()
 
             elif choice == 2:
-
                 upgrade = {"upgrade": "Gold to Platinum"}
 
                 ivr_data["plan_upgrades"].append(upgrade)
@@ -406,7 +390,6 @@ def plan_upgrade():
                 success_menu()
 
             elif choice == 3:
-
                 print("\n--- UPGRADE HISTORY ---")
 
                 for upgrade in ivr_data["plan_upgrades"]:
@@ -428,9 +411,8 @@ def plan_upgrade():
 def internet_services():
 
     while True:
-
         try:
-            print("\n--- INTERNET SERVICES ---" "\n 1. Broadband" "\n 2. Fiber" "\n 3. Back")
+            print("\n--- INTERNET SERVICES ---\n 1. Broadband\n 2. Fiber\n 3. Back")
 
             choice = int(input("Enter choice: "))
 
@@ -460,7 +442,6 @@ def internet_services():
 def tv_ott_services():
 
     while True:
-
         try:
             print(
                 "\n--- TV & OTT SERVICES ---"
@@ -474,19 +455,16 @@ def tv_ott_services():
             choice = int(input("Enter choice: "))
 
             if choice == 1:
-
                 print("Sports / Movies / All-in-One Pack")
 
                 success_menu()
 
             elif choice == 2:
-
                 print("1 Month / 6 Months / 12 Months Plans")
 
                 success_menu()
 
             elif choice == 3:
-
                 issue = input("Enter complaint: ")
 
                 complaint = {"issue": issue}
@@ -499,7 +477,6 @@ def tv_ott_services():
                 success_menu()
 
             elif choice == 4:
-
                 print("\n--- COMPLAINT HISTORY ---")
 
                 for complaint in ivr_data["complaints"]:

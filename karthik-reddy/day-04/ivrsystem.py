@@ -13,8 +13,13 @@ try:
         ivr_data = json.load(f)
 
 except FileNotFoundError:
-
-    ivr_data = {"recharges": [], "data_plans": [], "bill_payments": [], "plan_upgrades": [], "complaints": []}
+    ivr_data = {
+        "recharges": [],
+        "data_plans": [],
+        "bill_payments": [],
+        "plan_upgrades": [],
+        "complaints": [],
+    }
 
 
 # -------- SAVE DATA --------
@@ -32,12 +37,10 @@ def save_data():
 def success_menu():
 
     while True:
-
         print("\n1. Continue")
         print("2. Exit")
 
         try:
-
             choice = int(input(ENTER_CHOICE))
 
             if choice == 1:
@@ -60,9 +63,7 @@ def success_menu():
 def main_menu():
 
     while True:
-
         try:
-
             print(
                 "\n===== MAIN MENU ====="
                 "\n1. Mobile Services"
@@ -103,10 +104,8 @@ def main_menu():
 def mobile_services():
 
     while True:
-
         try:
-
-            print("\n--- MOBILE SERVICES ---" "\n1. Prepaid" "\n2. Postpaid" "\n3. Back")
+            print("\n--- MOBILE SERVICES ---\n1. Prepaid\n2. Postpaid\n3. Back")
 
             choice = int(input(ENTER_CHOICE))
 
@@ -132,9 +131,7 @@ def mobile_services():
 def prepaid():
 
     while True:
-
         try:
-
             print("\n--- PREPAID ---" "\n1. Balance Inquiry" "\n2. Recharge" "\n3. Data Plans" "\n4. Back")
 
             choice = int(input(ENTER_CHOICE))
@@ -187,11 +184,9 @@ def show_recharge_history():
         print("No recharge history found")
 
     else:
-
         print("\n--- RECHARGE HISTORY ---")
 
         for recharge in ivr_data["recharges"]:
-
             print(f"Method : {recharge['method']}")
             print(f"Amount : ₹{recharge['amount']}")
             print("----------------------")
@@ -203,9 +198,7 @@ def show_recharge_history():
 def recharge_menu():
 
     while True:
-
         try:
-
             print("\n--- RECHARGE ---" "\n1. Credit Card" "\n2. UPI" "\n3. Recharge History" "\n4. Back")
 
             choice = int(input(ENTER_CHOICE))
@@ -237,7 +230,6 @@ def data_plans():
     plans = {1: "1GB/day Plan", 2: "2GB/day Plan", 3: "Unlimited Plan"}
 
     while True:
-
         try:
 
             print(
@@ -252,24 +244,21 @@ def data_plans():
             choice = int(input(ENTER_CHOICE))
 
             if choice in plans:
-
                 plan = {"plan": plans[choice]}
 
                 ivr_data["data_plans"].append(plan)
 
                 save_data()
 
-                print(f"{plans[choice]} Selected\n" "Thank you for choosing our service!")
+                print(f"{plans[choice]} Selected\nThank you for choosing our service!")
 
                 success_menu()
 
             elif choice == 4:
-
                 if not ivr_data["data_plans"]:
                     print("No plans selected")
 
                 else:
-
                     print("\n--- SELECTED PLANS ---")
 
                     for plan in ivr_data["data_plans"]:
@@ -291,9 +280,7 @@ def data_plans():
 def postpaid():
 
     while True:
-
         try:
-
             print("\n--- POSTPAID ---" "\n1. Current Bill" "\n2. Bill Payment" "\n3. Plan Upgrade" "\n4. Back")
 
             choice = int(input(ENTER_CHOICE))
@@ -336,9 +323,7 @@ def process_payment(method):
 def bill_payment():
 
     while True:
-
         try:
-
             print("\n--- BILL PAYMENT ---" "\n1. NetBanking" "\n2. Wallet" "\n3. View Payment History" "\n4. Back")
 
             choice = int(input(ENTER_CHOICE))
@@ -350,7 +335,6 @@ def bill_payment():
                 process_payment("Wallet")
 
             elif choice == 3:
-
                 print("\n--- PAYMENT HISTORY ---")
 
                 for payment in ivr_data["bill_payments"]:
@@ -385,9 +369,7 @@ def process_upgrade(plan_name, message):
 def plan_upgrade():
 
     while True:
-
         try:
-
             print(
                 "\n--- PLAN UPGRADE ---"
                 "\n1. Silver → Gold (2GB/day throughout 1 year)"
@@ -399,15 +381,18 @@ def plan_upgrade():
             choice = int(input(ENTER_CHOICE))
 
             if choice == 1:
-
-                process_upgrade("Silver to Gold", "Silver upgraded to Gold\nThank you for upgrading!")
+                process_upgrade(
+                    "Silver to Gold",
+                    "Silver upgraded to Gold\nThank you for upgrading!",
+                )
 
             elif choice == 2:
-
-                process_upgrade("Gold to Platinum", "Gold upgraded to Platinum\nThank you for upgrading!")
+                process_upgrade(
+                    "Gold to Platinum",
+                    "Gold upgraded to Platinum\nThank you for upgrading!",
+                )
 
             elif choice == 3:
-
                 print("\n--- UPGRADE HISTORY ---")
 
                 for upgrade in ivr_data["plan_upgrades"]:
@@ -429,21 +414,17 @@ def plan_upgrade():
 def internet_services():
 
     while True:
-
         try:
-
-            print("\n--- INTERNET SERVICES ---" "\n1. Broadband" "\n2. Fiber" "\n3. Back")
+            print("\n--- INTERNET SERVICES ---\n1. Broadband\n2. Fiber\n3. Back")
 
             choice = int(input(ENTER_CHOICE))
 
             if choice == 1:
-
                 print("Broadband Selected")
 
                 success_menu()
 
             elif choice == 2:
-
                 print("Fiber Selected")
 
                 success_menu()
@@ -464,7 +445,6 @@ def internet_services():
 def tv_ott_services():
 
     while True:
-
         try:
 
             print(
@@ -479,19 +459,16 @@ def tv_ott_services():
             choice = int(input(ENTER_CHOICE))
 
             if choice == 1:
-
                 print("Sports / Movies / All-in-One Pack")
 
                 success_menu()
 
             elif choice == 2:
-
                 print("1 Month / 6 Months / 12 Months Plans")
 
                 success_menu()
 
             elif choice == 3:
-
                 issue = input("Enter complaint: ")
 
                 complaint = {"issue": issue}
@@ -505,7 +482,6 @@ def tv_ott_services():
                 success_menu()
 
             elif choice == 4:
-
                 print("\n--- COMPLAINT HISTORY ---")
 
                 for complaint in ivr_data["complaints"]:

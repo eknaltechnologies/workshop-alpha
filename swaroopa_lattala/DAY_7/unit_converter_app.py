@@ -23,7 +23,6 @@ def index():
     result = None
 
     if request.method == "POST":
-
         user_choice = int(request.form.get("choice"))
         val = float(request.form.get("value"))
 
