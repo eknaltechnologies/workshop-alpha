@@ -7,7 +7,9 @@ except FileNotFoundError:
     music_list = {}
 
 while True:
-    print("Welcome to the Music List! \n1. Add Song\n2. View Songs\n3. Update Song\n4. Delete Song\n5. Search a Song\n6. Exit")
+    print(
+        "Welcome to the Music List! \n1. Add Song\n2. View Songs\n3. Update Song\n4. Delete Song\n5. Search a Song\n6. Exit"
+    )
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
     user_choice = int(input("Please select an option (1-6): "))
 

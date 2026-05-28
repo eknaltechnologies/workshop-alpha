@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Music Recommendation</title>
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins',sans-serif;
+        }
+
+        body{
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            overflow-y:auto;
+            position:relative;
+            background:#020617;
+            padding:40px 20px;
+        }
+
+        /* Animated Background */
+
+        body::before{
+            content:"";
+            position:fixed;
+            width:700px;
+            height:700px;
+            background:linear-gradient(#ff00cc,#3333ff);
+            border-radius:50%;
+            top:-250px;
+            left:-180px;
+            filter:blur(130px);
+            animation:move1 10s infinite alternate;
+            z-index:-1;
+        }
+
+        body::after{
+            content:"";
+            position:fixed;
+            width:600px;
+            height:600px;
+            background:linear-gradient(#00ffcc,#ff6600);
+            border-radius:50%;
+            bottom:-250px;
+            right:-180px;
+            filter:blur(130px);
+            animation:move2 10s infinite alternate;
+            z-index:-1;
+        }
+
+        @keyframes move1{
+
+            100%{
+                transform:translate(120px,90px);
+            }
+
+        }
+
+        @keyframes move2{
+
+            100%{
+                transform:translate(-120px,-90px);
+            }
+
+        }
+
+        .container{
+            width:100%;
+            max-width:650px;
+            padding:40px;
+            border-radius:30px;
+            background:rgba(255,255,255,0.08);
+            backdrop-filter:blur(20px);
+            border:1px solid rgba(255,255,255,0.15);
+            box-shadow:0 10px 40px rgba(0,0,0,0.6);
+        }
+
+        .logo{
+            text-align:center;
+            font-size:80px;
+            margin-bottom:10px;
+            animation:bounce 2s infinite;
+        }
+
+        @keyframes bounce{
+
+            50%{
+                transform:translateY(-10px);
+            }
+
+        }
+
+        h1{
+            text-align:center;
+            color:white;
+            font-size:40px;
+            margin-bottom:30px;
+            font-weight:700;
+        }
+
+        h2{
+            color:white;
+            margin-top:20px;
+            margin-bottom:12px;
+            font-size:22px;
+            font-weight:500;
+        }
+
+        input,
+        select{
+            width:100%;
+            padding:16px;
+            margin-top:12px;
+            border:none;
+            outline:none;
+            border-radius:16px;
+            background:rgba(255,255,255,0.12);
+            color:white;
+            font-size:15px;
+            transition:0.3s;
+        }
+
+        input::placeholder{
+            color:#d1d5db;
+        }
+
+        input:focus,
+        select:focus{
+            background:rgba(255,255,255,0.2);
+            transform:scale(1.02);
+        }
+
+        select option{
+            color:black;
+        }
+
+        button{
+            width:100%;
+            padding:16px;
+            margin-top:18px;
+            border:none;
+            border-radius:16px;
+            background:linear-gradient(to right,#ff00cc,#3333ff);
+            color:white;
+            font-size:17px;
+            font-weight:600;
+            cursor:pointer;
+            transition:0.4s;
+        }
+
+        button:hover{
+            transform:translateY(-4px);
+            box-shadow:0 10px 25px rgba(255,0,204,0.5);
+        }
+
+        .all-songs-btn{
+            display:block;
+            text-decoration:none;
+        }
+
+        .all-songs-btn button{
+            background:linear-gradient(to right,#00c6ff,#0072ff);
+        }
+
+        hr{
+            margin:35px 0;
+            border:none;
+            height:1px;
+            background:rgba(255,255,255,0.15);
+        }
+
+        .footer{
+            text-align:center;
+            margin-top:25px;
+            color:#cbd5e1;
+            font-size:14px;
+        }
+
+        @media(max-width:700px){
+
+            .container{
+                padding:30px 22px;
+            }
+
+            h1{
+                font-size:32px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="logo">🎵</div>
+
+    <h1>Music Recommendation</h1>
+
+    <!-- Recommendation Form -->
+
+    <form action="/recommend" method="POST">
+
+        <h2>Select Your Mood</h2>
+
+        <select name="mood">
+
+            <option>Happy</option>
+            <option>Sad</option>
+            <option>Relaxed</option>
+            <option>Energetic</option>
+            <option>Romantic</option>
+
+        </select>
+
+        <button type="submit">
+            Get Recommendation
+        </button>
+
+    </form>
+
+    <!-- Show All Songs -->
+
+    <a href="/all-songs" class="all-songs-btn">
+
+        <button type="button">
+            Show All Songs
+        </button>
+
+    </a>
+
+    <hr>
+
+    <!-- Add Song Form -->
+
+    <form action="/add-music" method="POST">
+
+        <h2>Add Your Favorite Song</h2>
+
+        <input
+            type="text"
+            name="name"
+            placeholder="Enter Song Name"
+            required
+        >
+
+        <input
+            type="text"
+            name="artist"
+            placeholder="Enter Artist Name"
+            required
+        >
+
+        <input
+            type="url"
+            name="poster"
+            placeholder="Enter Poster Image URL"
+            required
+        >
+
+        <button type="submit">
+            Add Song
+        </button>
+
+    </form>
+
+    <div class="footer">
+        🎧 Feel The Beat • Feel The Mood
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+{
+    "songs": [
+        {
+            "name": "naa madhi",
+            "artist": "dhansuh",
+            "mood": "Happy",
+            "emoji": null,
+            "poster": "https://imgs.search.brave.com/J8DzDHkpTYfE80TK95QU2GGdOex5xS1thrcaf9Fh_08/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9seXJp/Y3NyYWFnLmNvbS93/cC1jb250ZW50L3Vw/bG9hZHMvMjAyMi8x/MC9OYWEtTWFkaGkt/THlyaWNzLUVuZ2xp/c2gtVHJhbnNsYXRp/b24tVGhpcnUuanBn"
+        },
+        {
+            "name": "tharagathi gadhi daati",
+            "artist": "Kaala Bhairava.",
+            "mood": "Happy",
+            "emoji": null,
+            "poster": "https://imgs.search.brave.com/kOxGiXkZ-Ptn3PC4geoMXwEzjtHRZMi64ey2taY-68I/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9jLnNh/YXZuY2RuLmNvbS9u/dWxsL0NvbG91ci1Q/aG90by1UZWx1Z3Ut/MjAyMC0yMDIwMTEx/ODIwNTkwNi01MDB4/NTAwLmpwZw"
+        },
+        {
+            "name": "Kannazhaga",
+            "artist": "dhanush",
+            "mood": "Relaxed",
+            "emoji": null,
+            "poster": "https://imgs.search.brave.com/9sSsWf44kMrttSKHGQNeaOoU_RqoGEoSxa3Bs-kjkEs/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90YW1p/bGx5cmljczE0My5j/b20vd3AtY29udGVu/dC91cGxvYWRzLzIw/MjAvMDQvMy1Nb29u/dS1Nb3ZpZS1Tb25n/LUx5cmljcy5qcGc"
+        }
+    ]
+}
