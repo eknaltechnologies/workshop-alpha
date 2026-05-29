@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ mood }} Songs</title>
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins',sans-serif;
+        }
+
+        body{
+            background:#050816;
+            min-height:100vh;
+            padding:40px;
+            color:white;
+        }
+
+        h1{
+            text-align:center;
+            font-size:40px;
+            margin-bottom:15px;
+        }
+
+        .back-btn{
+            display:inline-block;
+            margin-bottom:30px;
+            padding:12px 25px;
+            background:linear-gradient(to right,#ff00cc,#3333ff);
+            color:white;
+            text-decoration:none;
+            border-radius:12px;
+        }
+
+        .card-container{
+            display:flex;
+            flex-wrap:wrap;
+            gap:25px;
+            justify-content:center;
+        }
+
+        .card{
+            width:280px;
+            background:#111827;
+            border-radius:20px;
+            overflow:hidden;
+            transition:0.4s;
+            box-shadow:0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        .card:hover{
+            transform:translateY(-10px);
+        }
+
+        .card img{
+            width:100%;
+            height:320px;
+            object-fit:cover;
+        }
+
+        .content{
+            padding:20px;
+        }
+
+        .content h2{
+            margin-bottom:12px;
+            font-size:24px;
+        }
+
+        .content p{
+            margin-top:8px;
+            color:#d1d5db;
+        }
+
+        .empty{
+            text-align:center;
+            margin-top:60px;
+            font-size:28px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<h1>🎵 {{ mood }}</h1>
+
+<a href="/" class="back-btn">← Back To Home</a>
+
+<div class="card-container">
+
+    {% if songs %}
+
+        {% for song in songs %}
+
+        <div class="card">
+
+            <img 
+    src="{{ song.poster if song.poster else 'https://cdn-icons-png.flaticon.com/512/727/727245.png' }}" 
+    alt="Song Poster"
+>
+
+            <div class="content">
+
+                <h2>{{ song.emoji if song.emoji else '🎵' }} {{ song.name }}</h2>
+                <p><strong>Artist:</strong> {{ song.artist }}</p>
+                <p><strong>Mood:</strong> {{ song.mood }}</p>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    {% else %}
+
+        <div class="empty">
+            No Songs Found
+        </div>
+
+    {% endif %}
+
+</div>
+
+</body>
+</html>

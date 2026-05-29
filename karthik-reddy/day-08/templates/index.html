@@ -1,0 +1,425 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Music Recommendation</title>
+
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        :root{
+
+            --glass-bg:rgba(255,255,255,0.08);
+
+            --glass-border:rgba(255,255,255,0.18);
+
+            --text:white;
+
+            --muted:#d1d5db;
+
+            --input-bg:rgba(255,255,255,0.08);
+
+            --hover-bg:rgba(255,255,255,0.15);
+        }
+
+        *{
+
+            margin:0;
+
+            padding:0;
+
+            box-sizing:border-box;
+
+            font-family:'Poppins',sans-serif;
+        }
+
+        body{
+
+            min-height:100vh;
+
+            display:flex;
+
+            justify-content:center;
+
+            align-items:center;
+
+            padding:40px 20px;
+
+            background:
+                linear-gradient(
+                    rgba(5,10,25,0.55),
+                    rgba(5,10,25,0.75)
+                ),
+
+                url("/static/images/bandd.jpeg");
+
+            background-size:cover;
+
+            background-position:center;
+
+            background-repeat:no-repeat;
+
+            background-attachment:fixed;
+
+            overflow:hidden;
+
+            color:white;
+        }
+
+       
+.container{
+
+    width:100%;
+
+    max-width:480px;
+
+    min-height:480px;
+
+    padding:38px 35px;
+
+    border-radius:22px;
+
+    background:rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(22px);
+
+    -webkit-backdrop-filter:blur(22px);
+
+    border:1px solid rgba(255,255,255,0.22);
+
+    box-shadow:
+        0 0 18px rgba(255,255,255,0.12),
+        0 0 45px rgba(0,255,255,0.08),
+        inset 0 0 8px rgba(255,255,255,0.05);
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+}
+
+
+.container::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:22px;
+
+    border:1px solid rgba(255,255,255,0.28);
+
+    pointer-events:none;
+
+    box-shadow:
+        inset 0 0 12px rgba(255,255,255,0.08),
+        0 0 15px rgba(255,255,255,0.08);
+}
+
+
+
+        .logo{
+
+            text-align:center;
+
+            font-size:55px;
+
+            margin-bottom:10px;
+        }
+
+       
+h1{
+
+    text-align:center;
+
+    font-size:34px;
+
+    margin-bottom:28px;
+
+    font-weight:700;
+}
+
+
+
+        h2{
+
+            margin-bottom:14px;
+
+            color:var(--muted);
+
+            font-size:14px;
+
+            text-transform:uppercase;
+
+            letter-spacing:1px;
+        }
+
+        form{
+
+            display:flex;
+
+            flex-direction:column;
+        }
+
+        input,
+        select{
+
+            width:100%;
+
+            padding:15px 18px;
+
+            margin-bottom:18px;
+
+            border:none;
+
+            outline:none;
+
+            border-radius:14px;
+
+            background:var(--input-bg);
+
+            color:white;
+
+            font-size:15px;
+
+            border:1px solid rgba(255,255,255,0.12);
+
+            transition:0.3s;
+        }
+
+        input::placeholder{
+
+            color:#ddd;
+        }
+
+        input:focus,
+        select:focus{
+
+            background:rgba(255,255,255,0.12);
+
+            border:1px solid rgba(255,255,255,0.3);
+        }
+
+        select{
+
+            cursor:pointer;
+        }
+
+        select option{
+
+            background:#111827;
+
+            color:white;
+        }
+
+        button{
+
+            width:100%;
+
+            padding:15px;
+
+            border:none;
+
+            border-radius:14px;
+
+            background:rgba(0,0,0,0.45);
+
+            color:white;
+
+            font-size:16px;
+
+            font-weight:600;
+
+            cursor:pointer;
+
+            transition:0.3s;
+
+            border:1px solid rgba(255,255,255,0.15);
+        }
+
+        button:hover{
+
+            transform:translateY(-2px);
+
+            background:var(--hover-bg);
+
+            box-shadow:0 6px 25px rgba(255,255,255,0.15);
+        }
+
+        .all-songs-btn{
+
+            text-decoration:none;
+
+            display:block;
+
+            margin-top:15px;
+        }
+
+        hr{
+
+            margin:35px 0;
+
+            border:none;
+
+            height:1px;
+
+            background:rgba(255,255,255,0.12);
+        }
+
+        .footer{
+
+            text-align:center;
+
+            margin-top:35px;
+
+            font-size:13px;
+
+            color:#ddd;
+
+            letter-spacing:2px;
+        }
+
+        @media(max-width:600px){
+
+            .container{
+
+                padding:30px 22px;
+            }
+
+            h1{
+
+                font-size:32px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="logo">🎧</div>
+
+    <h1>Music Recommendation</h1>
+
+    <!-- Recommendation Form -->
+
+    <form action="/recommend" method="POST">
+
+        <h2>Select Your Mood</h2>
+
+        <select name="mood" required>
+
+            <option value="">Select Mood</option>
+
+            <option value="Happy">Happy</option>
+
+            <option value="Sad">Sad</option>
+
+            <option value="Relaxed">Relaxed</option>
+
+            <option value="Energetic">Energetic</option>
+
+            <option value="Romantic">Romantic</option>
+
+        </select>
+
+        <button type="submit">
+
+            Get Recommendation
+
+        </button>
+
+    </form>
+
+    <!-- Show All Songs -->
+
+    <a href="/all-songs" class="all-songs-btn">
+
+        <button type="button">
+
+            Show All Songs
+
+        </button>
+
+    </a>
+
+    <hr>
+
+    <!-- Add Song Form -->
+
+    <form action="/add-music" method="POST">
+
+        <h2>Add Your Favorite Song</h2>
+
+        <input
+            type="text"
+            name="name"
+            placeholder="Enter Song Name"
+            required
+        >
+
+        <input
+            type="text"
+            name="artist"
+            placeholder="Enter Artist Name"
+            required
+        >
+
+        <select name="mood" required>
+
+            <option value="">Select Mood</option>
+
+            <option value="Happy">Happy</option>
+
+            <option value="Sad">Sad</option>
+
+            <option value="Relaxed">Relaxed</option>
+
+            <option value="Energetic">Energetic</option>
+
+            <option value="Romantic">Romantic</option>
+
+        </select>
+
+        <input
+            type="url"
+            name="poster"
+            placeholder="Enter Poster Image URL"
+            required
+        >
+
+        <button type="submit">
+
+            Add Song
+
+        </button>
+
+    </form>
+
+    <div class="footer">
+
+        FEEL THE BEAT • FEEL THE MOOD
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
+
